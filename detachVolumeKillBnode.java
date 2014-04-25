@@ -20,7 +20,7 @@ import com.oracle.nimbula.qa.ha.InstanceUtil;
  *
  * @author nsun
  */
-public class attachVolumeKillBstoragemanager extends BaseTestCase {
+public class detachVolumeKillBnode extends BaseTestCase {
     //String defaultCustomer, defaultCustomerPassword;
     HAUtil util;
     FunctionalUtils func;
@@ -39,8 +39,7 @@ public class attachVolumeKillBstoragemanager extends BaseTestCase {
 
         func.createVolumes();
 
-        //vm.launchVMwithStorage();
-        vm.launchSimple();
+        vm.launchVMwithStorage();
         vmUUID = vm.getCreatedInstancesUUID().get(0);
         while (!vm.isVMup(vmUUID)){
             logger.log(Level.INFO,"VM is not up yet")
@@ -50,18 +49,21 @@ public class attachVolumeKillBstoragemanager extends BaseTestCase {
         String hostingNodeUUID = util.getVMnode(vmUUID);
         String hostingNodeIP = util.getNodeIP(hostingNodeUUID); 
         String volumeName = func.getCreatedVolumeNames().get(0);
-    }
-    
-    @Test(alwaysRun=true, timeOut=900000)
-    public void attachVolume() throws InterruptedException{
         //attach a storage volume on the running vm
         vm.addAttachment(vmUUID,volumeName);
         Assert.assertTrue(vm.addStorageAttachment(vmUUID, volumeName), "Storage volume could not be attached to the VM");
     }
     
+    @Test(alwaysRun=true, timeOut=900000)
+    public void detachVolume() throws InterruptedException{
+        // deattch a storage volume to the running vm
+        Assert.assertTrue(vm.deleteStorageAttachment(volumeName), "Storage volume could not be detached from the VM");
+    }
+    
     @Test(alwaysRun=true,timeOut=900000)
-    public void last_bStoragemanagerFailure() throws InterruptedException{                     
-        util.killNDService("bstoragemanager");               
+    public void last_bNodeFailure() throws InterruptedException{                     
+        //kill bnode service on one node
+        util.killNDService("bnode");               
         Thread.sleep(60000);
     }  
     

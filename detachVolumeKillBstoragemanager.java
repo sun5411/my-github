@@ -38,7 +38,6 @@ public class detachVolumeKillBstoragemanager extends BaseTestCase {
         vm = new InstanceUtil();
 
         func.createVolumes();
-        volumeName = func.getCreatedVolumeNames().get(0);
 
         vm.launchVMwithStorage();
         vmUUID = vm.getCreatedInstancesUUID().get(0);
@@ -71,8 +70,8 @@ public class detachVolumeKillBstoragemanager extends BaseTestCase {
 
     @AfterClass
     public void tearDown() {        
-        vm.deleteAllCreatedVMs();
         func.deleteVolume();
+        vm.deleteAllCreatedVMs();
         //func.deleteStoragePool();
         //func.deleteStorageServer();
     }        

@@ -20,7 +20,7 @@ import com.oracle.nimbula.qa.ha.InstanceUtil;
  *
  * @author nsun
  */
-public class attachVolumeKillBstoragemanager extends BaseTestCase {
+public class attachVolumeKillBnode extends BaseTestCase {
     //String defaultCustomer, defaultCustomerPassword;
     HAUtil util;
     FunctionalUtils func;
@@ -60,8 +60,8 @@ public class attachVolumeKillBstoragemanager extends BaseTestCase {
     }
     
     @Test(alwaysRun=true,timeOut=900000)
-    public void last_bStoragemanagerFailure() throws InterruptedException{                     
-        util.killNDService("bstoragemanager");               
+    public void last_bnodeFailure() throws InterruptedException{                     
+        util.killNDService("bnode");               
         Thread.sleep(60000);
     }  
     
