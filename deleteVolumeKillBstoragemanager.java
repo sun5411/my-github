@@ -35,7 +35,6 @@ public class deleteVolumeKillBstoragemanager extends BaseTestCase {
     }
     
     @Test(alwaysRun=true, timeOut=900000)
-    // run after addVolumeKillBstoragemanager case
     public void deleteVolume() throws InterruptedException{
         func.createVolumes(20);
     }
@@ -46,10 +45,8 @@ public class deleteVolumeKillBstoragemanager extends BaseTestCase {
         Thread.sleep(60000);
     }  
     
-    /*
     @AfterClass
     public void tearDown() {        
         func.deleteVolume();
     }        
-    */
 }

@@ -20,8 +20,8 @@ import com.oracle.nimbula.qa.ha.InstanceUtil;
  *
  * @author nsun
  */
-public class addAttachmentKillBstoragemanager extends BaseTestCase {
-    String defaultCustomer, defaultCustomerPassword;
+public class detachVolumeKillBstoragemanager extends BaseTestCase {
+    //String defaultCustomer, defaultCustomerPassword;
     HAUtil util;
     FunctionalUtils func;
     OrchestrationUtil orch;
@@ -31,36 +31,49 @@ public class addAttachmentKillBstoragemanager extends BaseTestCase {
     
     @BeforeClass
     public void setup() {
-    	defaultCustomer = nimbulaPropertiesReader.getNimbulaDefaultCustomer();
-	defaultCustomerPassword = nimbulaPropertiesReader.getNimbulaDefaultCustomerPassword();
+    	//defaultCustomer = nimbulaPropertiesReader.getNimbulaDefaultCustomer();
+	    //defaultCustomerPassword = nimbulaPropertiesReader.getNimbulaDefaultCustomerPassword();
         util = new HAUtil();                
         func = new FunctionalUtils();
         vm = new InstanceUtil();
+
+        func.createVolumes();
+        volumeName = func.getCreatedVolumeNames().get(0);
+
+        vm.launchVMwithStorage();
+        vmUUID = vm.getCreatedInstancesUUID().get(0);
+        while (!vm.isVMup(vmUUID)){
+            logger.log(Level.INFO,"VM is not up yet")
+            Thread.sleep(30000);
+        }
+
+        String hostingNodeUUID = util.getVMnode(vmUUID);
+        String hostingNodeIP = util.getNodeIP(hostingNodeUUID); 
+        String volumeName = func.getCreatedVolumeNames().get(0);
+        //attach a storage volume on the running vm
+        vm.addAttachment(vmUUID,volumeName);
+        Assert.assertTrue(vm.addStorageAttachment(vmUUID, volumeName), "Storage volume could not be attached to the VM");
     }
     
     @Test(alwaysRun=true, timeOut=900000)
-    public void addAttachment() throws InterruptedException{
-        //vm.launchNSimpleVMs(1);
-        vm.launchSimple();
-        //vm.launchVM();
-        List<String> uuid = vm.getVMsWithStorageAttachment();
-        vm.getStorageAttachmentNames(uuid.get(0));
-        vm.getStorageAttachment(uuid.get(0));
-
-        func.createVolumes(20);
+    public void detachVolume() throws InterruptedException{
+        // deattch a storage volume to the running vm
+        Assert.assertTrue(vm.deleteStorageAttachment(volumeName), "Storage volume could not be detached from the VM");
     }
     
     @Test(alwaysRun=true,timeOut=900000)
     public void last_bStoragemanagerFailure() throws InterruptedException{                     
+        //kill bstoragemanager service on one node
         util.killNDService("bstoragemanager");               
         Thread.sleep(60000);
     }  
     
-    //Keep the volume for deleteVolumeKillBstoragemanager test
-    /*
+
     @AfterClass
     public void tearDown() {        
+        vm.deleteAllCreatedVMs();
         func.deleteVolume();
+        //func.deleteStoragePool();
+        //func.deleteStorageServer();
     }        
-    */
 }
