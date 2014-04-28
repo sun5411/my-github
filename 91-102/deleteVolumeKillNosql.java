@@ -19,8 +19,8 @@ import org.testng.annotations.Test;
  *
  * @author nsun
  */
-public class addVolumeKillBstorageworker extends BaseTestCase {
-    //String defaultCustomer, defaultCustomerPassword;
+public class deleteVolumeKillNosql extends BaseTestCase {
+    String defaultCustomer, defaultCustomerPassword;
     HAUtil util;
     FunctionalUtils func;
     OrchestrationUtil orch;
@@ -28,25 +28,25 @@ public class addVolumeKillBstorageworker extends BaseTestCase {
     
     @BeforeClass
     public void setup() {
-    	//defaultCustomer = nimbulaPropertiesReader.getNimbulaDefaultCustomer();
-    	//defaultCustomerPassword = nimbulaPropertiesReader.getNimbulaDefaultCustomerPassword();
+    	defaultCustomer = nimbulaPropertiesReader.getNimbulaDefaultCustomer();
+	defaultCustomerPassword = nimbulaPropertiesReader.getNimbulaDefaultCustomerPassword();
         util = new HAUtil();                
         func = new FunctionalUtils();
-        }
+
+        func.createVolumes(20);
     }
     
     @Test(alwaysRun=true, timeOut=900000)
-    public void addVolume() throws InterruptedException{
-            func.createVolumes(20);
+    public void deleteVolume() throws InterruptedException{
+        func.deleteVolume();
     }
     
     @Test(alwaysRun=true,timeOut=900000)
-    public void last_bStorageworkerFailure() throws InterruptedException{                     
-        util.killNDService("bstorageworker");               
+    public void NosqlFailure() throws InterruptedException{                     
         Thread.sleep(60000);
+        util.killNDService("nosql");
     }  
     
-
     @AfterClass
     public void tearDown() {        
         func.deleteVolume();

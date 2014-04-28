@@ -20,7 +20,7 @@ import com.oracle.nimbula.qa.ha.InstanceUtil;
  *
  * @author nsun
  */
-public class detachVolumeKillBstoragemanager extends BaseTestCase {
+public class attachVolumeKillBstoragemanager extends BaseTestCase {
     //String defaultCustomer, defaultCustomerPassword;
     HAUtil util;
     FunctionalUtils func;
@@ -37,9 +37,10 @@ public class detachVolumeKillBstoragemanager extends BaseTestCase {
         func = new FunctionalUtils();
         vm = new InstanceUtil();
 
-        func.createVolumes();
+        func.createVolume();
 
-        vm.launchVMwithStorage();
+        //vm.launchVMwithStorage();
+        vm.launchSimple();
         vmUUID = vm.getCreatedInstancesUUID().get(0);
         while (!vm.isVMup(vmUUID)){
             logger.log(Level.INFO,"VM is not up yet")
@@ -49,21 +50,18 @@ public class detachVolumeKillBstoragemanager extends BaseTestCase {
         String hostingNodeUUID = util.getVMnode(vmUUID);
         String hostingNodeIP = util.getNodeIP(hostingNodeUUID); 
         String volumeName = func.getCreatedVolumeNames().get(0);
+    }
+    
+    @Test(alwaysRun=true, timeOut=900000)
+    public void attachVolume() throws InterruptedException{
         //attach a storage volume on the running vm
         vm.addAttachment(vmUUID,volumeName);
         Assert.assertTrue(vm.addStorageAttachment(vmUUID, volumeName), "Storage volume could not be attached to the VM");
     }
     
-    @Test(alwaysRun=true, timeOut=900000)
-    public void detachVolume() throws InterruptedException{
-        // deattch a storage volume to the running vm
-        Assert.assertTrue(vm.deleteStorageAttachment(volumeName), "Storage volume could not be detached from the VM");
-    }
-    
     @Test(alwaysRun=true,timeOut=900000)
     public void last_bStoragemanagerFailure() throws InterruptedException{                     
-        //kill bstoragemanager service on one node
-        util.killNDService("bstoragemanager");               
+        util.killNDService("RabbitMQ");               
         Thread.sleep(60000);
     }  
     

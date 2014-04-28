@@ -20,7 +20,7 @@ import com.oracle.nimbula.qa.ha.InstanceUtil;
  *
  * @author nsun
  */
-public class detachVolumeKillBnode extends BaseTestCase {
+public class detachVolumeKillBstoragemanager extends BaseTestCase {
     //String defaultCustomer, defaultCustomerPassword;
     HAUtil util;
     FunctionalUtils func;
@@ -37,7 +37,7 @@ public class detachVolumeKillBnode extends BaseTestCase {
         func = new FunctionalUtils();
         vm = new InstanceUtil();
 
-        func.createVolumes();
+        func.createVolume();
 
         vm.launchVMwithStorage();
         vmUUID = vm.getCreatedInstancesUUID().get(0);
@@ -61,9 +61,9 @@ public class detachVolumeKillBnode extends BaseTestCase {
     }
     
     @Test(alwaysRun=true,timeOut=900000)
-    public void last_bNodeFailure() throws InterruptedException{                     
-        //kill bnode service on one node
-        util.killNDService("bnode");               
+    public void last_bStoragemanagerFailure() throws InterruptedException{                     
+        //kill bstoragemanager service on one node
+        util.killNDService("RabbitMQ");               
         Thread.sleep(60000);
     }  
     

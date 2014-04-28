@@ -20,12 +20,13 @@ import com.oracle.nimbula.qa.ha.InstanceUtil;
  *
  * @author nsun
  */
-public class detachVolumeKillBstorageworker extends BaseTestCase {
+public class attachVolumeKillBstoragemanager extends BaseTestCase {
     //String defaultCustomer, defaultCustomerPassword;
     HAUtil util;
     FunctionalUtils func;
     OrchestrationUtil orch;
     InstanceUtil vm;
+    private int volumesNum = 20;
 
     protected static final Logger logger = Logger.getLogger(NimbulaTestSpaceLogger.TESTS_LOGGER);
     
@@ -37,9 +38,10 @@ public class detachVolumeKillBstorageworker extends BaseTestCase {
         func = new FunctionalUtils();
         vm = new InstanceUtil();
 
-        func.createVolumes();
+        func.createVolumes(volumesNum);
 
-        vm.launchVMwithStorage();
+        //vm.launchVMwithStorage();
+        vm.launchSimple();
         vmUUID = vm.getCreatedInstancesUUID().get(0);
         while (!vm.isVMup(vmUUID)){
             logger.log(Level.INFO,"VM is not up yet")
@@ -48,23 +50,22 @@ public class detachVolumeKillBstorageworker extends BaseTestCase {
 
         String hostingNodeUUID = util.getVMnode(vmUUID);
         String hostingNodeIP = util.getNodeIP(hostingNodeUUID); 
-        String volumeName = func.getCreatedVolumeNames().get(0);
-        //attach a storage volume on the running vm
-        vm.addAttachment(vmUUID,volumeName);
-        Assert.assertTrue(vm.addStorageAttachment(vmUUID, volumeName), "Storage volume could not be attached to the VM");
     }
     
     @Test(alwaysRun=true, timeOut=900000)
-    public void detachVolume() throws InterruptedException{
-        // deattch a storage volume to the running vm
-        Assert.assertTrue(vm.deleteStorageAttachment(volumeName), "Storage volume could not be detached from the VM");
+    public void attachVolume() throws InterruptedException{
+        //attach storage volumes on the running vm
+        for (int i=0;i < volumesNum; i++){
+            String volumeName = func.getCreatedVolumeNames().get(i);
+            vm.addAttachment(vmUUID,volumeName);
+            Assert.assertTrue(vm.addStorageAttachment(vmUUID, volumeName), "Storage volume could not be attached to the VM");
+        }
     }
     
     @Test(alwaysRun=true,timeOut=900000)
-    public void last_bStorageworkerFailure() throws InterruptedException{                     
-        //kill bstorageworker service on one node
-        util.killNDService("bstorageworker");               
+    public void last_bStoragemanagerFailure() throws InterruptedException{                     
         Thread.sleep(60000);
+        util.killNDService("bstoragemanager");               
     }  
     
 

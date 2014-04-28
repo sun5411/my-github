@@ -37,7 +37,7 @@ public class attachVolumeKillBstoragemanager extends BaseTestCase {
         func = new FunctionalUtils();
         vm = new InstanceUtil();
 
-        func.createVolumes();
+        func.createVolume();
 
         //vm.launchVMwithStorage();
         vm.launchSimple();
