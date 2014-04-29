@@ -1,0 +1,101 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package com.oracle.nimbula.qa.ha.serviceFailureResiliency;
+
+import com.oracle.nimbula.modules.utils.StorageTestUtils;
+import com.oracle.nimbula.qa.ha.FunctionalUtils;
+import com.oracle.nimbula.qa.ha.HAUtil;
+import com.oracle.nimbula.qa.ha.OrchestrationUtil;
+import com.oracle.nimbula.qa.ha.common.HAConstantDef;
+import com.oracle.nimbula.test_framework.BaseTestCase;
+import com.oracle.nimbula.test_framework.helpers.NimbulaHelper;
+import com.oracle.nimbula.test_framework.resource.types.Property;
+import com.oracle.nimbula.test_framework.resource.types.StorageVolume;
+import com.oracle.nimbula.test_framework.result.api.NimbulaResult;
+import java.util.logging.Level;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+
+/**
+ *
+ * @author ctyagi
+ */
+public class addVolumeKillBstoragemanager extends BaseTestCase {
+    String defaultCustomer, defaultCustomerPassword;
+    HAUtil util;
+    FunctionalUtils func;
+    OrchestrationUtil orch;
+    private NimbulaHelper nimhelper;
+    private final int volumesNum = 20;
+    //private Property stProperty;
+    private String stProperty;
+    private final String storageVolumeName = "/qa/stVol";
+
+    //private final String customerName = nimbulaPropertiesReader.getNimbulaDefaultCustomer();
+    //private String user = nimbulaPropertiesReader.getNimbulaDefaultUser();
+    //private String userPassword = nimbulaPropertiesReader.getNimbulaDefaultUserPassword();
+    //StorageVolume[] storageVol = new StorageVolume[volumesNum];
+
+    //protected static final Logger logger = Logger.getLogger(NimbulaTestSpaceLogger.TESTS_LOGGER);
+/*
+    public addVolumeKillBstoragemanager() {
+            customerNimbulaHelper = new NimbulaHelper(getUser(), getUserPassword()); 
+    }
+*/
+    @BeforeClass
+    public void setup() {
+        util = new HAUtil();                
+        func = new FunctionalUtils();
+        nimhelper = new NimbulaHelper(HAConstantDef.ROOT_USER,HAConstantDef.ROOT_PASSWORD);
+        //this.stProperty = nimhelper.getProperty("storage", HAConstantDef.STORAGE_PROP, true).getObject();
+        stProperty = HAConstantDef.STORAGE_PROP;
+    }
+    
+    @Test(alwaysRun=true, timeOut=900000)
+    public void addVolume() throws InterruptedException{
+        //func.createVolume();
+       // StorageVolume storageVolume = null;
+        for(int i =1;i<volumesNum;i++){
+            //String storageVolumeName = "/qa" + "/stVolume" + i;
+            NimbulaResult<StorageVolume> result;
+            //result = nimhelper.addStorageVolume(storageVolumeName + i, "1G", this.stProperty.getPropertyName(), true,"--tags " + "volumeTag" + i);
+            result = nimhelper.addStorageVolume(storageVolumeName + i, "1G", stProperty, true,"--tags " + "volumeTag" + i);
+        }
+        Thread.sleep(50000);
+        for(int i=0;i<volumesNum;i++) {
+            //String storageVolumeName = "/qa/storagevolume" + i;
+            //func.isVolumeOnline(storageVolumeName);
+            StorageVolume volumeStatus;
+            volumeStatus = nimhelper.getStorageVolume(storageVolumeName + i, true).getObject();
+            if ( null == volumeStatus ){
+                    logger.log(Level.WARNING, "{0} : Can not get the Volume info.", storageVolumeName);
+            }
+            if (!volumeStatus.getStatus().toLowerCase().equals("online")){
+                    logger.log(Level.SEVERE, "Volume is {0}", volumeStatus);
+            } 
+            logger.log(Level.INFO,"Volume {0} is online",storageVolumeName);
+        }
+    }
+
+    @Test(alwaysRun=true,timeOut=900000)
+    public void last_bStoragemanagerFailure() throws InterruptedException{
+        util.killNDService("bstoragemanager");
+    }
+    
+    @AfterClass
+    public void tearDown() {
+        ///////////////////delete Instance// //////////////////////////////
+        //StorageTestUtils.deleteInstance(customerNimbulaHelper, instance);
+        ///////////////////delete StorageVolumes/////////////////////////
+        /*
+        for(int i=1;i<volumesNum;i++){
+            String storageVolumeName = "/qa" + "/stVolume" + i;
+            StorageTestUtils.deleteStorageVolumes(nimhelper,storageVolumeName);
+        }
+                */
+        func.deleteAllSystemVolumes();
+    }
+}
