@@ -14,7 +14,7 @@ import org.testng.annotations.Test;
  *
  * @author Sun Ning
  */
-public class addVolumeKillBstorageworker extends BaseTestCase {
+public class deleteVolumeKillBstoragemanager extends BaseTestCase {
     String defaultCustomer, defaultCustomerPassword;
     HAUtil util;
     FunctionalUtils func;
@@ -25,16 +25,17 @@ public class addVolumeKillBstorageworker extends BaseTestCase {
     public void setup() throws InterruptedException {
         util = new HAUtil();                
         func = new FunctionalUtils();
-    }
-    
-    @Test(alwaysRun=true, timeOut=900000)
-    public void addVolume() throws InterruptedException{
         func.createVolume();
     }
     
+    @Test(alwaysRun=true, timeOut=900000)
+    public void deleteVolume() throws InterruptedException{
+        func.deleteVolume();
+    }
+    
     @Test(alwaysRun=true,timeOut=900000)
-    public void last_bStorageworkerFailure() throws InterruptedException{                     
-        util.killNDService("bstorageworker");               
+    public void last_bStoragemanagerFailure() throws InterruptedException{                     
+        util.killNDService("bstoragemanager");               
     }  
     
     @AfterClass

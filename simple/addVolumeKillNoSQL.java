@@ -14,7 +14,7 @@ import org.testng.annotations.Test;
  *
  * @author Sun Ning
  */
-public class addVolumeKillBstorageworker extends BaseTestCase {
+public class addVolumeKillNoSQL extends BaseTestCase {
     String defaultCustomer, defaultCustomerPassword;
     HAUtil util;
     FunctionalUtils func;
@@ -22,7 +22,9 @@ public class addVolumeKillBstorageworker extends BaseTestCase {
     protected static final Logger logger = Logger.getLogger(NimbulaTestSpaceLogger.TESTS_LOGGER);
     
     @BeforeClass
-    public void setup() throws InterruptedException {
+    public void setup() {
+    	defaultCustomer = nimbulaPropertiesReader.getNimbulaDefaultCustomer();
+	defaultCustomerPassword = nimbulaPropertiesReader.getNimbulaDefaultCustomerPassword();
         util = new HAUtil();                
         func = new FunctionalUtils();
     }
@@ -33,9 +35,10 @@ public class addVolumeKillBstorageworker extends BaseTestCase {
     }
     
     @Test(alwaysRun=true,timeOut=900000)
-    public void last_bStorageworkerFailure() throws InterruptedException{                     
-        util.killNDService("bstorageworker");               
-    }  
+    public void last_NosqlFailure() throws InterruptedException{
+        util.killNOSQLReplica();
+
+    }
     
     @AfterClass
     public void tearDown() {        
