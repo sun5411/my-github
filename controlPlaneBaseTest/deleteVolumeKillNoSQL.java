@@ -17,25 +17,24 @@ public class deleteVolumeKillNoSQL extends ControlPlaneBaseTest {
     
     @BeforeClass
     public void deleteVolume_setup() throws InterruptedException{
-        System.out.println("###### Setup ...");
         super.setup();
+        func = new FunctionalUtils();
+        util = new HAUtil();
         func.createVolume();
     }
     
     @Test(alwaysRun=true, timeOut=900000)
     public void deleteVolume() throws InterruptedException{
-        System.out.println("###### deleteVolume ...");
         func.deleteVolume();
     }
     
     @Test(alwaysRun=true,timeOut=900000)
     public void last_NosqlFailure() throws InterruptedException{                     
-        System.out.println("###### last_NosqlFailure ...");
         util.killNOSQLReplica();
     }  
     
     @AfterClass
-    public void tearDown() {        
-        System.out.println("###### tearDown ...");
+    public void tearDown() {
+        func.deleteCreatedVolumes();
     }
 }
