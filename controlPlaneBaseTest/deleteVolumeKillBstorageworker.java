@@ -17,12 +17,12 @@ public class deleteVolumeKillBstorageworker extends ControlPlaneBaseTest {
     public void deleteVolume_setup() throws InterruptedException{
         super.setup();
         func = new FunctionalUtils();
-        func.createVolume();
+        func.createVolumes(2);
     }
     
     @Test(alwaysRun=true, timeOut=900000)
     public void deleteVolume() throws InterruptedException{
-        func.deleteVolume();
+        func.deleteCreatedVolumes();
     }
     
     @Test(alwaysRun=true,timeOut=900000)

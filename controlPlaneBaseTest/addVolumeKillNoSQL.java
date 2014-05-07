@@ -25,16 +25,13 @@ public class addVolumeKillNoSQL extends ControlPlaneBaseTest {
     
     @Test(alwaysRun=true, timeOut=900000)
     public void addVolume() throws InterruptedException{
-        System.out.println("###### Will create volume ...");
         func.createVolumes(2);
-        System.out.println("###### Will check volumes ....");
-        Assert.assertTrue(func.areVolumesOnline(), "Error : Volume is not online");
+        Assert.assertTrue(func.areVolumesOnline(), "Error : Volume is not online !");
     }
     
     @Test(alwaysRun=true,timeOut=900000)
     public void last_NosqlFailure() throws InterruptedException{                     
         util.killNOSQLReplica();
-        //Thread.sleep(60000);
     }  
     
     @AfterClass

@@ -20,12 +20,12 @@ public class deleteVolumeKillNoSQL extends ControlPlaneBaseTest {
         super.setup();
         func = new FunctionalUtils();
         util = new HAUtil();
-        func.createVolume();
+        func.createVolumes(2);
     }
     
     @Test(alwaysRun=true, timeOut=900000)
     public void deleteVolume() throws InterruptedException{
-        func.deleteVolume();
+        func.deleteCreatedVolumes();
     }
     
     @Test(alwaysRun=true,timeOut=900000)
