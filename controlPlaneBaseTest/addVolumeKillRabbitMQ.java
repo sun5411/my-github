@@ -1,12 +1,10 @@
 package com.oracle.nimbula.qa.ha.serviceFailureResiliency;
-
 import com.oracle.nimbula.qa.ha.FunctionalUtils;
-import com.oracle.nimbula.qa.ha.HAUtil;
 import com.oracle.nimbula.qa.ha.common.ControlPlaneBaseTest;
-import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+import org.testng.Assert;
 import com.oracle.colt.result.Result;
 import com.oracle.nimbula.test_framework.helpers.NimbulaHelper;
 import com.oracle.nimbula.qa.ha.common.HAConstantDef;
@@ -15,7 +13,7 @@ import com.oracle.nimbula.qa.ha.common.HAConstantDef;
  *
  * @author Sun Ning
  */
-public class addVolumeKillGlusterServer extends ControlPlaneBaseTest {
+public class addVolumeKillRabbitMQ extends ControlPlaneBaseTest {
     FunctionalUtils func;
     NimbulaHelper nimhelper;
     
@@ -33,8 +31,8 @@ public class addVolumeKillGlusterServer extends ControlPlaneBaseTest {
     }
     
     @Test(alwaysRun=true,timeOut=900000)
-    public void last_GlusterServerFailure() throws InterruptedException{                     
-        super.killNDService("gluster_server");
+    public void last_RabbitMQFailure() throws InterruptedException{                     
+        super.killNDService("rabbitmq_1");
     }  
     
     @AfterClass

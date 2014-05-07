@@ -7,6 +7,9 @@ import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+import com.oracle.colt.result.Result;
+import com.oracle.nimbula.test_framework.helpers.NimbulaHelper;
+import com.oracle.nimbula.qa.ha.common.HAConstantDef;
 
 /**
  *
@@ -15,6 +18,7 @@ import org.testng.annotations.Test;
 public class addVolumeKillNoSQL extends ControlPlaneBaseTest {
     HAUtil util;
     FunctionalUtils func;
+    NimbulaHelper nimhelper;
     
     @BeforeClass
     public void addVolume_setup() throws InterruptedException{
@@ -24,7 +28,7 @@ public class addVolumeKillNoSQL extends ControlPlaneBaseTest {
     }
     
     @Test(alwaysRun=true, timeOut=900000)
-    public void addVolume() throws InterruptedException{
+    public void addVolumes() throws InterruptedException{
         func.createVolumes(2);
         Assert.assertTrue(func.areVolumesOnline(), "Error : Volume is not online !");
     }
@@ -37,5 +41,11 @@ public class addVolumeKillNoSQL extends ControlPlaneBaseTest {
     @AfterClass
     public void tearDown() {        
         func.deleteCreatedVolumes();
+        func.deleteStoragePool();
+        Result res = nimhelper.deleteProperty("storage", HAConstantDef.STORAGE_PROP, true);
+        if ( 0 != res.getExitValue() ){
+            System.out.println("Error : Delete property failed !");
+        }
+        func.deleteStorageServer();
     }
 }
