@@ -25,7 +25,7 @@ public class deleteVolumeKillBstoragemanager extends ControlPlaneBaseTest {
     @Test(alwaysRun=true, timeOut=900000)
     public void deleteVolume() throws InterruptedException{
         Assert.assertTrue(func.deleteCreatedVolumes(), "Error : Delete volume failed!");
-        Assert.assertFalse(func.areVolumesOnline(), "Error : Volumes are not online!");
+        Assert.assertFalse(func.areVolumesOnline(), "Error : Volumes are online!");
     }
     
     @Test(alwaysRun=true,timeOut=900000)

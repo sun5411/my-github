@@ -5,7 +5,6 @@
 package com.oracle.nimbula.qa.ha.serviceFailureResiliency;
 
 import com.oracle.nimbula.qa.ha.FunctionalUtils;
-import com.oracle.nimbula.qa.ha.HAUtil;
 import com.oracle.nimbula.qa.ha.InstanceUtil;
 import com.oracle.nimbula.qa.ha.common.ControlPlaneBaseTest;
 import org.testng.Assert;
@@ -19,7 +18,6 @@ import java.util.List;
  * @author Sun Ning
  */
 public class attachVolumeKillRabbitMQ extends ControlPlaneBaseTest {
-    HAUtil util;
     FunctionalUtils func;
     InstanceUtil vm;
     String vmUUID;
@@ -35,7 +33,7 @@ public class attachVolumeKillRabbitMQ extends ControlPlaneBaseTest {
         func = new FunctionalUtils();
         vm = new InstanceUtil();
         Assert.assertTrue(func.createVolumes(volNum),"Error : Volume create failed!");
-        Assert.assertTrue(func.areVolumesOnline(), "Error : Volume is not online!");
+        Assert.assertTrue(func.areVolumesOnline(), "Error : Volumes are not online!");
         Assert.assertTrue(vm.launchNSimpleVMs(volNum),"Error : VMs create failed!");
         uuids = vm.getCreatedInstancesUUID();
         volumeNames = func.getCreatedVolumeNames();

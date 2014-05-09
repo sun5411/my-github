@@ -12,8 +12,7 @@ import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import java.util.LinkedList;
-import java.util.List;
+
 /**
  *
  * @author Sun Ning
@@ -24,9 +23,8 @@ public class attachVolumeKillBnode extends ControlPlaneBaseTest {
     InstanceUtil vm;
     String vmUUID;
     String volumeName;
-    int volNum = 2;
-    List <String> uuids = new LinkedList<>();
-    List<String> volumeNames = new LinkedList<>();
+    String hostingNodeUUID;
+    String hostingNodeIP;
 
     
     @BeforeClass
@@ -34,37 +32,33 @@ public class attachVolumeKillBnode extends ControlPlaneBaseTest {
         super.setup();
         func = new FunctionalUtils();
         vm = new InstanceUtil();
-        Assert.assertTrue(func.createVolumes(volNum),"Error : Volume create failed!");
-        Assert.assertTrue(func.areVolumesOnline(), "Error : Volume is not online!");
-        Assert.assertTrue(vm.launchNSimpleVMs(volNum),"Error : VMs create failed!");
-        uuids = vm.getCreatedInstancesUUID();
-        volumeNames = func.getCreatedVolumeNames();
-        for ( int i = 0 ; i < volNum; i++ ){
-            vmUUID = uuids.get(i);
+        util = new HAUtil();
+        Assert.assertTrue(func.createVolume(),"Error : Volume create failed!");
+        Assert.assertTrue(func.isVolumeOnline(), "Error : Volume is not online!");
+        Assert.assertTrue(vm.launchSimple(),"Error : VM create failed!");
+        volumeName = func.getCreatedVolumeNames().get(0);
+        vmUUID = vm.getCreatedInstancesUUID().get(0);
             while(!vm.isVMup(vmUUID)){
                 Thread.sleep(3000);
             }
-        }
+        hostingNodeUUID = util.getVMnode(vmUUID);                                                                                                                                                  
+        hostingNodeIP = util.getNodeIP(hostingNodeUUID);
     }
     
     @Test(alwaysRun=true, timeOut=900000)
     public void attachVolumes() throws InterruptedException{
-        for ( int i = 0 ; i < volNum; i++ ){
-            vmUUID = uuids.get(i);
-            volumeName = volumeNames.get(i);
-            Assert.assertTrue(vm.addStorageAttachment(vmUUID, volumeName), "Storage volume could not be attached to the VM");
-        }
+        Assert.assertTrue(vm.addStorageAttachment(vmUUID, volumeName), "Storage volume could not be attached to the VM");
         Thread.sleep(5000);
     }
     
     @Test(alwaysRun=true,timeOut=900000)
     public void last_BnodeFailure() throws InterruptedException{                     
-       super.killNDService("bnode");               
+       super.killNDServiceOnNode("bnode", hostingNodeIP);
     }
 
     @AfterClass
     public void tearDown() throws InterruptedException {
-        vm.deleteAllCreatedVMs();
+        vm.deleteVM(vmUUID);
         Thread.sleep(10000);
         func.deleteCreatedVolumes();
         func.deleteStoragePool();

@@ -12,8 +12,6 @@ import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import java.util.LinkedList;
-import java.util.List;
 /**
  *
  * @author Sun Ning
@@ -24,48 +22,38 @@ public class detachVolumeKillBnode extends ControlPlaneBaseTest {
     InstanceUtil vm;
     String vmUUID;
     String volumeName;
-    int volNum = 2;
-    List <String> uuids = new LinkedList<>();
-    List<String> volumeNames = new LinkedList<>();
+    String hostingNodeUUID;
+    String hostingNodeIP;
 
     @BeforeClass
     public void detachVolumes_setup() throws InterruptedException {
         super.setup();
         func = new FunctionalUtils();
         vm = new InstanceUtil();
-        Assert.assertTrue(func.createVolumes(volNum),"Error : Volume create failed!");
-        Assert.assertTrue(func.areVolumesOnline(), "Error : Volume is not online!");
-        Assert.assertTrue(vm.launchNSimpleVMs(volNum),"Error : VMs create failed!");
-        uuids = vm.getCreatedInstancesUUID();
-        volumeNames = func.getCreatedVolumeNames();
-        Assert.assertTrue(func.areVolumesOnline(), "Error : Volumes are not online !");
-        for ( int i = 0 ; i < volNum; i++ ){
-            vmUUID = uuids.get(i);
-            while(!vm.isVMup(vmUUID)){
-                Thread.sleep(30000);
-            }
+        util = new HAUtil();
+        Assert.assertTrue(func.createVolume(),"Error : Volume create failed!");
+        Assert.assertTrue(func.isVolumeOnline(), "Error : Volume is not online!");
+        Assert.assertTrue(vm.launchSimple(),"Error : VM create failed!");
+        volumeName = func.getCreatedVolumeNames().get(0);
+        vmUUID = vm.getCreatedInstancesUUID().get(0);
+        while(!vm.isVMup(vmUUID)){
+            Thread.sleep(3000);
         }
-
-        for ( int i = 0 ; i < volNum; i++ ){
-            vmUUID = uuids.get(i);
-            volumeName = volumeNames.get(i);
-            Assert.assertTrue(vm.addStorageAttachment(vmUUID, volumeName), "Storage volume could not be attached to the VM !");
-        }
+        hostingNodeUUID = util.getVMnode(vmUUID);                                                                                                                                                  
+        hostingNodeIP = util.getNodeIP(hostingNodeUUID);
+        Assert.assertTrue(vm.addStorageAttachment(vmUUID, volumeName), "Storage volume could not be attached to the VM !");
     }
     
     @Test(alwaysRun=true, timeOut=900000)
     public void detachVolumes() throws InterruptedException{
-        for ( int i = 0 ; i < volNum; i++ ){
-            //volumeName = volumeNames.get(i);
-            //Assert.assertTrue(vm.deleteStorageAttachment(volumeName), volumeName + " Error : Volume detach failed");
-            vm.deleteAllCreatedVMs();
-            Thread.sleep(20000);
-        }
+        vm.deleteVM(vmUUID);
+        Thread.sleep(5000);
     }
     
     @Test(alwaysRun=true,timeOut=900000)
-    public void last_BnodeFailure() throws InterruptedException{                     
-       super.killNDService("bnode");               
+    public void last_BnodeFailure() throws InterruptedException{
+       System.out.println(hostingNodeIP + " service bnode will be killed ! ######");
+       super.killNDServiceOnNode("bnode", hostingNodeIP);               
     }  
     
 
