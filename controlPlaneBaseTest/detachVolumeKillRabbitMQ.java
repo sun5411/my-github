@@ -12,9 +12,8 @@ import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import com.oracle.colt.result.Result;
-import com.oracle.nimbula.test_framework.helpers.NimbulaHelper;
-import com.oracle.nimbula.qa.ha.common.HAConstantDef;
+import java.util.LinkedList;
+import java.util.List;
 /**
  *
  * @author Sun Ning
@@ -25,38 +24,42 @@ public class detachVolumeKillRabbitMQ extends ControlPlaneBaseTest {
     InstanceUtil vm;
     String vmUUID;
     String volumeName;
-    NimbulaHelper nimhelper;
-    int volNum = 20;
+    int volNum = 2;
+    List <String> uuids = new LinkedList<>();
+    List<String> volumeNames = new LinkedList<>();
 
     @BeforeClass
     public void detachVolumes_setup() throws InterruptedException {
         super.setup();
         func = new FunctionalUtils();
         vm = new InstanceUtil();
-        nimhelper = new NimbulaHelper(HAConstantDef.ROOT_USER,HAConstantDef.ROOT_PASSWORD);
         Assert.assertTrue(func.createVolumes(volNum),"Error : Volume create failed!");
         Assert.assertTrue(func.areVolumesOnline(), "Error : Volume is not online!");
         Assert.assertTrue(vm.launchNSimpleVMs(volNum),"Error : VMs create failed!");
-        Thread.sleep(120000);
-        Assert.assertTrue(func.areVolumesOnline(), "Error : Volume is not online");
-        vm.launchNSimpleVMs(volNum);
+        uuids = vm.getCreatedInstancesUUID();
+        volumeNames = func.getCreatedVolumeNames();
+        Assert.assertTrue(func.areVolumesOnline(), "Error : Volumes are not online !");
         for ( int i = 0 ; i < volNum; i++ ){
-            vmUUID = vm.getCreatedInstancesUUID().get(i);
-            Assert.assertTrue(vm.isVMup(vmUUID),"VM is not up yet");
+            vmUUID = uuids.get(i);
+            while(!vm.isVMup(vmUUID)){
+                Thread.sleep(30000);
+            }
         }
 
         for ( int i = 0 ; i < volNum; i++ ){
-            vmUUID = vm.getCreatedInstancesUUID().get(i);
-            volumeName = func.getCreatedVolumeNames().get(i);
-            Assert.assertTrue(vm.addStorageAttachment(vmUUID, volumeName), "Storage volume could not be attached to the VM");
+            vmUUID = uuids.get(i);
+            volumeName = volumeNames.get(i);
+            Assert.assertTrue(vm.addStorageAttachment(vmUUID, volumeName), "Storage volume could not be attached to the VM !");
         }
     }
     
     @Test(alwaysRun=true, timeOut=900000)
     public void detachVolumes() throws InterruptedException{
         for ( int i = 0 ; i < volNum; i++ ){
-            volumeName = func.getCreatedVolumeNames().get(i);
-            Assert.assertTrue(vm.deleteStorageAttachment(volumeName), volumeName + " Error : Volume detach failed");
+            //volumeName = volumeNames.get(i);
+            //Assert.assertTrue(vm.deleteStorageAttachment(volumeName), volumeName + " Error : Volume detach failed");
+            vm.deleteAllCreatedVMs();
+            Thread.sleep(20000);
         }
     }
     
@@ -67,14 +70,9 @@ public class detachVolumeKillRabbitMQ extends ControlPlaneBaseTest {
     
 
     @AfterClass
-    public void tearDown() {
-        vm.deleteAllCreatedVMs();
+    public void tearDown() throws InterruptedException {
         func.deleteCreatedVolumes();
         func.deleteStoragePool();
-        Result res = nimhelper.deleteProperty("storage", HAConstantDef.STORAGE_PROP, true);
-        if ( 0 != res.getExitValue() ){
-            System.out.println("Error : Delete property failed !");
-        }
         func.deleteStorageServer();
     }        
 }

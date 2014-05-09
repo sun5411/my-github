@@ -8,13 +8,12 @@ import com.oracle.nimbula.qa.ha.FunctionalUtils;
 import com.oracle.nimbula.qa.ha.HAUtil;
 import com.oracle.nimbula.qa.ha.InstanceUtil;
 import com.oracle.nimbula.qa.ha.common.ControlPlaneBaseTest;
+import java.util.LinkedList;
+import java.util.List;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import com.oracle.colt.result.Result;
-import com.oracle.nimbula.test_framework.helpers.NimbulaHelper;
-import com.oracle.nimbula.qa.ha.common.HAConstantDef;
 /**
  *
  * @author Sun Ning
@@ -25,8 +24,9 @@ public class attachVolumeKillBstoragemanager extends ControlPlaneBaseTest {
     InstanceUtil vm;
     String vmUUID;
     String volumeName;
-    NimbulaHelper nimhelper;
     int volNum = 2;
+    List <String> uuids = new LinkedList<>();
+    List<String> volumeNames = new LinkedList<>();
 
     
     @BeforeClass
@@ -34,25 +34,27 @@ public class attachVolumeKillBstoragemanager extends ControlPlaneBaseTest {
         super.setup();
         func = new FunctionalUtils();
         vm = new InstanceUtil();
-        nimhelper = new NimbulaHelper(HAConstantDef.ROOT_USER,HAConstantDef.ROOT_PASSWORD);
         Assert.assertTrue(func.createVolumes(volNum),"Error : Volume create failed!");
         Assert.assertTrue(func.areVolumesOnline(), "Error : Volume is not online!");
         Assert.assertTrue(vm.launchNSimpleVMs(volNum),"Error : VMs create failed!");
-        Thread.sleep(120000);
+        uuids = vm.getCreatedInstancesUUID();
+        volumeNames = func.getCreatedVolumeNames();
         for ( int i = 0 ; i < volNum; i++ ){
-            vmUUID = vm.getCreatedInstancesUUID().get(i);
-            Assert.assertTrue(vm.isVMup(vmUUID),"VM is not up yet");
+            vmUUID = uuids.get(i);
+            while(!vm.isVMup(vmUUID)){
+                Thread.sleep(3000);
+            }
         }
     }
     
     @Test(alwaysRun=true, timeOut=900000)
     public void attachVolumes() throws InterruptedException{
         for ( int i = 0 ; i < volNum; i++ ){
-            vmUUID = vm.getCreatedInstancesUUID().get(i);
-            volumeName = func.getCreatedVolumeNames().get(i);
+            vmUUID = uuids.get(i);
+            volumeName = volumeNames.get(i);
             Assert.assertTrue(vm.addStorageAttachment(vmUUID, volumeName), "Storage volume could not be attached to the VM");
         }
-        Thread.sleep(30000);
+        Thread.sleep(5000);
     }
     
     @Test(alwaysRun=true,timeOut=900000)
@@ -63,18 +65,10 @@ public class attachVolumeKillBstoragemanager extends ControlPlaneBaseTest {
 
     @AfterClass
     public void tearDown() throws InterruptedException {
-        for ( int i = 0 ; i < volNum; i++ ){
-            volumeName = func.getCreatedVolumeNames().get(i);
-            Assert.assertTrue(vm.deleteStorageAttachment(volumeName), volumeName + " Error : Volume detach failed");
-        }
-        Thread.sleep(5000);
         vm.deleteAllCreatedVMs();
+        Thread.sleep(10000);
         func.deleteCreatedVolumes();
         func.deleteStoragePool();
-        Result res = nimhelper.deleteProperty("storage", HAConstantDef.STORAGE_PROP, true);
-        if ( 0 != res.getExitValue() ){
-            System.out.println("Error : Delete property failed !");
-        }
         func.deleteStorageServer();
     }        
 }
