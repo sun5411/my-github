@@ -9,19 +9,24 @@ import org.testng.Assert;
  *
  * @author Sun Ning
  */
-public class addBootVolumeKillRabbitmq extends ControlPlaneBaseTest {
+public class deleteBootVolumeKillRabbitmq extends ControlPlaneBaseTest {
         
     @BeforeClass
-    public void addVolume_setup() throws InterruptedException{
-        super.setup();        
+    public void deleteVolume_setup() throws InterruptedException{
+        super.setup();
+        Assert.assertTrue(func.createBootVolume(20),"Storage volumes could not be created");
+        while (!func.areVolumesOnline()){
+            logger.info("Not all volumes are online yet");
+            Thread.sleep(30000);
+        }
     }
     
     @Test(alwaysRun=true, timeOut=129600000)
-    public void aa_addVolumes() throws InterruptedException{
-        Assert.assertTrue(func.createBootVolumeSpeedup(20),"Storage volumes could not be created");
+    public void aa_deleteVolumes() throws InterruptedException{
+        Assert.assertTrue(func.deleteCreatedBootVolumes(), "Storage volumes could not be deleted");
         while (!func.areVolumesOnline()){
-            logger.info("Not all volumes are online yet");
-            Thread.sleep(3000);
+            logger.info("Not all volumes are delete yet");
+            Thread.sleep(30000);
         }
     }
     
