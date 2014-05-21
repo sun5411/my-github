@@ -22,7 +22,7 @@ public class addVolumeKillGlusterServer extends ControlPlaneBaseTest {
     
     @Test(alwaysRun=true, timeOut=900000)
     public void addVolumes() throws InterruptedException{
-        func.createVolumes(2);
+        func.createVolumes(20);
         Assert.assertTrue(func.areVolumesOnline(), "Error : Volumes are not online");
     }
     

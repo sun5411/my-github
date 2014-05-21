@@ -59,8 +59,8 @@ public class attachVolumeKillBnode extends ControlPlaneBaseTest {
     @AfterClass
     public void tearDown() throws InterruptedException {
         vm.deleteVM(vmUUID);
-        Thread.sleep(10000);
-        func.deleteCreatedVolumes();
+        Thread.sleep(5000);
+        func.deleteVolume();
         func.deleteStoragePool();
         func.deleteStorageServer();
     }

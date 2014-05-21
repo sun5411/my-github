@@ -21,7 +21,7 @@ public class deleteVolumeKillNoSQL extends ControlPlaneBaseTest {
         super.setup();
         func = new FunctionalUtils();
         util = new HAUtil();
-        Assert.assertTrue(func.createVolumes(2), "Error : Create volumes failed!");
+        Assert.assertTrue(func.createVolumes(20), "Error : Create volumes failed!");
         Assert.assertTrue(func.areVolumesOnline(), "Error : Volumes are not online!");
     }
     

@@ -59,7 +59,7 @@ public class detachVolumeKillBnode extends ControlPlaneBaseTest {
 
     @AfterClass
     public void tearDown() {
-        func.deleteCreatedVolumes();
+        func.deleteVolume();
         func.deleteStoragePool();
         func.deleteStorageServer();
     }        

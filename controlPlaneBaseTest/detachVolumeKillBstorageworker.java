@@ -22,7 +22,7 @@ public class detachVolumeKillBstorageworker extends ControlPlaneBaseTest {
     InstanceUtil vm;
     String vmUUID;
     String volumeName;
-    int volNum = 2;
+    int volNum = 20;
     List <String> uuids = new LinkedList<>();
     List<String> volumeNames = new LinkedList<>();
 

@@ -18,7 +18,7 @@ public class deleteVolumeKillRabbitMQ extends ControlPlaneBaseTest {
     public void deleteVolume_setup() throws InterruptedException{
         super.setup();
         func = new FunctionalUtils();
-        Assert.assertTrue(func.createVolumes(2), "Error : Create volumes failed!");
+        Assert.assertTrue(func.createVolumes(20), "Error : Create volumes failed!");
         Assert.assertTrue(func.areVolumesOnline(), "Error : Volumes are not online!");
     }
     
