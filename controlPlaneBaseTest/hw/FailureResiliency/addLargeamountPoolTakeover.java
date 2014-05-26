@@ -13,7 +13,7 @@ import com.oracle.nimbula.qa.ha.common.NimbulaHAPropertiesReader;
  *
  * @author Sun Ning
  */
-public class deleteStorageServerPoolTakeover extends ControlPlaneBaseTest {
+public class addLargeamountPoolTakeover extends ControlPlaneBaseTest {
     NimbulaHAPropertiesReader haProp = NimbulaHAPropertiesReader.getInstance();
     Zfs zfs;
     String username = null;
@@ -21,23 +21,23 @@ public class deleteStorageServerPoolTakeover extends ControlPlaneBaseTest {
     String hostname = null;
             
     @BeforeClass
-    public void deleteStServerPool_setup() throws InterruptedException, UnknownHostException{
+    public void addStServerPool_setup() throws InterruptedException, UnknownHostException{
         super.setup();
         this.hostname = haProp.getNimbulaZFS_HOSTNAME();
         this.username = haProp.getNimbulaZFS_USERNAME();
         this.password = haProp.getNimbulaZFS_PASSWORD();
         zfs = new Zfs(username,password,hostname,null,null);
         if (zfs.peerInCluster()){
-            Assert.assertTrue(zfs.failback(), "Error : Storage failback failed!");
+            //Assert.assertTrue(zfs.failback(), "Error : Storage failback failed!");
         }
         Assert.assertTrue(func.createStorageProperty(),"Error : Create Storage property failed!");
         Assert.assertTrue(func.createStorageServer(),"Error : Create Storageserver failed!");
-       Assert.assertTrue(func.createStoragePool(),"Error : Create Storagepool failed!");
     }
     
     @Test(alwaysRun=true, timeOut=129600000)
-    public void aa_deleteStorageServerPool() throws InterruptedException{
-       Assert.assertTrue(func.deleteStoragePool(),"Error : Delete Storagepool failed!");
+    public void aa_addStorageServerLargeamountPool() throws InterruptedException{
+       //Added 1000 stPools
+       Assert.assertTrue(func.createStoragePool(),"Error : Create Storagepool failed!");
     }
     
     @Test(alwaysRun=true,timeOut=129600000)
