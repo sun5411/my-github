@@ -30,31 +30,32 @@ public class deleteVolumeTakeover extends ControlPlaneBaseTest {
         if (zfs.peerInCluster()){
             Assert.assertTrue(zfs.failback(), "Error : Storage failback failed!");
         }
-        Assert.assertTrue(func.createStorageProperty(),"Error : Create Storage property failed!");
-        Assert.assertTrue(func.createStorageServer(),"Error : Create Storageserver failed!");
-        Assert.assertTrue(func.createStoragePool(),"Error : Create Storagepool failed!");
         Assert.assertTrue(func.createVolumes(10, true), "Error : Create Volumes failed!");
         while (!func.areVolumesOnline()){
             logger.info("Not all volumes are online yet");
-            Thread.sleep(30000);
+            Thread.sleep(3000);
         }
     }
     
     @Test(alwaysRun=true, timeOut=129600000)
     public void aa_deleteVolumes() throws InterruptedException{
-        func.deleteCreatedVolumes();
+        Assert.assertTrue(func.deleteCreatedVolumes(), "Error : Delete storage volumes failed!");
         Assert.assertFalse(func.areVolumesOnline(), "Error : Delete Volume failed!");
     }
     
     @Test(alwaysRun=true,timeOut=129600000)
     public void bb_StorageServerTakeover() throws InterruptedException{
         Assert.assertTrue(zfs.takeover(), "Error : Storage takeover failed!");
-        Assert.assertTrue(zfs.isAlive(), "Error : Storage isn't alive!");
+        while(!zfs.peerInCluster()){
+            logger.info("Storage server isn't alive yet");
+            Thread.sleep(3000);
+        }
     }  
     
     @AfterClass(alwaysRun = true)
     public void tearDown() {
-        func.deleteStoragePool();
-        func.deleteStorageServer();
+
+        Assert.assertTrue(func.deleteStoragePool(), "Error : Delete storage pool failed!");
+        Assert.assertTrue(func.deleteStorageServer(), "Error : Delete storage server failed!");
     }
 }

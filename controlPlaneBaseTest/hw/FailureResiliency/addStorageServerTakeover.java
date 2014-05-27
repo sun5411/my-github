@@ -39,8 +39,8 @@ public class addStorageServerTakeover extends ControlPlaneBaseTest {
     
     @Test(alwaysRun=true,timeOut=129600000)
     public void bb_StorageServerTakeover() throws InterruptedException{
-        Assert.assertTrue(zfs.takeover(), "Error : Storage takeover failed!");
-        Assert.assertTrue(zfs.isAlive(), "Error : Storage isn't alive!");
+       Assert.assertTrue(zfs.takeover(), "Error : Storage takeover failed!");
+       Assert.assertTrue(zfs.isAlive(), "Error : Storage isn't alive!");
     }  
     
     @AfterClass(alwaysRun = true)

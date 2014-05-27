@@ -47,6 +47,7 @@ public class addStoragePoolTakeover extends ControlPlaneBaseTest {
     
     @AfterClass(alwaysRun = true)
     public void tearDown() {
-        func.deleteStorageServer();
+        Assert.assertTrue(func.deleteStoragePool(),"Error : Delete Storagespool failed!");
+        Assert.assertTrue(func.deleteStorageServer(),"Error : Delete Storageserver failed!");
     }
 }

@@ -781,23 +781,60 @@ public class FunctionalUtils {
         }
         return true;
     }
-
-    public boolean speedupCmd(String cmd){
+    
+    public boolean speedup_createVolumes(int number){
         NimbulaPropertiesReader propertiesReader = NimbulaPropertiesReader.getInstance();
         CommandLineService commandlineService;
         String NIMBULA_API = propertiesReader.getNimbulaAPI();
         SSHSession session;
+        
+        java.util.Properties config = new java.util.Properties();
+        config.put("StrictHostKeyChecking", "no");
+        config.put("PreferredAuthentications", "publickey,keyboard-interactive,password");
         session = new SSHSession(
                         propertiesReader.getNimbulaClientSSHHost(),
                         propertiesReader.getNimbulaClientSSHPort(),
                         propertiesReader.getNimbulaClientSSHUser(),
-                        propertiesReader.getNimbulaClientSSHPassword());
+                        propertiesReader.getNimbulaClientSSHPassword(),config);
         commandlineService = new RemoteSSHCommandlineService(session);
-        String command = "oracle-compute-api -a " + NIMBULA_API + " -u " + HAConstantDef.ROOT_USER + " -p " + HAConstantDef.NIMBULA_PASSWORD_FILE + cmd + " -f json";
-        Result result = commandlineService.runCommand(command);
-        if ( 0 != result.getExitValue() ){
-            logger.log(Level.SEVERE, result.getOutput());
-            return false;
+        String property = HAConstantDef.STORAGE_PROP;
+        for ( int i=0;i<number;i++ ){
+            String stVol=HAConstantDef.STORAGE_SERVER_VOLUME.concat("_").concat(Integer.toString(i));
+            String cmd = "oracle-compute-api -a " + NIMBULA_API + " -u " + HAConstantDef.ROOT_USER + " -p " + HAConstantDef.NIMBULA_PASSWORD_FILE + " add storagevolume " + stVol + " 1g " + property + " -f json &";
+            logger.log(Level.INFO, cmd);
+            Result result = commandlineService.runCommand(cmd);
+            if ( 0 != result.getExitValue() ){
+                logger.log(Level.SEVERE, cmd + "Error : command exec failed!");
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public boolean speedup_deleteVolumes(int number){
+        NimbulaPropertiesReader propertiesReader = NimbulaPropertiesReader.getInstance();
+        CommandLineService commandlineService;
+        String NIMBULA_API = propertiesReader.getNimbulaAPI();
+        SSHSession session;
+        
+        java.util.Properties config = new java.util.Properties();
+        config.put("StrictHostKeyChecking", "no");
+        config.put("PreferredAuthentications", "publickey,keyboard-interactive,password");
+        session = new SSHSession(
+                        propertiesReader.getNimbulaClientSSHHost(),
+                        propertiesReader.getNimbulaClientSSHPort(),
+                        propertiesReader.getNimbulaClientSSHUser(),
+                        propertiesReader.getNimbulaClientSSHPassword(),config);
+        commandlineService = new RemoteSSHCommandlineService(session);
+        for ( int i=0;i<number;i++ ){
+            String stVol=HAConstantDef.STORAGE_SERVER_VOLUME.concat("_").concat(Integer.toString(i));
+            String cmd = "oracle-compute-api -a " + NIMBULA_API + " -u " + HAConstantDef.ROOT_USER + " -p " + HAConstantDef.NIMBULA_PASSWORD_FILE + " delete storagevolume " + stVol + " -f json &";
+            logger.log(Level.INFO, cmd);
+            Result result = commandlineService.runCommand(cmd);
+            if ( 0 != result.getExitValue() ){
+                logger.log(Level.SEVERE, cmd + "Error : command exec failed!");
+                return false;
+            }
         }
         return true;
     }

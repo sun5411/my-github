@@ -32,11 +32,12 @@ public class deleteStoragePoolTakeover extends ControlPlaneBaseTest {
         }
         Assert.assertTrue(func.createStorageProperty(),"Error : Create Storage property failed!");
         Assert.assertTrue(func.createStorageServer(),"Error : Create Storageserver failed!");
-       Assert.assertTrue(func.createStoragePool(),"Error : Create Storagepool failed!");
+        Assert.assertTrue(func.createStoragePool(),"Error : Create Storagepool failed!");
     }
     
     @Test(alwaysRun=true, timeOut=129600000)
     public void aa_deleteStorageServerPool() throws InterruptedException{
+       //Delete 10 storage pools
        Assert.assertTrue(func.deleteStoragePool(),"Error : Delete Storagepool failed!");
     }
     
@@ -48,6 +49,6 @@ public class deleteStoragePoolTakeover extends ControlPlaneBaseTest {
     
     @AfterClass(alwaysRun = true)
     public void tearDown() {
-        func.deleteStorageServer();
+        Assert.assertTrue(func.deleteStorageServer(),"Error : Delete Storageserver failed!");
     }
 }

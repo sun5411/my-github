@@ -28,7 +28,7 @@ public class addLargeamountPoolTakeover extends ControlPlaneBaseTest {
         this.password = haProp.getNimbulaZFS_PASSWORD();
         zfs = new Zfs(username,password,hostname,null,null);
         if (zfs.peerInCluster()){
-            //Assert.assertTrue(zfs.failback(), "Error : Storage failback failed!");
+            Assert.assertTrue(zfs.failback(), "Error : Storage failback failed!");
         }
         Assert.assertTrue(func.createStorageProperty(),"Error : Create Storage property failed!");
         Assert.assertTrue(func.createStorageServer(),"Error : Create Storageserver failed!");
@@ -48,6 +48,6 @@ public class addLargeamountPoolTakeover extends ControlPlaneBaseTest {
     
     @AfterClass(alwaysRun = true)
     public void tearDown() {
-        func.deleteStorageServer();
+        Assert.assertTrue(func.deleteStorageServer(),"Error : delete storageserver failed!");
     }
 }
