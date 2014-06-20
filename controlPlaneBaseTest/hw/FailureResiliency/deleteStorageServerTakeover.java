@@ -14,6 +14,7 @@ public class deleteStorageServerTakeover extends TakeoverBaseClass {
     @BeforeClass
     public void deleteStServer_setup() throws InterruptedException, UnknownHostException{
         super.setup();        
+        Assert.assertTrue(func.createStorageProperty(),"Error : Create Storage property failed!");
         Assert.assertTrue(func.createStorageServer(),"Failed to create storage server");
     }
     
@@ -24,11 +25,11 @@ public class deleteStorageServerTakeover extends TakeoverBaseClass {
     
     @Test(alwaysRun=true,timeOut=129600000)
     public void bb_StorageServerTakeover() throws InterruptedException{
-        Assert.assertTrue(this.takeover(), "Error : Storage takeover failed!");
+        Assert.assertTrue(super.takeover(), "Error : Storage takeover failed!");
     }
     
     @AfterClass(alwaysRun = true)
     public void tearDown() {
-        Assert.assertTrue(func.deleteStorageServer(),"Error : Delete Storageserver failed!");
+        func.deleteStorageServer();
     }
 }

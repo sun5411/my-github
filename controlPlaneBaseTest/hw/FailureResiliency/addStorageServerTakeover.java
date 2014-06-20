@@ -14,6 +14,7 @@ public class addStorageServerTakeover extends TakeoverBaseClass {
     @BeforeClass
     public void addStServer_setup() throws InterruptedException, UnknownHostException{
         super.setup();
+        Assert.assertTrue(func.createStorageProperty(),"Error : Create Storage property failed!");
     }
     
     @Test(alwaysRun=true, timeOut=129600000)
@@ -23,7 +24,7 @@ public class addStorageServerTakeover extends TakeoverBaseClass {
     
     @Test(alwaysRun=true,timeOut=129600000)
     public void bb_StorageServerTakeover() throws InterruptedException{
-        Assert.assertTrue(this.takeover(), "Error : Storage takeover failed!");
+        Assert.assertTrue(super.takeover(), "Error : Storage takeover failed!");
     }  
     
     @AfterClass(alwaysRun = true)

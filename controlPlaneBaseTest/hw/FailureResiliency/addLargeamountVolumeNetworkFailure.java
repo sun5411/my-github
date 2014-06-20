@@ -30,7 +30,7 @@ public class addLargeamountVolumeNetworkFailure extends TakeoverBaseClass {
     public void bb_StorageNetworkFailure() throws InterruptedException{
         Thread.sleep(120000);
         //Network Failure about 5 mins        
-        Assert.assertTrue(this.networkFailure(), "Failed to inject network failure.");
+        Assert.assertTrue(this.networkFailure(5), "Failed to inject network failure.");
     }
     
     @AfterClass(alwaysRun = true)
