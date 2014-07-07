@@ -1,0 +1,48 @@
+{
+    "description": "demonstrates creating a bootable storage volume and launching an instance from that volume",
+    "oplans": [
+        {
+            "label": "bootvolume",
+            "obj_type": "storage/volume",
+            "objects": [
+                {
+                    "bootable": "True",
+                    "imagelist": "/nimbula/public/oel6",
+		                "imagelist_entry": 1,
+                    "name": "/acme/admin/oel6_boot",
+		                "size": "1G",
+		                "properties":["/nimbula/public/storage/default"]
+                }
+            ]
+        },
+        {
+            "ha_policy": "active",
+            "label": "bootfromnds",
+            "obj_type": "launchplan",
+            "objects": [
+                {
+                    "instances": [
+                        {
+                            "imagelist": "/nimbula/public/empty5G",
+                            "shape": "small",
+                            "storage_attachments": [
+                                {
+                                    "index": 1,
+                                    "volume": "/acme/admin/oel6_boot"
+                                },
+			    "boot_order":[1]
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "oplan": "bootfromnds",
+            "to_oplan": "bootvolume",
+            "type": "depends"
+        }
+    ]
+}

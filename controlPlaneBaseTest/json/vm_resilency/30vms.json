@@ -1,0 +1,638 @@
+{
+    "name": "/oracle/public/30vmCreate",
+    "description": "Orchestration for ha test - 1)30 vms create",
+    "oplans": [
+        {
+            "status": "",
+            "info": {},
+            "objects": [
+                {
+                    "policy": "PERMIT",
+                    "outbound_cidr_policy": "PERMIT",
+                    "name": "/root/root/seclist_vms",
+                    "description": "seclist_vms"
+                }
+            ],
+            "obj_type": "seclist",
+            "label": "seclist-creation",
+            "isNew": "true"
+        },
+        {
+            "status": "",
+            "objects": [
+                {
+                    "action": "PERMIT",
+                    "name": "/oracle/public/ssh_vms",
+                    "application": "/oracle/public/ssh",
+                    "src_list": "seciplist:/oracle/public/public-internet",
+                    "dst_list": "seclist:/root/root/seclist_vms"
+                }
+            ],
+            "obj_type": "secrule",
+            "label": "sec_rule_creation",
+            "isNew": "true"
+        },
+        {
+            "ha_policy": "active",
+            "status": "",
+            "objects": [
+                {
+                    "instances": [
+                        {
+                            "networking": {
+                                "eth0": {
+                                        "nat": "ipreservation:/oracle/haAutomation/ippool1/ipreserSanityTest_0",
+                                        "seclists": ["/root/root/seclist_vms"]
+                                 }
+                            },
+                            "boot_order": [],
+                            "shape": "small",
+                            "imagelist": "/oracle/public/oel6",
+                            "name": "/root/public/ha_orchestration_hwFailure/instance0",
+                            "account": "/root/default",
+                            "label": "instance0"
+                        },
+                        {
+                            "networking": {
+                                "eth0": {
+                                        "nat": "ipreservation:/oracle/haAutomation/ippool1/ipreserSanityTest_1",
+                                        "seclists": ["/root/root/seclist_vms"]
+                                 }
+                            },
+                            "boot_order": [],
+                            "shape": "small",
+                            "imagelist": "/oracle/public/oel6",
+                            "account": "/root/default",
+                            "name": "/root/public/ha_orchestration_hwFailure/instance1",
+                            "label": "instance1"
+                        },
+                        {
+                            "networking": {
+                                "eth0": {
+                                        "nat": "ipreservation:/oracle/haAutomation/ippool1/ipreserSanityTest_2",
+                                        "seclists": ["/root/root/seclist_vms"]
+                                 }
+                            },
+                            "boot_order": [],
+                            "shape": "small",
+                            "imagelist": "/oracle/public/oel6",
+                            "account": "/root/default",
+                            "name": "/root/public/ha_orchestration_hwFailure/instance2",
+                            "label": "instance2"
+                        },
+                        {
+                           "networking": {
+                                "eth0": {
+                                        "nat": "ipreservation:/oracle/haAutomation/ippool1/ipreserSanityTest_3",
+                                        "seclists": ["/root/root/seclist_vms"]
+                                 }
+                            },
+                            "boot_order": [],
+                            "shape": "small",
+                            "imagelist": "/oracle/public/oel6",
+                            "name": "/root/public/ha_orchestration_hwFailure/instance3",
+                            "account": "/root/default",
+                            "label": "instance3"
+                        },
+                        {
+                           "networking": {
+                                "eth0": {
+                                        "nat": "ipreservation:/oracle/haAutomation/ippool1/ipreserSanityTest_4",
+                                        "seclists": ["/root/root/seclist_vms"]
+                                 }
+                            },
+                            "boot_order": [],
+                            "shape": "small",
+                            "imagelist": "/oracle/public/oel6",
+                            "name": "/root/public/ha_orchestration_hwFailure/instance4",
+                            "account": "/root/default",
+                            "label": "instance4"
+                        },
+                        {
+                           "networking": {
+                                "eth0": {
+                                        "nat": "ipreservation:/oracle/haAutomation/ippool1/ipreserSanityTest_5",
+                                        "seclists": ["/root/root/seclist_vms"]
+                                 }
+                            },
+                            "boot_order": [],
+                            "shape": "small",
+                            "imagelist": "/oracle/public/oel6",
+                            "name": "/root/public/ha_orchestration_hwFailure/instance5",
+                            "account": "/root/default",
+                            "label": "instance5"
+                        },
+                        {
+                           "networking": {
+                                "eth0": {
+                                        "nat": "ipreservation:/oracle/haAutomation/ippool1/ipreserSanityTest_6",
+                                        "seclists": ["/root/root/seclist_vms"]
+                                 }
+                            },
+                            "boot_order": [],
+                            "shape": "small",
+                            "imagelist": "/oracle/public/oel6",
+                            "name": "/root/public/ha_orchestration_hwFailure/instance6",
+                            "account": "/root/default",
+                            "label": "instance6"
+                        },
+                        {
+                           "networking": {
+                                "eth0": {
+                                        "nat": "ipreservation:/oracle/haAutomation/ippool1/ipreserSanityTest_7",
+                                        "seclists": ["/root/root/seclist_vms"]
+                                 }
+                            },
+                            "boot_order": [],
+                            "shape": "small",
+                            "imagelist": "/oracle/public/oel6",
+                            "name": "/root/public/ha_orchestration_hwFailure/instance7",
+                            "account": "/root/default",
+                            "label": "instance7"
+                        },
+                        {
+                           "networking": {
+                                "eth0": {
+                                        "nat": "ipreservation:/oracle/haAutomation/ippool1/ipreserSanityTest_8",
+                                        "seclists": ["/root/root/seclist_vms"]
+                                 }
+                            },
+                            "boot_order": [],
+                            "shape": "small",
+                            "imagelist": "/oracle/public/oel6",
+                            "name": "/root/public/ha_orchestration_hwFailure/instance8",
+                            "account": "/root/default",
+                            "label": "instance8"
+                        },
+                        {
+                           "networking": {
+                                "eth0": {
+                                        "nat": "ipreservation:/oracle/haAutomation/ippool1/ipreserSanityTest_9",
+                                        "seclists": ["/root/root/seclist_vms"]
+                                 }
+                            },
+                            "boot_order": [],
+                            "shape": "small",
+                            "imagelist": "/oracle/public/oel6",
+                            "name": "/root/public/ha_orchestration_hwFailure/instance9",
+                            "account": "/root/default",
+                            "label": "instance9"
+                        },
+                        {
+                           "networking": {
+                                "eth0": {
+                                        "nat": "ipreservation:/oracle/haAutomation/ippool1/ipreserSanityTest_10",
+                                        "seclists": ["/root/root/seclist_vms"]
+                                 }
+                            },
+                            "boot_order": [],
+                            "shape": "small",
+                            "imagelist": "/oracle/public/oel6",
+                            "name": "/root/public/ha_orchestration_hwFailure/instance10",
+                            "account": "/root/default",
+                            "label": "instance10"
+                        },
+                        {
+                           "networking": {
+                                "eth0": {
+                                        "nat": "ipreservation:/oracle/haAutomation/ippool1/ipreserSanityTest_11",
+                                        "seclists": ["/root/root/seclist_vms"]
+                                 }
+                            },
+                            "boot_order": [],
+                            "shape": "small",
+                            "imagelist": "/oracle/public/oel6",
+                            "name": "/root/public/ha_orchestration_hwFailure/instance11",
+                            "account": "/root/default",
+                            "label": "instance11"
+                        },
+                        {
+                           "networking": {
+                                "eth0": {
+                                        "nat": "ipreservation:/oracle/haAutomation/ippool1/ipreserSanityTest_12",
+                                        "seclists": ["/root/root/seclist_vms"]
+                                 }
+                            },
+                            "boot_order": [],
+                            "shape": "small",
+                            "imagelist": "/oracle/public/oel6",
+                            "name": "/root/public/ha_orchestration_hwFailure/instance12",
+                            "account": "/root/default",
+                            "label": "instance12"
+                        },
+                        {
+                           "networking": {
+                                "eth0": {
+                                        "nat": "ipreservation:/oracle/haAutomation/ippool1/ipreserSanityTest_13",
+                                        "seclists": ["/root/root/seclist_vms"]
+                                 }
+                            },
+                            "boot_order": [],
+                            "shape": "small",
+                            "imagelist": "/oracle/public/oel6",
+                            "name": "/root/public/ha_orchestration_hwFailure/instance13",
+                            "account": "/root/default",
+                            "label": "instance13"
+                        },
+                        {
+                           "networking": {
+                                "eth0": {
+                                        "nat": "ipreservation:/oracle/haAutomation/ippool1/ipreserSanityTest_14",
+                                        "seclists": ["/root/root/seclist_vms"]
+                                 }
+                            },
+                            "boot_order": [],
+                            "shape": "small",
+                            "imagelist": "/oracle/public/oel6",
+                            "name": "/root/public/ha_orchestration_hwFailure/instance14",
+                            "account": "/root/default",
+                            "label": "instance14"
+                        },
+                        {
+                           "networking": {
+                                "eth0": {
+                                        "nat": "ipreservation:/oracle/haAutomation/ippool1/ipreserSanityTest_15",
+                                        "seclists": ["/root/root/seclist_vms"]
+                                 }
+                            },
+                            "boot_order": [],
+                            "shape": "small",
+                            "imagelist": "/oracle/public/oel6",
+                            "name": "/root/public/ha_orchestration_hwFailure/instance15",
+                            "account": "/root/default",
+                            "label": "instance15"
+                        },
+                        {
+                           "networking": {
+                                "eth0": {
+                                        "nat": "ipreservation:/oracle/haAutomation/ippool1/ipreserSanityTest_16",
+                                        "seclists": ["/root/root/seclist_vms"]
+                                 }
+                            },
+                            "boot_order": [],
+                            "shape": "small",
+                            "imagelist": "/oracle/public/oel6",
+                            "name": "/root/public/ha_orchestration_hwFailure/instance16",
+                            "account": "/root/default",
+                            "label": "instance16"
+                        },
+                        {
+                           "networking": {
+                                "eth0": {
+                                        "nat": "ipreservation:/oracle/haAutomation/ippool1/ipreserSanityTest_17",
+                                        "seclists": ["/root/root/seclist_vms"]
+                                 }
+                            },
+                            "boot_order": [],
+                            "shape": "small",
+                            "imagelist": "/oracle/public/oel6",
+                            "name": "/root/public/ha_orchestration_hwFailure/instance17",
+                            "account": "/root/default",
+                            "label": "instance17"
+                        },
+                        {
+                           "networking": {
+                                "eth0": {
+                                        "nat": "ipreservation:/oracle/haAutomation/ippool1/ipreserSanityTest_18",
+                                        "seclists": ["/root/root/seclist_vms"]
+                                 }
+                            },
+                            "boot_order": [],
+                            "shape": "small",
+                            "imagelist": "/oracle/public/oel6",
+                            "name": "/root/public/ha_orchestration_hwFailure/instance18",
+                            "account": "/root/default",
+                            "label": "instance18"
+                        },
+                        {
+                           "networking": {
+                                "eth0": {
+                                        "nat": "ipreservation:/oracle/haAutomation/ippool1/ipreserSanityTest_19",
+                                        "seclists": ["/root/root/seclist_vms"]
+                                 }
+                            },
+                            "boot_order": [],
+                            "shape": "small",
+                            "imagelist": "/oracle/public/oel6",
+                            "name": "/root/public/ha_orchestration_hwFailure/instance19",
+                            "account": "/root/default",
+                            "label": "instance19"
+                        },
+                        {
+                           "networking": {
+                                "eth0": {
+                                        "nat": "ipreservation:/oracle/haAutomation/ippool1/ipreserSanityTest_20",
+                                        "seclists": ["/root/root/seclist_vms"]
+                                 }
+                            },
+                            "boot_order": [],
+                            "shape": "small",
+                            "imagelist": "/oracle/public/oel6",
+                            "name": "/root/public/ha_orchestration_hwFailure/instance20",
+                            "account": "/root/default",
+                            "label": "instance20"
+                        },
+                        {
+                           "networking": {
+                                "eth0": {
+                                        "nat": "ipreservation:/oracle/haAutomation/ippool1/ipreserSanityTest_21",
+                                        "seclists": ["/root/root/seclist_vms"]
+                                 }
+                            },
+                            "boot_order": [],
+                            "shape": "small",
+                            "imagelist": "/oracle/public/oel6",
+                            "name": "/root/public/ha_orchestration_hwFailure/instance21",
+                            "account": "/root/default",
+                            "label": "instance21"
+                        },
+                        {
+                           "networking": {
+                                "eth0": {
+                                        "nat": "ipreservation:/oracle/haAutomation/ippool1/ipreserSanityTest_22",
+                                        "seclists": ["/root/root/seclist_vms"]
+                                 }
+                            },
+                            "boot_order": [],
+                            "shape": "small",
+                            "imagelist": "/oracle/public/oel6",
+                            "name": "/root/public/ha_orchestration_hwFailure/instance22",
+                            "account": "/root/default",
+                            "label": "instance22"
+                        },
+                        {
+                           "networking": {
+                                "eth0": {
+                                        "nat": "ipreservation:/oracle/haAutomation/ippool1/ipreserSanityTest_23",
+                                        "seclists": ["/root/root/seclist_vms"]
+                                 }
+                            },
+                            "boot_order": [],
+                            "shape": "small",
+                            "imagelist": "/oracle/public/oel6",
+                            "name": "/root/public/ha_orchestration_hwFailure/instance23",
+                            "account": "/root/default",
+                            "label": "instance23"
+                        },
+                        {
+                           "networking": {
+                                "eth0": {
+                                        "nat": "ipreservation:/oracle/haAutomation/ippool1/ipreserSanityTest_24",
+                                        "seclists": ["/root/root/seclist_vms"]
+                                 }
+                            },
+                            "boot_order": [],
+                            "shape": "small",
+                            "imagelist": "/oracle/public/oel6",
+                            "name": "/root/public/ha_orchestration_hwFailure/instance24",
+                            "account": "/root/default",
+                            "label": "instance24"
+                        },
+                        {
+                           "networking": {
+                                "eth0": {
+                                        "nat": "ipreservation:/oracle/haAutomation/ippool1/ipreserSanityTest_25",
+                                        "seclists": ["/root/root/seclist_vms"]
+                                 }
+                            },
+                            "boot_order": [],
+                            "shape": "small",
+                            "imagelist": "/oracle/public/oel6",
+                            "name": "/root/public/ha_orchestration_hwFailure/instance25",
+                            "account": "/root/default",
+                            "label": "instance25"
+                        },
+                        {
+                           "networking": {
+                                "eth0": {
+                                        "nat": "ipreservation:/oracle/haAutomation/ippool1/ipreserSanityTest_26",
+                                        "seclists": ["/root/root/seclist_vms"]
+                                 }
+                            },
+                            "boot_order": [],
+                            "shape": "small",
+                            "imagelist": "/oracle/public/oel6",
+                            "name": "/root/public/ha_orchestration_hwFailure/instance26",
+                            "account": "/root/default",
+                            "label": "instance26"
+                        },
+                        {
+                           "networking": {
+                                "eth0": {
+                                        "nat": "ipreservation:/oracle/haAutomation/ippool1/ipreserSanityTest_27",
+                                        "seclists": ["/root/root/seclist_vms"]
+                                 }
+                            },
+                            "boot_order": [],
+                            "shape": "small",
+                            "imagelist": "/oracle/public/oel6",
+                            "name": "/root/public/ha_orchestration_hwFailure/instance27",
+                            "account": "/root/default",
+                            "label": "instance27"
+                        },
+                        {
+                           "networking": {
+                                "eth0": {
+                                        "nat": "ipreservation:/oracle/haAutomation/ippool1/ipreserSanityTest_28",
+                                        "seclists": ["/root/root/seclist_vms"]
+                                 }
+                            },
+                            "boot_order": [],
+                            "shape": "small",
+                            "imagelist": "/oracle/public/oel6",
+                            "name": "/root/public/ha_orchestration_hwFailure/instance28",
+                            "account": "/root/default",
+                            "label": "instance28"
+                        },
+                        {
+                           "networking": {
+                                "eth0": {
+                                        "nat": "ipreservation:/oracle/haAutomation/ippool1/ipreserSanityTest_29",
+                                        "seclists": ["/root/root/seclist_vms"]
+                                 }
+                            },
+                            "boot_order": [],
+                            "shape": "small",
+                            "imagelist": "/oracle/public/oel6",
+                            "name": "/root/public/ha_orchestration_hwFailure/instance29",
+                            "account": "/root/default",
+                            "label": "instance29"
+                        }
+                      ]
+                }
+            ],
+            "obj_type": "launchplan",
+            "label": "launchplan_create_instances",
+            "isNew": true
+        },
+	{
+		"label": "test-ipreservation",
+  		"obj_type": "ip/reservation",
+  		"objects": [
+    				{
+      					"name": "/oracle/haAutomation/ippool1/ipreserSanityTest_0",
+      					"parentpool": "/oracle/haAutomation/ippool1",
+      					"permanent": "True"
+    				},
+    				{
+      					"name": "/oracle/haAutomation/ippool1/ipreserSanityTest_1",
+      					"parentpool": "/oracle/haAutomation/ippool1",
+      					"permanent": "True"
+    				},
+    				{
+      					"name": "/oracle/haAutomation/ippool1/ipreserSanityTest_2",
+      					"parentpool": "/oracle/haAutomation/ippool1",
+      					"permanent": "True"
+    				},
+    				{
+      					"name": "/oracle/haAutomation/ippool1/ipreserSanityTest_3",
+      					"parentpool": "/oracle/haAutomation/ippool1",
+      					"permanent": "True"
+    				},
+    				{
+      					"name": "/oracle/haAutomation/ippool1/ipreserSanityTest_4",
+      					"parentpool": "/oracle/haAutomation/ippool1",
+      					"permanent": "True"
+    				},
+    				{
+      					"name": "/oracle/haAutomation/ippool1/ipreserSanityTest_5",
+      					"parentpool": "/oracle/haAutomation/ippool1",
+      					"permanent": "True"
+    				},
+    				{
+      					"name": "/oracle/haAutomation/ippool1/ipreserSanityTest_6",
+      					"parentpool": "/oracle/haAutomation/ippool1",
+      					"permanent": "True"
+    				},
+    				{
+      					"name": "/oracle/haAutomation/ippool1/ipreserSanityTest_7",
+      					"parentpool": "/oracle/haAutomation/ippool1",
+      					"permanent": "True"
+    				},
+    				{
+      					"name": "/oracle/haAutomation/ippool1/ipreserSanityTest_8",
+      					"parentpool": "/oracle/haAutomation/ippool1",
+      					"permanent": "True"
+    				},
+    				{
+      					"name": "/oracle/haAutomation/ippool1/ipreserSanityTest_9",
+      					"parentpool": "/oracle/haAutomation/ippool1",
+      					"permanent": "True"
+    				},
+    				{
+      					"name": "/oracle/haAutomation/ippool1/ipreserSanityTest_10",
+      					"parentpool": "/oracle/haAutomation/ippool1",
+      					"permanent": "True"
+    				},
+    				{
+      					"name": "/oracle/haAutomation/ippool1/ipreserSanityTest_11",
+      					"parentpool": "/oracle/haAutomation/ippool1",
+      					"permanent": "True"
+    				},
+    				{
+      					"name": "/oracle/haAutomation/ippool1/ipreserSanityTest_12",
+      					"parentpool": "/oracle/haAutomation/ippool1",
+      					"permanent": "True"
+    				},
+    				{
+      					"name": "/oracle/haAutomation/ippool1/ipreserSanityTest_13",
+      					"parentpool": "/oracle/haAutomation/ippool1",
+      					"permanent": "True"
+    				},
+    				{
+      					"name": "/oracle/haAutomation/ippool1/ipreserSanityTest_14",
+      					"parentpool": "/oracle/haAutomation/ippool1",
+      					"permanent": "True"
+    				},
+    				{
+      					"name": "/oracle/haAutomation/ippool1/ipreserSanityTest_15",
+      					"parentpool": "/oracle/haAutomation/ippool1",
+      					"permanent": "True"
+    				},
+    				{
+      					"name": "/oracle/haAutomation/ippool1/ipreserSanityTest_16",
+      					"parentpool": "/oracle/haAutomation/ippool1",
+      					"permanent": "True"
+    				},
+    				{
+      					"name": "/oracle/haAutomation/ippool1/ipreserSanityTest_17",
+      					"parentpool": "/oracle/haAutomation/ippool1",
+      					"permanent": "True"
+    				},
+    				{
+      					"name": "/oracle/haAutomation/ippool1/ipreserSanityTest_18",
+      					"parentpool": "/oracle/haAutomation/ippool1",
+      					"permanent": "True"
+    				},
+    				{
+      					"name": "/oracle/haAutomation/ippool1/ipreserSanityTest_19",
+      					"parentpool": "/oracle/haAutomation/ippool1",
+      					"permanent": "True"
+    				},
+    				{
+      					"name": "/oracle/haAutomation/ippool1/ipreserSanityTest_20",
+      					"parentpool": "/oracle/haAutomation/ippool1",
+      					"permanent": "True"
+    				},
+    				{
+      					"name": "/oracle/haAutomation/ippool1/ipreserSanityTest_21",
+      					"parentpool": "/oracle/haAutomation/ippool1",
+      					"permanent": "True"
+    				},
+    				{
+      					"name": "/oracle/haAutomation/ippool1/ipreserSanityTest_22",
+      					"parentpool": "/oracle/haAutomation/ippool1",
+      					"permanent": "True"
+    				},
+    				{
+      					"name": "/oracle/haAutomation/ippool1/ipreserSanityTest_23",
+      					"parentpool": "/oracle/haAutomation/ippool1",
+      					"permanent": "True"
+    				},
+    				{
+      					"name": "/oracle/haAutomation/ippool1/ipreserSanityTest_24",
+      					"parentpool": "/oracle/haAutomation/ippool1",
+      					"permanent": "True"
+    				},
+    				{
+      					"name": "/oracle/haAutomation/ippool1/ipreserSanityTest_25",
+      					"parentpool": "/oracle/haAutomation/ippool1",
+      					"permanent": "True"
+    				},
+    				{
+      					"name": "/oracle/haAutomation/ippool1/ipreserSanityTest_26",
+      					"parentpool": "/oracle/haAutomation/ippool1",
+      					"permanent": "True"
+    				},
+    				{
+      					"name": "/oracle/haAutomation/ippool1/ipreserSanityTest_27",
+      					"parentpool": "/oracle/haAutomation/ippool1",
+      					"permanent": "True"
+    				},
+    				{
+      					"name": "/oracle/haAutomation/ippool1/ipreserSanityTest_28",
+      					"parentpool": "/oracle/haAutomation/ippool1",
+      					"permanent": "True"
+    				},
+    				{
+      					"name": "/oracle/haAutomation/ippool1/ipreserSanityTest_29",
+      					"parentpool": "/oracle/haAutomation/ippool1",
+      					"permanent": "True"
+    				}
+  		           ]
+	}
+    ],
+    "account": "/root/default",
+     "relationships" : [
+        {
+            "oplan" : "sec_rule_creation" ,
+            "to_oplan" : "seclist-creation",
+            "type" : "depends"
+        },
+	      {
+ 	          "oplan": "launchplan_create_instances",
+            "to_oplan": "test-ipreservation",
+	          "type": "depends"
+        }
+    ]
+}
