@@ -1,6 +1,6 @@
 {
     "name": "/oracle/public/vmsWith10VolAttach_2",
-    "description": "Orchestration for ha test - 1)3 vms create with 10 volumes attached",
+    "description": "Orchestration for ha test - 1)vm create with 10 volumes attached",
     "oplans": [
         {
             "status": "",
@@ -9,8 +9,8 @@
                 {
                     "policy": "PERMIT",
                     "outbound_cidr_policy": "PERMIT",
-                    "name": "/root/root/seclist_vm",
-                    "description": "seclist_vm"
+                    "name": "/root/root/seclist_vm2",
+                    "description": "seclist_vm2"
                 }
             ],
             "obj_type": "seclist",
@@ -22,10 +22,10 @@
             "objects": [
                 {
                     "action": "PERMIT",
-                    "name": "/oracle/public/ssh_vms",
+                    "name": "/oracle/public/ssh_attach_vms2",
                     "application": "/oracle/public/ssh",
                     "src_list": "seciplist:/oracle/public/public-internet",
-                    "dst_list": "seclist:/root/root/seclist_vm"
+                    "dst_list": "seclist:/root/root/seclist_vm2"
                 }
             ],
             "obj_type": "secrule",
@@ -41,8 +41,8 @@
                         {
                             "networking": {
                                 "eth0": {
-                                        "nat": "ipreservation:/oracle/haAutomation/ippool1/ipreserSanityTest_1",
-                                        "seclists": ["/root/root/seclist_vm"]
+                                        "nat": "ipreservation:/oracle/haAutomation/ippool1/ipreserVmResiliency_2",
+                                        "seclists": ["/root/root/seclist_vm2"]
                                  }
                             },
                             "storage_attachments": [
@@ -91,8 +91,8 @@
                             "shape": "small",
                             "imagelist": "/oracle/public/oel6",
                             "account": "/root/default",
-                            "name": "/root/public/ha_orchestration_hwFailure/instance1",
-                            "label": "instance1"
+                            "name": "/root/public/ha_orchestration_hwFailure/instance2",
+                            "label": "instance2"
                         }
                       ]
                 }
@@ -106,7 +106,7 @@
   		"obj_type": "ip/reservation",
   		"objects": [
     				{
-      					"name": "/oracle/haAutomation/ippool1/ipreserSanityTest_1",
+      					"name": "/oracle/haAutomation/ippool1/ipreserVmResiliency_2",
       					"parentpool": "/oracle/haAutomation/ippool1",
       					"permanent": "True"
     				}

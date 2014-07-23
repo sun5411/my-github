@@ -22,7 +22,7 @@
             "objects": [
                 {
                     "action": "PERMIT",
-                    "name": "/oracle/public/ssh_vms",
+                    "name": "/oracle/public/ssh_vms1",
                     "application": "/oracle/public/ssh",
                     "src_list": "seciplist:/oracle/public/public-internet",
                     "dst_list": "seclist:/root/root/seclist_vm1"

@@ -22,7 +22,7 @@
             "objects": [
                 {
                     "action": "PERMIT",
-                    "name": "/oracle/public/ssh_vms",
+                    "name": "/oracle/public/ssh_vms3",
                     "application": "/oracle/public/ssh",
                     "src_list": "seciplist:/oracle/public/public-internet",
                     "dst_list": "seclist:/root/root/seclist_vm3"
@@ -248,6 +248,11 @@
             "oplan" : "sec_rule_creation" ,
             "to_oplan" : "seclist-creation",
             "type" : "depends"
+        },
+	      {
+ 	          "oplan": "test-ipreservation",
+            "to_oplan": "seclist-creation",
+	          "type": "depends"
         },
 	      {
  	          "oplan": "launchplan_create_instances",
