@@ -24,30 +24,33 @@ public class startOrchestrationStorageVolumeTakeover extends TakeoverBaseClass {
     IPpoolUtil ip;
     String ipPoolEntry;
     String resName;
-    List<String> orchFiles = new LinkedList<>();
+    List<String> orchFiles;
     
-    @BeforeClass
-    public void startOrch_setup() throws InterruptedException, UnknownHostException{
+    @BeforeClass(alwaysRun = true, timeOut = 900000)
+    public void setup() throws InterruptedException {
         super.setup();
         ip = new IPpoolUtil();
         ip.addIPpool();
         ipPoolEntry = ip.addIPPoolEntry();
         instanceUtil = new InstanceUtil();
+        orchFiles = new LinkedList<>();
+        
         Assert.assertTrue(func.createStorageProperty(), "Error : Create Storage Property failed!");
         Assert.assertTrue(func.createStorageServer(), "Error : Add storage server failed!");
-        Assert.assertTrue(func.createStoragePool(), "Error : Create storage pool failed!");
+        Assert.assertTrue(func.createStoragePool(), "Error : Create storage pool failed!");        
+        
         orchFiles.add("/tmp/hwFailure_OplanVolumeAttachVM1.json");
         orchFiles.add("/tmp/hwFailure_OplanVolumeAttachVM2.json");
         orchFiles.add("/tmp/hwFailure_OplanVolumeAttachVM3.json");
         orchFiles.add("/tmp/hwFailure_OplanVolumeAttachVM4.json");
         orchFiles.add("/tmp/hwFailure_OplanVolumeAttachVM5.json");
+        
+        orchObj = super.addListOfOrchestrations(orchFiles);
     }
     
     @Test(alwaysRun=true, timeOut=129600000)
-    public void aa_startOrchVolumes() throws InterruptedException{
-        
-        orchObj = super.addListOfOrchestrations(orchFiles);
-        super.startListOfOrchestrations(orchObj);
+    public void aa_startOrchestrations() throws InterruptedException{
+        Assert.assertTrue(0 == super.startListOfOrchestrations(orchObj), "Orchestrations could not be started");
         Iterator<OrchestrationUtil> orchIt = orchObj.iterator();
         while (orchIt.hasNext()){
             OrchestrationUtil ou = orchIt.next();
@@ -65,15 +68,15 @@ public class startOrchestrationStorageVolumeTakeover extends TakeoverBaseClass {
     @Test(alwaysRun=true,timeOut=129600000)
     public void bb_StorageServerTakeover() throws InterruptedException{
         Thread.sleep(20000);
-        //Assert.assertTrue(this.takeover(), "Error : Storage takeover failed!");
+        Assert.assertTrue(this.takeover(), "Error : Storage takeover failed!");
     }  
     
     @AfterClass(alwaysRun = true)
     public void tearDown() {
         super.stopListOfOrchestrations(orchObj);
-        super.deleteListOfOrchestrations(orchObj);
+        super.deleteListOfOrchestrations(orchObj);        
         ip.deleteIPPoolEntry(ipPoolEntry);
-        ip.deleteIPpool();
+        ip.deleteIPpool();        
         Assert.assertTrue(func.deleteStoragePool(),"Error : Delete Storagespool failed!");
         Assert.assertTrue(func.deleteStorageServer(),"Error : Delete Storageserver failed!");
     }

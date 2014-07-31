@@ -10,6 +10,7 @@ import com.oracle.nimbula.qa.ha.OrchestrationUtil;
 import com.oracle.nimbula.qa.ha.common.ControlPlaneBaseTest;
 import com.oracle.nimbula.qa.ha.common.HAConstantDef;
 import com.oracle.nimbula.qa.ha.common.NimbulaHAPropertiesReader;
+import com.oracle.nimbula.qa.ha.hardware.IBSwitch;
 import com.oracle.nimbula.qa.ha.hardware.Zfs;
 import java.net.UnknownHostException;
 import java.util.Iterator;
@@ -26,6 +27,8 @@ public class TakeoverBaseClass extends ControlPlaneBaseTest {
     
     protected Zfs zfs1;
     protected Zfs zfs2;
+    protected IBSwitch sw1;
+    protected IBSwitch sw2;
     
     public void setup() throws InterruptedException{
         super.setup();
@@ -47,11 +50,23 @@ public class TakeoverBaseClass extends ControlPlaneBaseTest {
         
         try {
             zfs1 = new Zfs(username1,password1,hostname1,console1,domain);
+            zfs2 = new Zfs(username2,password2,hostname2,console2,domain);            
         } catch (UnknownHostException ex) {
             logger.log(Level.SEVERE, ex.getMessage());
         }
+        
+        String sw1_username = haProp.getSW1username();
+        String sw1_passwd = haProp.getSW1password();
+        String sw1_host = haProp.getSW1hostname();
+        
+        String sw2_username = haProp.getSW2username();        
+        String sw2_passwd = haProp.getSW2password();        
+        String sw2_host = haProp.getSW2hostname();
+        domain = haProp.getZFS_DOMAIN();
+        
         try {
-            zfs2 = new Zfs(username2,password2,hostname2,console2,domain);
+            sw1 = new IBSwitch(sw1_username,sw1_passwd,sw1_host,domain);
+            sw2 = new IBSwitch(sw2_username,sw2_passwd,sw2_host,domain);
         } catch (UnknownHostException ex) {
             logger.log(Level.SEVERE, ex.getMessage());
         }
@@ -127,39 +142,105 @@ public class TakeoverBaseClass extends ControlPlaneBaseTest {
     }
     
     /**
-     * This method will add and start a list of orchestrations
+     * This method will add a list of orchestrations
      * @param orchestrationJsonFiles
      * @return List<OrchestrationUtil>  
      */
-    public List<OrchestrationUtil> addStartListOfOrchestrations(List<String> orchestrationJsonFiles){        
-        List<OrchestrationUtil> res = new LinkedList<>();
+    public List<OrchestrationUtil> addListOfOrchestrations(List<String> orchestrationJsonFiles){        
+        List<OrchestrationUtil> res = new LinkedList<>();     
+        Assert.assertNotNull(orchestrationJsonFiles, "orchestrationJsonFiles is null in TakeoverBaseClass -> addStartListOfOrchestrations");        
         for (int i = 0 ; i < orchestrationJsonFiles.size(); i++){
-            res.add(new OrchestrationUtil(HAConstantDef.ROOT_USER, HAConstantDef.ROOT_PASSWORD));
-        }
-        if ( null == orchestrationJsonFiles ){
-            logger.severe("orchestrationJsonFiles is null in TakeoverBaseClass -> addStartListOfOrchestrations");
-            return res;
-        }
-        
-        for (int i = 0 ; i < orchestrationJsonFiles.size(); i++){            
-            Assert.assertTrue(0 == res.get(i).addOrchestration(orchestrationJsonFiles.get(i)),"Failed to add " + orchestrationJsonFiles.get(i));
-            Assert.assertTrue(0 == res.get(i).startOrchestration(),"Failed to start " +  orchestrationJsonFiles.get(i));
-        }
+            res.add(new OrchestrationUtil(HAConstantDef.ROOT_USER, HAConstantDef.ROOT_PASSWORD));                  
+            Assert.assertTrue(0 == res.get(i).addOrchestration(orchestrationJsonFiles.get(i)),"Failed to add " + orchestrationJsonFiles.get(i));         
+        }       
         return res;
+    }
+    
+    /**
+     * This method will start a list of orchestrations
+     * @param orchestrationJsonFiles
+     * @return List<OrchestrationUtil>  
+     */
+    public int startListOfOrchestrations(List<OrchestrationUtil> orch){     
+        Assert.assertNotNull(orch,"orch is null in TakeoverBaseClass -> startListOfOrchestrations");
+        Iterator<OrchestrationUtil> it = orch.iterator();
+        while (it.hasNext()){
+            OrchestrationUtil or = it.next();
+            Assert.assertTrue(0 == or.startOrchestration(),"Failed to start " +  or.getName());        
+        }
+        return 0;
+    }
+    
+    /**
+     * This method will update a list of orchestrations
+     * @param orchestrationJsonFiles
+     * @return List<OrchestrationUtil>  
+     */
+    public void updateListOfOrchestrations(List<OrchestrationUtil> orch, List<String> orchestrationJsonFiles){                 
+        Assert.assertNotNull(orch, "orch is null in TakeoverBaseClass -> updateListOfOrchestrations");        
+        Assert.assertNotNull(orchestrationJsonFiles, "orchestrationJsonFiles is null in TakeoverBaseClass -> updateListOfOrchestrations");        
+        for (int i = 0 ; i < orchestrationJsonFiles.size(); i++){                          
+            Assert.assertTrue(0 == orch.get(i).updateOrchestration(orchestrationJsonFiles.get(i)),"Failed to add " + orchestrationJsonFiles.get(i));         
+        }       
+    }
+    
+    /**
+     * This method will get a list of orchestrations
+     * @param orchestrationJsonFiles
+     * @return List<OrchestrationUtil>  
+     */
+    public void getListOfOrchestrations(List<OrchestrationUtil> orch){                 
+        Assert.assertNotNull(orch, "orch is null in TakeoverBaseClass -> updateListOfOrchestrations");        
+        Iterator<OrchestrationUtil> it = orch.iterator();
+        while(it.hasNext()){
+            OrchestrationUtil or = it.next();
+            Assert.assertTrue(0 == or.getOrchestration(),"Get orchestration request failed");
+        }
     }
     
     /**
      * This method will stop a List<OrchestrationUtil> of orchestrations
      * @param orchObj 
      */
-    public void stopDeleteListOfOrchestrations(List<OrchestrationUtil> orchObj){        
-        Assert.assertNotNull(orchObj,"orchObj is null in TakeoverBaseClass -> stopDeleteListOfOrchestrations");
+    public void stopListOfOrchestrations(List<OrchestrationUtil> orchObj){        
+        Assert.assertNotNull(orchObj,"orchObj is null in TakeoverBaseClass -> stopListOfOrchestrations");
         
         Iterator <OrchestrationUtil> it = orchObj.iterator();
         while(it.hasNext()){
             OrchestrationUtil o = it.next();
-            Assert.assertTrue( 0 == o.stopOrchestration(),"Orchestration could not be stopped");
+            Assert.assertTrue( 0 == o.stopOrchestration(),"Orchestration could not be stopped");            
+        }
+    }
+    
+    /**
+     * This method will delete a List<OrchestrationUtil> of orchestrations
+     * @param orchObj 
+     */
+    public void deleteListOfOrchestrations(List<OrchestrationUtil> orchObj){        
+        Assert.assertNotNull(orchObj,"orchObj is null in TakeoverBaseClass -> deleteListOfOrchestrations");
+        
+        Iterator <OrchestrationUtil> it = orchObj.iterator();
+        while(it.hasNext()){
+            OrchestrationUtil o = it.next();
             Assert.assertTrue( 0 == o.deleteOrchestration(),"Orchestration could not be deleted");
         }
+    }
+    
+    public boolean switchFailover(){
+        if(sw1.isMasterSwitch()){
+            if (!sw1.reboot()){
+                logger.severe("Failed to reboot sw1");
+                return false;
+            }
+        } else if (sw2.isMasterSwitch()){
+            if (!sw2.reboot()){
+                logger.severe("Failed to reboot sw2");
+                return false;
+            }
+        } else {
+            logger.severe("No switch is the master");
+            return false;
+        }
+        return true;
     }
 }

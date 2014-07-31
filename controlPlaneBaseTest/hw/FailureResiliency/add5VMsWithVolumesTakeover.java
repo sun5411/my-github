@@ -11,6 +11,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import com.oracle.nimbula.qa.ha.IPpoolUtil;
+import java.util.logging.Level;
 
 /**
  *
@@ -22,10 +23,12 @@ public class add5VMsWithVolumesTakeover extends TakeoverBaseClass {
     IPpoolUtil ip;
     String ipPoolEntry;
     String resName;
+    List<String> orchFiles;
     
-    @BeforeClass
-    public void addStServerPool_setup() throws InterruptedException, UnknownHostException{
+    @BeforeClass(alwaysRun = true, timeOut = 900000)
+    public void add_setup() throws InterruptedException{
         super.setup();
+        orchFiles = new LinkedList<>();
         ip = new IPpoolUtil();
         ip.addIPpool();
         ipPoolEntry = ip.addIPPoolEntry();
@@ -33,19 +36,24 @@ public class add5VMsWithVolumesTakeover extends TakeoverBaseClass {
         Assert.assertTrue(func.createStorageProperty(), "Error : Create Storage Property failed!");
         Assert.assertTrue(func.createStorageServer(), "Error : Add storage server failed!");
         Assert.assertTrue(func.createStoragePool(), "Error : Create storage pool failed!");
+        orchFiles.add("/tmp/hwFailure_Launch5VMswithVolumes.json");
+        orchObj = super.addListOfOrchestrations(orchFiles);
     }
     
     @Test(alwaysRun=true, timeOut=129600000)
     public void aa_addOrchVolumes() throws InterruptedException{
-        List<String> orchFiles = new LinkedList<>();
-        super.addStartOrchestration("/tmp/hwFailure_Launch5VMswithVolumes.json");
-        
-        List<String> instances = super.orchestrationInstances();
-        Iterator<String> it = instances.iterator();
-        while(it.hasNext()){
-            String vm = it.next();
-            Assert.assertTrue(instanceUtil.pingVM(vm), "Error : Failed to ping VM after new instance is created!");
-            Assert.assertTrue(instanceUtil.checkVolumeSanity(vm), "Error : Failed to accessed attached volume from instance, VM : " + vm);
+        Assert.assertTrue(0 == super.startListOfOrchestrations(orchObj), "Orchestration could not be started");
+        Iterator<OrchestrationUtil> orchIt = orchObj.iterator();
+        while (orchIt.hasNext()){
+            OrchestrationUtil ou = orchIt.next();
+            logger.log(Level.INFO, "Checking instances for orchestration : {0}", ou.getListOfInstanceNames());
+            List<String> instances = ou.getListOfInstanceNames();
+            Iterator<String> it = instances.iterator();
+            while(it.hasNext()){
+                String vm = it.next();
+                Assert.assertTrue(instanceUtil.pingVM(vm), "Error : Failed to ping VM after new instance is created!");
+                Assert.assertTrue(instanceUtil.checkVolumeSanity(vm), "Error : Failed to accessed attached volume from instance, VM : " + vm);
+            }
         }
     }
     
@@ -57,7 +65,8 @@ public class add5VMsWithVolumesTakeover extends TakeoverBaseClass {
     
     @AfterClass(alwaysRun = true)
     public void tearDown() {
-        super.stopDeleteListOfOrchestrations(orchObj);
+        super.stopListOfOrchestrations(orchObj);
+        super.deleteListOfOrchestrations(orchObj);
         ip.deleteIPPoolEntry(ipPoolEntry);
         ip.deleteIPpool();
         Assert.assertTrue(func.deleteStoragePool(),"Error : Delete Storagespool failed!");

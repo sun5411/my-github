@@ -20,8 +20,8 @@ public class delete5VMsWithVolumesTakeover extends TakeoverBaseClass {
     String ipPoolEntry;
     String resName;
     
-    @BeforeClass
-    public void addStServerPool_setup() throws InterruptedException, UnknownHostException{
+    @BeforeClass(alwaysRun = true, timeOut = 900000)
+    public void setup() throws InterruptedException{
         super.setup();
         ip = new IPpoolUtil();
         ip.addIPpool();
@@ -29,14 +29,15 @@ public class delete5VMsWithVolumesTakeover extends TakeoverBaseClass {
         instanceUtil = new InstanceUtil();
         Assert.assertTrue(func.createStorageProperty(), "Error : Create Storage Property failed!");
         Assert.assertTrue(func.createStorageServer(), "Error : Add storage server failed!");
-        Assert.assertTrue(func.createStoragePool(), "Error : Create storage pool failed!");
-        List<String> orchFiles = new LinkedList<>();
-        super.addStartOrchestration("/tmp/hwFailure_Launch5VMswithVolumes.json");
+        Assert.assertTrue(func.createStoragePool(), "Error : Create storage pool failed!");        
+        Assert.assertTrue(0 == orch.addOrchestration("/tmp/hwFailure_Launch5VMswithVolumes.json"),"Add Orchestration failed!");
+        Assert.assertTrue(0 == orch.startOrchestration(),"Orchestration start failed!");
     }
     
     @Test(alwaysRun=true, timeOut=129600000)
     public void aa_addOrchVolumes() throws InterruptedException{
-        super.stopDeleteOrchestration();
+        Assert.assertTrue(0 == orch.stopOrchestration(),"Orchestration stop failed!");
+        Assert.assertTrue(0 == orch.deleteOrchestration(),"Orchestration deleted failed!");
     }
     
     @Test(alwaysRun=true,timeOut=129600000)
