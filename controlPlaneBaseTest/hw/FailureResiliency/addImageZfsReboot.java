@@ -12,6 +12,7 @@ import org.testng.annotations.Test;
  * @author Sun Ning
  */
 public class addImageZfsReboot extends TakeoverBaseClass {
+    
     @BeforeClass
     public void addStServer_setup() throws InterruptedException, UnknownHostException{
         super.setup();
@@ -31,22 +32,13 @@ public class addImageZfsReboot extends TakeoverBaseClass {
     }
     
     @Test(alwaysRun=true,timeOut=129600000)
-    public void bb_zfsTakeover() throws InterruptedException{
-        String master = zfs1.getMaster();
-        if (master.equalsIgnoreCase(zfs1.getHostname())){
-            Assert.assertTrue(super.zfs1.reboot(), "Error : Storage reboot failed!");
-        } else if(master.equalsIgnoreCase(zfs2.getMaster())) {
-            Assert.assertTrue(super.zfs2.reboot(), "Error : Storage reboot failed!");
-        }else {
-            logger.log(Level.SEVERE, "Error : No master found");            
-        }
-
+    public void bb_zfsReboot() throws InterruptedException{
+        Assert.assertTrue(super.rebootZFSmaster(),"Failed to reboot ZFS master");
     }  
     
     @AfterClass(alwaysRun = true)
     public void tearDown() {
         func.deleteMachineImage();
         func.deleteMachineImageDownloadDirectory();
-
     }
 }

@@ -6,11 +6,6 @@ package com.oracle.nimbula.qa.ha.hw.FailureResiliency;
 
 import com.oracle.nimbula.qa.ha.IPpoolUtil;
 import com.oracle.nimbula.qa.ha.InstanceUtil;
-import com.oracle.nimbula.qa.ha.hw.FailureResiliency.TakeoverBaseClass;
-import com.oracle.nimbula.test_framework.resource.types.Instance;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -43,27 +38,30 @@ public class launchInstanceSwitchFailover extends TakeoverBaseClass {
     public void aa_launchInstance() throws InterruptedException{
         Assert.assertTrue(vm.launchVMwithIPreservation(ipResName),"Error : VM create failed!");
         vmUUID = vm.getCreatedInstancesUUID().get(0);
+        int count = 0;
         while(!vm.isVMup(vmUUID)){
+            if (count >= 100){ 
+                break;
+            }
             Thread.sleep(1000);
-        }
-        
-        Assert.assertTrue(vm.pingVM(vmUUID), "Error : Failed to ping VM");
+            count++;
+        }   
+        Assert.assertTrue(vm.isVMup(vmUUID), "VM is down");
+        Assert.assertTrue(vm.pingVM(vmUUID), "Error : Failed to ping VM with private IP.");
+        Assert.assertTrue(vm.pingVM_publicIP(vmUUID, 10), "Error : Failed to ping VM with public IP.");
+        Assert.assertTrue(vm.sshVM_IP(vmUUID), "Error : Failed to ssh VM");
     }
     
     @Test(alwaysRun=true,timeOut=129600000)
     public void bb_switchFailover() throws InterruptedException{
+        // TODO: reboot the switch to which the BserviceManager's host is connected to
         Assert.assertTrue(super.switchFailover(), "Failed to perform switch failover");
     }  
 
     @AfterClass(alwaysRun = true)
     public void tearDown() throws InterruptedException {
-        vm.deleteAllCreatedVMs();
-        Instance ins = vm.getVM(vmUUID);
-        if(null != ins){
-            while(ins.getState().equalsIgnoreCase("stopping")){
-                Thread.sleep(10000);
-            }
-        }
+        vm.deleteVM(vmUUID);
+        Thread.sleep(20000);
         ip.deleteIPpoolReservation(ipResName);
         ip.deleteIPPoolEntry(ipPoolEntry);
         ip.deleteIPpool();

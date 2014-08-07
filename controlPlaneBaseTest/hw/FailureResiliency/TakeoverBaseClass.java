@@ -33,7 +33,7 @@ public class TakeoverBaseClass extends ControlPlaneBaseTest {
     public void setup() throws InterruptedException{
         super.setup();
         NimbulaHAPropertiesReader haProp = NimbulaHAPropertiesReader.getInstance();
-        
+        /*
         String domain = haProp.getZFS_DOMAIN();
         
         String hostname1 = haProp.getZFS1_HOSTNAME();
@@ -70,6 +70,7 @@ public class TakeoverBaseClass extends ControlPlaneBaseTest {
         } catch (UnknownHostException ex) {
             logger.log(Level.SEVERE, ex.getMessage());
         }
+        */
     }
     
     protected boolean takeover() throws InterruptedException{
@@ -96,6 +97,26 @@ public class TakeoverBaseClass extends ControlPlaneBaseTest {
             result = false;
         }
         return result;
+    }    
+    
+    protected boolean rebootZFSmaster() throws InterruptedException{
+        while (!zfs1.isAlive()){            
+            logger.log(Level.SEVERE, "Storage head 1 is not up yet");
+            Thread.sleep(30000);
+        }
+        while (!zfs2.isAlive()){            
+            logger.log(Level.SEVERE, "Storage head 2 is not up yet");
+            Thread.sleep(30000);
+        }
+        String master = zfs1.getMaster();
+        if (master.equalsIgnoreCase(zfs1.getHostname())){
+            return zfs1.reboot();
+        } else if (master.equalsIgnoreCase(zfs2.getMaster())){
+            return zfs2.reboot();
+        } else {
+            logger.log(Level.SEVERE, "No master found");                        
+        }
+        return false;
     }    
     
     public List<String> add_N_Shares(int n){
@@ -243,4 +264,18 @@ public class TakeoverBaseClass extends ControlPlaneBaseTest {
         }
         return true;
     }
+     public boolean switchFailover(String portName){
+        if("eth0".equals(portName)){
+            if (!sw1.reboot()){
+                logger.severe("Failed to reboot sw1");
+                return false;
+            }
+        } else if ("eth1".equals(portName)){
+            if (!sw2.reboot()){
+                logger.severe("Failed to reboot sw2");
+                return false;
+            }
+        }
+        return true;
+     }
 }

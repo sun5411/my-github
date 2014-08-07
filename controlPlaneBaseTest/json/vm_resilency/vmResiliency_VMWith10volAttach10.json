@@ -1,0 +1,195 @@
+{
+    "name": "/oracle/public/vmsWith10VolAttach_10",
+    "description": "Orchestration for ha test - 1)vm created with 10 volumes attached",
+    "oplans": [
+        {
+            "status": "",
+            "info": {},
+            "objects": [
+                {
+                    "policy": "PERMIT",
+                    "outbound_cidr_policy": "PERMIT",
+                    "name": "/root/root/seclist_vm10",
+                    "description": "seclist_vm10"
+                }
+            ],
+            "obj_type": "seclist",
+            "label": "seclist-creation",
+            "isNew": "true"
+        },
+        {
+            "status": "",
+            "objects": [
+                {
+                    "action": "PERMIT",
+                    "name": "/oracle/public/ssh_attach_vms10",
+                    "application": "/oracle/public/ssh",
+                    "src_list": "seciplist:/oracle/public/public-internet",
+                    "dst_list": "seclist:/root/root/seclist_vm10"
+                }
+            ],
+            "obj_type": "secrule",
+            "label": "sec_rule_creation",
+            "isNew": "true"
+        },
+        {
+            "ha_policy": "active",
+            "status": "",
+            "objects": [
+                {
+                    "instances": [
+                        {
+                            "networking": {
+                                "eth0": {
+                                        "nat": "ipreservation:/oracle/haAutomation/ippool1/ipreserVmResiliency_10",
+                                        "seclists": ["/root/root/seclist_vm10"]
+                                 }
+                            },
+                            "storage_attachments": [
+                                 {
+                                        "index": 1,
+                                        "volume": "/oracle/public/ha_st_vol91"
+                                 },
+                                 {
+                                        "index": 2,
+                                        "volume": "/oracle/public/ha_st_vol92"
+                                 },
+                                 {
+                                        "index": 3,
+                                        "volume": "/oracle/public/ha_st_vol93"
+                                 },
+                                 {
+                                        "index": 4,
+                                        "volume": "/oracle/public/ha_st_vol94"
+                                 },
+                                 {
+                                        "index": 5,
+                                        "volume": "/oracle/public/ha_st_vol95"
+                                 },
+                                 {
+                                        "index": 6,
+                                        "volume": "/oracle/public/ha_st_vol96"
+                                 },
+                                 {
+                                        "index": 7,
+                                        "volume": "/oracle/public/ha_st_vol97"
+                                 },
+                                 {
+                                        "index": 8,
+                                        "volume": "/oracle/public/ha_st_vol98"
+                                 },
+                                 {
+                                        "index": 9,
+                                        "volume": "/oracle/public/ha_st_vol99"
+                                 },
+                                 {
+                                        "index": 10,
+                                        "volume": "/oracle/public/ha_st_vol100"
+                                 }
+                            ],
+                            "boot_order": [],
+                            "shape": "small",
+                            "imagelist": "/oracle/public/oel6",
+                            "name": "/root/public/ha_orchestration_hwFailure/instance10",
+                            "account": "/root/default",
+                            "label": "instance10"
+                        }
+                      ]
+                }
+            ],
+            "obj_type": "launchplan",
+            "label": "launchplan_create_instances",
+            "isNew": true
+        },
+	{
+		"label": "test-ipreservation",
+  		"obj_type": "ip/reservation",
+  		"objects": [
+    				{
+      					"name": "/oracle/haAutomation/ippool1/ipreserVmResiliency_10",
+      					"parentpool": "/oracle/haAutomation/ippool1",
+      					"permanent": "True"
+    				}
+  		           ]
+	},
+	{
+            "label": "storage_creation",
+            "obj_type": "storage/volume",
+            "objects": [
+                {
+                    "name": "/oracle/public/ha_st_vol91",
+                    "size": "1G",
+                    "properties": ["/oracle/ha_storage_prop1_auto"]
+                },
+                {
+                    "name": "/oracle/public/ha_st_vol92",
+                    "size": "1G",
+                    "properties": ["/oracle/ha_storage_prop1_auto"]
+                },
+                {
+                    "name": "/oracle/public/ha_st_vol93",
+                    "size": "1G",
+                    "properties": ["/oracle/ha_storage_prop1_auto"]
+                },
+                {
+                    "name": "/oracle/public/ha_st_vol94",
+                    "size": "1G",
+                    "properties": ["/oracle/ha_storage_prop1_auto"]
+                },
+                {
+                    "name": "/oracle/public/ha_st_vol95",
+                    "size": "1G",
+                    "properties": ["/oracle/ha_storage_prop1_auto"]
+                },
+                {
+                    "name": "/oracle/public/ha_st_vol96",
+                    "size": "1G",
+                    "properties": ["/oracle/ha_storage_prop1_auto"]
+                },
+                {
+                    "name": "/oracle/public/ha_st_vol97",
+                    "size": "1G",
+                    "properties": ["/oracle/ha_storage_prop1_auto"]
+                },
+                {
+                    "name": "/oracle/public/ha_st_vol98",
+                    "size": "1G",
+                    "properties": ["/oracle/ha_storage_prop1_auto"]
+                },
+                {
+                    "name": "/oracle/public/ha_st_vol99",
+                    "size": "1G",
+                    "properties": ["/oracle/ha_storage_prop1_auto"]
+                },
+                {
+                    "name": "/oracle/public/ha_st_vol100",
+                    "size": "1G",
+                    "properties": ["/oracle/ha_storage_prop1_auto"]
+                }
+            ]
+        }
+    ],
+    "account": "/root/default",
+     "relationships" : [
+        {
+            "oplan" : "storage_creation" ,
+            "to_oplan" : "seclist-creation",
+            "type" : "depends"
+        },
+        {
+            "oplan" : "sec_rule_creation" ,
+            "to_oplan" : "seclist-creation",
+            "type" : "depends"
+        },
+        {
+            "oplan" : "launchplan_create_instances" ,
+            "to_oplan" : "storage_creation",
+            "type" : "depends"
+        },
+	      {
+ 	          "oplan": "launchplan_create_instances",
+            "to_oplan": "test-ipreservation",
+	          "type": "depends"
+        }
+    ]
+}

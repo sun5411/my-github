@@ -36,7 +36,7 @@ public class launchInstanceZfsTakeover extends TakeoverBaseClass {
         Assert.assertTrue(ip.addIPpool(),"Failed to add ippool");
         ipPoolEntry = ip.addIPPoolEntry();
         ipResName = ip.addIPPoolReservation();
-        Assert.assertNotNull(ipResName, "Unable to add ip reservation");
+        Assert.assertNotNull(ipResName, "Unable to add ip reservation"); 
     }
     
     @Test(alwaysRun=true, timeOut=129600000)
@@ -46,24 +46,20 @@ public class launchInstanceZfsTakeover extends TakeoverBaseClass {
         while(!vm.isVMup(vmUUID)){
             Thread.sleep(1000);
         }
-        Assert.assertTrue(vm.pingVM(vmUUID), "Error : Failed to ping VM");
+        Assert.assertTrue(vm.pingVM(vmUUID), "Error : Failed to ping VM with private IP");
+        Assert.assertTrue(vm.pingVM_publicIP(vmUUID, 10), "Error : Failed to ping VM with public IP.");
+        Assert.assertTrue(vm.sshVM_IP(vmUUID), "Error : Failed to ssh VM");
     }
     
     @Test(alwaysRun=true,timeOut=129600000)
     public void bb_zfsTakeover() throws InterruptedException{
         Assert.assertTrue(super.takeover(), "Error : Storage takeover failed!");
-        Thread.sleep(30000);
     }  
 
     @AfterClass(alwaysRun = true)
     public void tearDown() throws InterruptedException {
-        vm.deleteAllCreatedVMs();
-        Instance ins = vm.getVM(vmUUID);
-        if(null != ins){
-            while(ins.getState().equalsIgnoreCase("stopping")){
-                Thread.sleep(10000);
-            }
-        }
+        vm.deleteVM(vmUUID);
+        Thread.sleep(20000);
         ip.deleteIPpoolReservation(ipResName);
         ip.deleteIPPoolEntry(ipPoolEntry);
         ip.deleteIPpool();

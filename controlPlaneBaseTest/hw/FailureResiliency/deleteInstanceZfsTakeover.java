@@ -6,6 +6,7 @@ package com.oracle.nimbula.qa.ha.hw.FailureResiliency;
 
 import com.oracle.nimbula.qa.ha.FunctionalUtils;
 import com.oracle.nimbula.qa.ha.HAUtil;
+import com.oracle.nimbula.qa.ha.InstanceUtil;
 import java.util.logging.Level;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -14,25 +15,36 @@ import org.testng.annotations.Test;
 
 /**
  *
- * @author ctyagi
+ * @author sning
  */
 public class deleteInstanceZfsTakeover extends TakeoverBaseClass {
+    InstanceUtil vm;
+    
     @BeforeClass(alwaysRun = true, timeOut = 129600000)
     public void setup() throws InterruptedException {
+        super.setup();
+        vm = new InstanceUtil();
         func.launchSmallVM();
+        int count = 0;
         while (!func.isVMup()){
-            Thread.sleep(10000);
+            Thread.sleep(10000);   
+            count++;
+            if (count >= 10){
+                break;
+            }
         }
+        Assert.assertTrue(func.isVMup(),"VM is down");
     }
     
     @Test(alwaysRun=true, timeOut=129600000)
     public void aa_deleteInstance() throws InterruptedException{
         func.deleteVM(); 
         if (func.isVMup()){
-            logger.log(Level.INFO, "VM failed to delete when bImage was killed");            
+            logger.log(Level.INFO, "Error : VM failed to be deleted!");            
             func.deleteVM();    
-            Thread.sleep(30000);
+            Thread.sleep(10000);
         }
+        Assert.assertFalse(func.isVMup(),"Error : VM have not been deleted!");
     }
     
     @Test(alwaysRun=true,timeOut=129600000)
@@ -42,7 +54,6 @@ public class deleteInstanceZfsTakeover extends TakeoverBaseClass {
     
     @AfterClass(alwaysRun = true)
     public void tearDown() {
-        Assert.assertFalse(func.isVMup(),"VM was deleted");
     }
     
 }

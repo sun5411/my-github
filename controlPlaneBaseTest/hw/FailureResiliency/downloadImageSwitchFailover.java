@@ -12,6 +12,7 @@ import org.testng.annotations.Test;
  * @author Sun Ning
  */
 public class downloadImageSwitchFailover extends TakeoverBaseClass {
+    
     @BeforeClass
     public void addStServer_setup() throws InterruptedException, UnknownHostException{
         super.setup();
@@ -29,7 +30,7 @@ public class downloadImageSwitchFailover extends TakeoverBaseClass {
     }
     
     @Test(alwaysRun=true,timeOut=129600000)
-    public void bb_zfsTakeover() throws InterruptedException{
+    public void bb_switchFailover() throws InterruptedException{
         Assert.assertTrue(super.switchFailover(), "Failed to perform switch failover"); 
     }  
     
@@ -37,6 +38,5 @@ public class downloadImageSwitchFailover extends TakeoverBaseClass {
     public void tearDown() {
         func.deleteMachineImage();
         func.deleteMachineImageDownloadDirectory();
-
     }
 }

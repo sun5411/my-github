@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
  *
  * @author Sun Ning
  */
-public class downloadImageZfsTakeover extends TakeoverBaseClass {
+public class downloadImageZfsTakeover extends TakeoverBaseClass { 
     @BeforeClass
     public void addStServer_setup() throws InterruptedException, UnknownHostException{
         super.setup();

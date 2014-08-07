@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
  *
  * @author Sun Ning
  */
-public class addImageZfsTakeover extends TakeoverBaseClass {
+public class addImageZfsTakeover extends TakeoverBaseClass { 
     @BeforeClass
     public void addStServer_setup() throws InterruptedException, UnknownHostException{
         super.setup();
@@ -39,6 +39,5 @@ public class addImageZfsTakeover extends TakeoverBaseClass {
     public void tearDown() {
         func.deleteMachineImage();
         func.deleteMachineImageDownloadDirectory();
-
     }
 }

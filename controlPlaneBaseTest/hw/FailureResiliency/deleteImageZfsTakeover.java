@@ -39,6 +39,5 @@ public class deleteImageZfsTakeover extends TakeoverBaseClass {
     public void tearDown() {
         func.deleteMachineImage();
         func.deleteMachineImageDownloadDirectory();
-
     }
 }

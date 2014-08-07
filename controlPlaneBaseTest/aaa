@@ -1,0 +1,3440 @@
+{
+ "list": [
+  {
+   "status": "active", 
+   "endpoint": "192.6.80.11", 
+   "node_resources": {
+    "available": {
+     "ram": 58679, 
+     "load_avg_5": 102000.65, 
+     "instance_space": 341880754176, 
+     "image_space": 341880754176, 
+     "cpus": 30.0, 
+     "instances": 1048576, 
+     "shared_instance_image_device": true, 
+     "hdfs_space": 0, 
+     "data_space": 10660614144
+    }, 
+    "monitor_port": 48362, 
+    "total": {
+     "ram": 65535, 
+     "instance_space": 528379994112, 
+     "image_space": 528379994112, 
+     "cpus": 60, 
+     "data_space": 16910295040, 
+     "instances": 1048576, 
+     "hdfs_space": 0, 
+     "cores": 6, 
+     "sockets": 1
+    }
+   }, 
+   "uuid": "01cca6bc-b7bb-408e-bf7e-d800cd35f563", 
+   "cluster": "192.6.80.0/24", 
+   "uri": "https://10.247.59.2/node/01cca6bc-b7bb-408e-bf7e-d800cd35f563", 
+   "instances": [], 
+   "mac": "00:50:56:8b:a6:ca", 
+   "version": null, 
+   "ipmi_ip": "0.0.0.0", 
+   "load_metrics": {
+    "load_average": [
+     0.5, 
+     0.64, 
+     0.73
+    ], 
+    "memory": {
+     "swap_free": 327676, 
+     "cached": 567572, 
+     "free": 4486328, 
+     "swap_total": 327676, 
+     "total": 5842036, 
+     "buffers": 56748
+    }
+   }, 
+   "services": [
+    {
+     "uri": "https://10.247.59.2/node/01cca6bc-b7bb-408e-bf7e-d800cd35f563/service/access-control", 
+     "service": "https://10.247.59.2/service/access-control", 
+     "name": "access-control"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/01cca6bc-b7bb-408e-bf7e-d800cd35f563/service/api_dns_ip_0", 
+     "service": "https://10.247.59.2/service/api_dns_ip_0", 
+     "name": "api_dns_ip_0"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/01cca6bc-b7bb-408e-bf7e-d800cd35f563/service/banner", 
+     "service": "https://10.247.59.2/service/banner", 
+     "name": "banner"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/01cca6bc-b7bb-408e-bf7e-d800cd35f563/service/bcluster", 
+     "service": "https://10.247.59.2/service/bcluster", 
+     "name": "bcluster"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/01cca6bc-b7bb-408e-bf7e-d800cd35f563/service/bdns_1", 
+     "service": "https://10.247.59.2/service/bdns_1", 
+     "name": "bdns_1"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/01cca6bc-b7bb-408e-bf7e-d800cd35f563/service/bdns_ip_1", 
+     "service": "https://10.247.59.2/service/bdns_ip_1", 
+     "name": "bdns_ip_1"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/01cca6bc-b7bb-408e-bf7e-d800cd35f563/service/bloghandler", 
+     "service": "https://10.247.59.2/service/bloghandler", 
+     "name": "bloghandler"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/01cca6bc-b7bb-408e-bf7e-d800cd35f563/service/bnatnode", 
+     "service": "https://10.247.59.2/service/bnatnode", 
+     "name": "bnatnode"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/01cca6bc-b7bb-408e-bf7e-d800cd35f563/service/bnode", 
+     "service": "https://10.247.59.2/service/bnode", 
+     "name": "bnode"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/01cca6bc-b7bb-408e-bf7e-d800cd35f563/service/bsecnode", 
+     "service": "https://10.247.59.2/service/bsecnode", 
+     "name": "bsecnode"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/01cca6bc-b7bb-408e-bf7e-d800cd35f563/service/btraphandler", 
+     "service": "https://10.247.59.2/service/btraphandler", 
+     "name": "btraphandler"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/01cca6bc-b7bb-408e-bf7e-d800cd35f563/service/diamond", 
+     "service": "https://10.247.59.2/service/diamond", 
+     "name": "diamond"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/01cca6bc-b7bb-408e-bf7e-d800cd35f563/service/firewall", 
+     "service": "https://10.247.59.2/service/firewall", 
+     "name": "firewall"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/01cca6bc-b7bb-408e-bf7e-d800cd35f563/service/flow-engine", 
+     "service": "https://10.247.59.2/service/flow-engine", 
+     "name": "flow-engine"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/01cca6bc-b7bb-408e-bf7e-d800cd35f563/service/grub_configuration", 
+     "service": "https://10.247.59.2/service/grub_configuration", 
+     "name": "grub_configuration"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/01cca6bc-b7bb-408e-bf7e-d800cd35f563/service/lldp", 
+     "service": "https://10.247.59.2/service/lldp", 
+     "name": "lldp"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/01cca6bc-b7bb-408e-bf7e-d800cd35f563/service/named_api_0", 
+     "service": "https://10.247.59.2/service/named_api_0", 
+     "name": "named_api_0"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/01cca6bc-b7bb-408e-bf7e-d800cd35f563/service/proxy_setup", 
+     "service": "https://10.247.59.2/service/proxy_setup", 
+     "name": "proxy_setup"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/01cca6bc-b7bb-408e-bf7e-d800cd35f563/service/rsyslog-cluster", 
+     "service": "https://10.247.59.2/service/rsyslog-cluster", 
+     "name": "rsyslog-cluster"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/01cca6bc-b7bb-408e-bf7e-d800cd35f563/service/selinux", 
+     "service": "https://10.247.59.2/service/selinux", 
+     "name": "selinux"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/01cca6bc-b7bb-408e-bf7e-d800cd35f563/service/snmpd-node", 
+     "service": "https://10.247.59.2/service/snmpd-node", 
+     "name": "snmpd-node"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/01cca6bc-b7bb-408e-bf7e-d800cd35f563/service/snmptrapd-cluster", 
+     "service": "https://10.247.59.2/service/snmptrapd-cluster", 
+     "name": "snmptrapd-cluster"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/01cca6bc-b7bb-408e-bf7e-d800cd35f563/service/sshd_configuration", 
+     "service": "https://10.247.59.2/service/sshd_configuration", 
+     "name": "sshd_configuration"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/01cca6bc-b7bb-408e-bf7e-d800cd35f563/service/sslreload", 
+     "service": "https://10.247.59.2/service/sslreload", 
+     "name": "sslreload"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/01cca6bc-b7bb-408e-bf7e-d800cd35f563/service/statsd-server", 
+     "service": "https://10.247.59.2/service/statsd-server", 
+     "name": "statsd-server"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/01cca6bc-b7bb-408e-bf7e-d800cd35f563/service/storage_config", 
+     "service": "https://10.247.59.2/service/storage_config", 
+     "name": "storage_config"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/01cca6bc-b7bb-408e-bf7e-d800cd35f563/service/system_users", 
+     "service": "https://10.247.59.2/service/system_users", 
+     "name": "system_users"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/01cca6bc-b7bb-408e-bf7e-d800cd35f563/service/traffic-control", 
+     "service": "https://10.247.59.2/service/traffic-control", 
+     "name": "traffic-control"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/01cca6bc-b7bb-408e-bf7e-d800cd35f563/service/yum", 
+     "service": "https://10.247.59.2/service/yum", 
+     "name": "yum"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/01cca6bc-b7bb-408e-bf7e-d800cd35f563/service/zookeeper_observer", 
+     "service": "https://10.247.59.2/service/zookeeper_observer", 
+     "name": "zookeeper_observer"
+    }
+   ], 
+   "properties": {
+    "/system/bic/no/bsite": "1", 
+    "/system/bic/no/buserfront": "1", 
+    "/system/bic/no/graphite-nginx": "1", 
+    "/system/bic/no/bstorageworker_iscsi_101": "1", 
+    "/system/bic/no/nosql_configure": "1", 
+    "/system/bic/no/bdhcp": "1", 
+    "/system/bic/master": "1", 
+    "/system/bic/no/nosql_make_bootconfig": "1", 
+    "/system/bic/no/pxe-ip": "1", 
+    "/system/bic/no/nosql_br_endpoint": "1", 
+    "/system/bic/no/nosql_kill_orphan_sna": "1", 
+    "/system/bic/no/primary_dns_ip": "1", 
+    "/system/bic/no/bservicesite": "1", 
+    "/system/bic/no/borchestrationmanager": "1", 
+    "/system/bic/no/frontend-nginx": "1", 
+    "/system/bic/no/bnet": "1", 
+    "/system/bic/no/nosql_admin": "1", 
+    "/system/bic/no/bsecsite": "1", 
+    "/system/bic/no/storage_metadata": "1", 
+    "/system/bic/no/bdns_api_primary": "1", 
+    "/system/bic/no/storage_writable": "1", 
+    "/system/bic/no/bauthfront": "1", 
+    "/system/bic/no/storage_master": "1", 
+    "/system/bic/no/bfederated": "1", 
+    "/system/bic/no/bmeteringsite": "1", 
+    "/system/bic/no/imagedata": "1", 
+    "/system/bic/no/carbon-cache": "1", 
+    "/system/bic/no/backend-nginx": "1", 
+    "/system/bic/no/nosql_generate_traps": "1", 
+    "/system/bic/no/zookeeper_base": "1", 
+    "/system/bic/no/gluster_mount": "1", 
+    "/system/bic/no/nosql_storage_node_agent": "1", 
+    "/system/bic/no/bstoragemanager_1": "1", 
+    "/system/bic/no/bevent": "1", 
+    "/system/bic/no/bstoragemanager_3": "1", 
+    "/system/bic/no/memcached": "1", 
+    "/system/bic/no/rabbitmq_2": "1", 
+    "/system/compute/allow_instances": "1", 
+    "/system/bic/no/bimage": "1", 
+    "/system/bic/no/nosql_shard_setup": "1", 
+    "/system/bic/no/bstoragemanager_2": "1", 
+    "/system/bic/no/zookeeper_ssl": "1", 
+    "/system/bic/no/pxe-nginx": "1", 
+    "/system/bic/no/bstorageworker_iscsi_102": "1", 
+    "/system/bic/no/borchestrationsite": "1", 
+    "/system/bic/no/nosql_bic_reload": "1", 
+    "/system/compute/hypervisor/xen": "1", 
+    "/system/bic/no/buser": "1", 
+    "/system/bic/no/storage_node": "1", 
+    "/system/bic/no/bservicemanager": "1", 
+    "/system/compute/placement/default": "1", 
+    "/system/bic/no/gluster_server": "1", 
+    "/system/bic/no/bdatabaseshim": "1", 
+    "/system/bic/no/bauth": "1", 
+    "/system/bic/no/baws": "1", 
+    "/system/bic/no/ddb_zookeeper_1": "1", 
+    "/system/bic/no/ddb_zookeeper_2": "1", 
+    "/system/bic/no/ddb_zookeeper_3": "1", 
+    "/system/bic/no/frontend-admin-nginx": "1", 
+    "/system/bic/no/dhcpd": "1", 
+    "/system/bic/no/tftpd": "1", 
+    "/system/bic/no/snmptrapd-site": "1", 
+    "/system/bic/no/graphite-web": "1", 
+    "/system/bic/no/rabbitmq_1": "1", 
+    "/system/bic/no/ntp-site-server": "1", 
+    "/system/bic/no/rabbitmq_3": "1", 
+    "/system/bic/no/bstorageworker_nfs_1": "1", 
+    "/system/bic/no/rsyslog-site": "1", 
+    "/system/bic/no/bdns_api_secondary": "1", 
+    "/system/bic/no/bstorageworker_nfs_2": "1", 
+    "/system/bic/no/nosql_admin_endpoint": "1", 
+    "/system/bic/no/storage_secondary": "1"
+   }, 
+   "updating": false
+  }, 
+  {
+   "status": "active", 
+   "endpoint": "192.6.80.12", 
+   "node_resources": {
+    "available": {
+     "ram": 58679, 
+     "load_avg_5": 0.73, 
+     "instance_space": 395031306240, 
+     "image_space": 395031306240, 
+     "cpus": 30.0, 
+     "instances": 1048576, 
+     "shared_instance_image_device": true, 
+     "hdfs_space": 0, 
+     "data_space": 10660753408
+    }, 
+    "monitor_port": 44072, 
+    "total": {
+     "ram": 65535, 
+     "instance_space": 528379994112, 
+     "image_space": 528379994112, 
+     "cpus": 60, 
+     "data_space": 16910295040, 
+     "instances": 1048576, 
+     "hdfs_space": 0, 
+     "cores": 6, 
+     "sockets": 1
+    }
+   }, 
+   "uuid": "ee039012-266a-4f39-96bf-578516901b54", 
+   "cluster": "192.6.80.0/24", 
+   "uri": "https://10.247.59.2/node/ee039012-266a-4f39-96bf-578516901b54", 
+   "instances": [], 
+   "mac": "00:50:56:8b:6e:a0", 
+   "version": null, 
+   "ipmi_ip": "0.0.0.0", 
+   "load_metrics": {
+    "load_average": [
+     0.95, 
+     0.72, 
+     0.73
+    ], 
+    "memory": {
+     "swap_free": 327676, 
+     "cached": 512784, 
+     "free": 4868272, 
+     "swap_total": 327676, 
+     "total": 5842036, 
+     "buffers": 21004
+    }
+   }, 
+   "services": [
+    {
+     "uri": "https://10.247.59.2/node/ee039012-266a-4f39-96bf-578516901b54/service/access-control", 
+     "service": "https://10.247.59.2/service/access-control", 
+     "name": "access-control"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/ee039012-266a-4f39-96bf-578516901b54/service/banner", 
+     "service": "https://10.247.59.2/service/banner", 
+     "name": "banner"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/ee039012-266a-4f39-96bf-578516901b54/service/bnatnode", 
+     "service": "https://10.247.59.2/service/bnatnode", 
+     "name": "bnatnode"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/ee039012-266a-4f39-96bf-578516901b54/service/bnode", 
+     "service": "https://10.247.59.2/service/bnode", 
+     "name": "bnode"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/ee039012-266a-4f39-96bf-578516901b54/service/bsecnode", 
+     "service": "https://10.247.59.2/service/bsecnode", 
+     "name": "bsecnode"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/ee039012-266a-4f39-96bf-578516901b54/service/diamond", 
+     "service": "https://10.247.59.2/service/diamond", 
+     "name": "diamond"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/ee039012-266a-4f39-96bf-578516901b54/service/firewall", 
+     "service": "https://10.247.59.2/service/firewall", 
+     "name": "firewall"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/ee039012-266a-4f39-96bf-578516901b54/service/flow-engine", 
+     "service": "https://10.247.59.2/service/flow-engine", 
+     "name": "flow-engine"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/ee039012-266a-4f39-96bf-578516901b54/service/grub_configuration", 
+     "service": "https://10.247.59.2/service/grub_configuration", 
+     "name": "grub_configuration"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/ee039012-266a-4f39-96bf-578516901b54/service/lldp", 
+     "service": "https://10.247.59.2/service/lldp", 
+     "name": "lldp"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/ee039012-266a-4f39-96bf-578516901b54/service/proxy_setup", 
+     "service": "https://10.247.59.2/service/proxy_setup", 
+     "name": "proxy_setup"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/ee039012-266a-4f39-96bf-578516901b54/service/selinux", 
+     "service": "https://10.247.59.2/service/selinux", 
+     "name": "selinux"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/ee039012-266a-4f39-96bf-578516901b54/service/snmpd-node", 
+     "service": "https://10.247.59.2/service/snmpd-node", 
+     "name": "snmpd-node"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/ee039012-266a-4f39-96bf-578516901b54/service/sshd_configuration", 
+     "service": "https://10.247.59.2/service/sshd_configuration", 
+     "name": "sshd_configuration"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/ee039012-266a-4f39-96bf-578516901b54/service/sslreload", 
+     "service": "https://10.247.59.2/service/sslreload", 
+     "name": "sslreload"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/ee039012-266a-4f39-96bf-578516901b54/service/storage_config", 
+     "service": "https://10.247.59.2/service/storage_config", 
+     "name": "storage_config"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/ee039012-266a-4f39-96bf-578516901b54/service/system_users", 
+     "service": "https://10.247.59.2/service/system_users", 
+     "name": "system_users"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/ee039012-266a-4f39-96bf-578516901b54/service/traffic-control", 
+     "service": "https://10.247.59.2/service/traffic-control", 
+     "name": "traffic-control"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/ee039012-266a-4f39-96bf-578516901b54/service/yum", 
+     "service": "https://10.247.59.2/service/yum", 
+     "name": "yum"
+    }
+   ], 
+   "properties": {
+    "/system/bic/no/bsite": "1", 
+    "/system/bic/no/buserfront": "1", 
+    "/system/bic/no/graphite-nginx": "1", 
+    "/system/bic/no/bstorageworker_iscsi_101": "1", 
+    "/system/bic/no/nosql_configure": "1", 
+    "/system/bic/no/bdhcp": "1", 
+    "/system/bic/master": "1", 
+    "/system/bic/no/nosql_make_bootconfig": "1", 
+    "/system/bic/no/pxe-ip": "1", 
+    "/system/bic/no/nosql_br_endpoint": "1", 
+    "/system/bic/no/nosql_kill_orphan_sna": "1", 
+    "/system/bic/no/primary_dns_ip": "1", 
+    "/system/bic/no/bservicesite": "1", 
+    "/system/bic/no/borchestrationmanager": "1", 
+    "/system/bic/no/frontend-nginx": "1", 
+    "/system/bic/no/bnet": "1", 
+    "/system/bic/no/nosql_admin": "1", 
+    "/system/bic/no/bsecsite": "1", 
+    "/system/bic/no/storage_metadata": "1", 
+    "/system/bic/no/bdns_api_primary": "1", 
+    "/system/bic/no/storage_writable": "1", 
+    "/system/bic/no/bauthfront": "1", 
+    "/system/bic/no/storage_master": "1", 
+    "/system/bic/no/bfederated": "1", 
+    "/system/bic/no/bmeteringsite": "1", 
+    "/system/bic/no/imagedata": "1", 
+    "/system/bic/no/carbon-cache": "1", 
+    "/system/bic/no/backend-nginx": "1", 
+    "/system/bic/no/nosql_generate_traps": "1", 
+    "/system/bic/no/zookeeper_base": "1", 
+    "/system/bic/no/gluster_mount": "1", 
+    "/system/bic/no/nosql_storage_node_agent": "1", 
+    "/system/bic/no/bstoragemanager_1": "1", 
+    "/system/bic/no/bevent": "1", 
+    "/system/bic/no/bstoragemanager_3": "1", 
+    "/system/bic/no/memcached": "1", 
+    "/system/bic/no/rabbitmq_2": "1", 
+    "/system/compute/allow_instances": "1", 
+    "/system/bic/no/bimage": "1", 
+    "/system/bic/no/nosql_shard_setup": "1", 
+    "/system/bic/no/bstoragemanager_2": "1", 
+    "/system/bic/no/zookeeper_ssl": "1", 
+    "/system/bic/no/pxe-nginx": "1", 
+    "/system/bic/no/bstorageworker_iscsi_102": "1", 
+    "/system/bic/no/borchestrationsite": "1", 
+    "/system/bic/no/nosql_bic_reload": "1", 
+    "/system/compute/hypervisor/xen": "1", 
+    "/system/bic/no/buser": "1", 
+    "/system/bic/no/storage_node": "1", 
+    "/system/bic/no/bservicemanager": "1", 
+    "/system/compute/placement/default": "1", 
+    "/system/bic/no/gluster_server": "1", 
+    "/system/bic/no/bdatabaseshim": "1", 
+    "/system/bic/no/bauth": "1", 
+    "/system/bic/no/baws": "1", 
+    "/system/bic/no/ddb_zookeeper_1": "1", 
+    "/system/bic/no/ddb_zookeeper_2": "1", 
+    "/system/bic/no/ddb_zookeeper_3": "1", 
+    "/system/bic/no/frontend-admin-nginx": "1", 
+    "/system/bic/no/dhcpd": "1", 
+    "/system/bic/no/tftpd": "1", 
+    "/system/bic/no/snmptrapd-site": "1", 
+    "/system/bic/no/graphite-web": "1", 
+    "/system/bic/no/rabbitmq_1": "1", 
+    "/system/bic/no/ntp-site-server": "1", 
+    "/system/bic/no/rabbitmq_3": "1", 
+    "/system/bic/no/bstorageworker_nfs_1": "1", 
+    "/system/bic/no/rsyslog-site": "1", 
+    "/system/bic/no/bdns_api_secondary": "1", 
+    "/system/bic/no/bstorageworker_nfs_2": "1", 
+    "/system/bic/no/nosql_admin_endpoint": "1", 
+    "/system/bic/no/storage_secondary": "1"
+   }, 
+   "updating": false
+  }, 
+  {
+   "status": "active", 
+   "endpoint": "192.6.64.11", 
+   "node_resources": {
+    "available": {
+     "ram": 311, 
+     "load_avg_5": 116000.93, 
+     "instance_space": 128147648512, 
+     "image_space": 128147648512, 
+     "cpus": 0.0, 
+     "instances": 1048576, 
+     "shared_instance_image_device": true, 
+     "hdfs_space": 33091211264, 
+     "data_space": 10657464320
+    }, 
+    "monitor_port": 56165, 
+    "total": {
+     "ram": 65535, 
+     "instance_space": 135215419392, 
+     "image_space": 135215419392, 
+     "cpus": 40, 
+     "data_space": 16910295040, 
+     "instances": 1048576, 
+     "hdfs_space": 33091399680, 
+     "cores": 8, 
+     "sockets": 1
+    }
+   }, 
+   "uuid": "ac78a974-34c9-4b7e-8f26-0d04d184d105", 
+   "cluster": "192.6.64.0/24", 
+   "uri": "https://10.247.59.2/node/ac78a974-34c9-4b7e-8f26-0d04d184d105", 
+   "instances": [], 
+   "mac": "00:50:56:3f:01:01", 
+   "version": "initial", 
+   "ipmi_ip": "0.0.0.0", 
+   "load_metrics": {
+    "load_average": [
+     0.69, 
+     0.95, 
+     1.12
+    ], 
+    "memory": {
+     "swap_free": 3342332, 
+     "cached": 289716, 
+     "free": 61721236, 
+     "swap_total": 3342332, 
+     "total": 64674896, 
+     "buffers": 222816
+    }
+   }, 
+   "services": [
+    {
+     "uri": "https://10.247.59.2/node/ac78a974-34c9-4b7e-8f26-0d04d184d105/service/access-control", 
+     "service": "https://10.247.59.2/service/access-control", 
+     "name": "access-control"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/ac78a974-34c9-4b7e-8f26-0d04d184d105/service/api_dns_ip_0", 
+     "service": "https://10.247.59.2/service/api_dns_ip_0", 
+     "name": "api_dns_ip_0"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/ac78a974-34c9-4b7e-8f26-0d04d184d105/service/banner", 
+     "service": "https://10.247.59.2/service/banner", 
+     "name": "banner"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/ac78a974-34c9-4b7e-8f26-0d04d184d105/service/bauth", 
+     "service": "https://10.247.59.2/service/bauth", 
+     "name": "bauth"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/ac78a974-34c9-4b7e-8f26-0d04d184d105/service/bauthfront", 
+     "service": "https://10.247.59.2/service/bauthfront", 
+     "name": "bauthfront"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/ac78a974-34c9-4b7e-8f26-0d04d184d105/service/baws", 
+     "service": "https://10.247.59.2/service/baws", 
+     "name": "baws"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/ac78a974-34c9-4b7e-8f26-0d04d184d105/service/bdatabaseshim", 
+     "service": "https://10.247.59.2/service/bdatabaseshim", 
+     "name": "bdatabaseshim"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/ac78a974-34c9-4b7e-8f26-0d04d184d105/service/bdns_api_secondary", 
+     "service": "https://10.247.59.2/service/bdns_api_secondary", 
+     "name": "bdns_api_secondary"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/ac78a974-34c9-4b7e-8f26-0d04d184d105/service/bimage", 
+     "service": "https://10.247.59.2/service/bimage", 
+     "name": "bimage"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/ac78a974-34c9-4b7e-8f26-0d04d184d105/service/bnatnode", 
+     "service": "https://10.247.59.2/service/bnatnode", 
+     "name": "bnatnode"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/ac78a974-34c9-4b7e-8f26-0d04d184d105/service/bnode", 
+     "service": "https://10.247.59.2/service/bnode", 
+     "name": "bnode"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/ac78a974-34c9-4b7e-8f26-0d04d184d105/service/borchestrationauditor", 
+     "service": "https://10.247.59.2/service/borchestrationauditor", 
+     "name": "borchestrationauditor"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/ac78a974-34c9-4b7e-8f26-0d04d184d105/service/bsecnode", 
+     "service": "https://10.247.59.2/service/bsecnode", 
+     "name": "bsecnode"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/ac78a974-34c9-4b7e-8f26-0d04d184d105/service/bstoragemanager_1", 
+     "service": "https://10.247.59.2/service/bstoragemanager_1", 
+     "name": "bstoragemanager_1"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/ac78a974-34c9-4b7e-8f26-0d04d184d105/service/buser", 
+     "service": "https://10.247.59.2/service/buser", 
+     "name": "buser"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/ac78a974-34c9-4b7e-8f26-0d04d184d105/service/buserfront", 
+     "service": "https://10.247.59.2/service/buserfront", 
+     "name": "buserfront"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/ac78a974-34c9-4b7e-8f26-0d04d184d105/service/ddb_zookeeper_1", 
+     "service": "https://10.247.59.2/service/ddb_zookeeper_1", 
+     "name": "ddb_zookeeper_1"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/ac78a974-34c9-4b7e-8f26-0d04d184d105/service/diamond", 
+     "service": "https://10.247.59.2/service/diamond", 
+     "name": "diamond"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/ac78a974-34c9-4b7e-8f26-0d04d184d105/service/firewall", 
+     "service": "https://10.247.59.2/service/firewall", 
+     "name": "firewall"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/ac78a974-34c9-4b7e-8f26-0d04d184d105/service/flow-engine", 
+     "service": "https://10.247.59.2/service/flow-engine", 
+     "name": "flow-engine"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/ac78a974-34c9-4b7e-8f26-0d04d184d105/service/gluster_mount", 
+     "service": "https://10.247.59.2/service/gluster_mount", 
+     "name": "gluster_mount"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/ac78a974-34c9-4b7e-8f26-0d04d184d105/service/gluster_server", 
+     "service": "https://10.247.59.2/service/gluster_server", 
+     "name": "gluster_server"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/ac78a974-34c9-4b7e-8f26-0d04d184d105/service/graphite-nginx", 
+     "service": "https://10.247.59.2/service/graphite-nginx", 
+     "name": "graphite-nginx"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/ac78a974-34c9-4b7e-8f26-0d04d184d105/service/grub_configuration", 
+     "service": "https://10.247.59.2/service/grub_configuration", 
+     "name": "grub_configuration"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/ac78a974-34c9-4b7e-8f26-0d04d184d105/service/lldp", 
+     "service": "https://10.247.59.2/service/lldp", 
+     "name": "lldp"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/ac78a974-34c9-4b7e-8f26-0d04d184d105/service/named_api_0", 
+     "service": "https://10.247.59.2/service/named_api_0", 
+     "name": "named_api_0"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/ac78a974-34c9-4b7e-8f26-0d04d184d105/service/nosql_bic_reload", 
+     "service": "https://10.247.59.2/service/nosql_bic_reload", 
+     "name": "nosql_bic_reload"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/ac78a974-34c9-4b7e-8f26-0d04d184d105/service/nosql_br_endpoint", 
+     "service": "https://10.247.59.2/service/nosql_br_endpoint", 
+     "name": "nosql_br_endpoint"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/ac78a974-34c9-4b7e-8f26-0d04d184d105/service/nosql_make_bootconfig", 
+     "service": "https://10.247.59.2/service/nosql_make_bootconfig", 
+     "name": "nosql_make_bootconfig"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/ac78a974-34c9-4b7e-8f26-0d04d184d105/service/nosql_shard_setup", 
+     "service": "https://10.247.59.2/service/nosql_shard_setup", 
+     "name": "nosql_shard_setup"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/ac78a974-34c9-4b7e-8f26-0d04d184d105/service/ntp-cluster-server", 
+     "service": "https://10.247.59.2/service/ntp-cluster-server", 
+     "name": "ntp-cluster-server"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/ac78a974-34c9-4b7e-8f26-0d04d184d105/service/ntp-node-server", 
+     "service": "https://10.247.59.2/service/ntp-node-server", 
+     "name": "ntp-node-server"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/ac78a974-34c9-4b7e-8f26-0d04d184d105/service/ossec-client", 
+     "service": "https://10.247.59.2/service/ossec-client", 
+     "name": "ossec-client"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/ac78a974-34c9-4b7e-8f26-0d04d184d105/service/proxy_setup", 
+     "service": "https://10.247.59.2/service/proxy_setup", 
+     "name": "proxy_setup"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/ac78a974-34c9-4b7e-8f26-0d04d184d105/service/rabbitmq_3", 
+     "service": "https://10.247.59.2/service/rabbitmq_3", 
+     "name": "rabbitmq_3"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/ac78a974-34c9-4b7e-8f26-0d04d184d105/service/selinux", 
+     "service": "https://10.247.59.2/service/selinux", 
+     "name": "selinux"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/ac78a974-34c9-4b7e-8f26-0d04d184d105/service/snmpd-node", 
+     "service": "https://10.247.59.2/service/snmpd-node", 
+     "name": "snmpd-node"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/ac78a974-34c9-4b7e-8f26-0d04d184d105/service/snmptrapd-site", 
+     "service": "https://10.247.59.2/service/snmptrapd-site", 
+     "name": "snmptrapd-site"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/ac78a974-34c9-4b7e-8f26-0d04d184d105/service/sshd_configuration", 
+     "service": "https://10.247.59.2/service/sshd_configuration", 
+     "name": "sshd_configuration"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/ac78a974-34c9-4b7e-8f26-0d04d184d105/service/sslreload", 
+     "service": "https://10.247.59.2/service/sslreload", 
+     "name": "sslreload"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/ac78a974-34c9-4b7e-8f26-0d04d184d105/service/storage_config", 
+     "service": "https://10.247.59.2/service/storage_config", 
+     "name": "storage_config"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/ac78a974-34c9-4b7e-8f26-0d04d184d105/service/storage_master", 
+     "service": "https://10.247.59.2/service/storage_master", 
+     "name": "storage_master"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/ac78a974-34c9-4b7e-8f26-0d04d184d105/service/storage_metadata", 
+     "service": "https://10.247.59.2/service/storage_metadata", 
+     "name": "storage_metadata"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/ac78a974-34c9-4b7e-8f26-0d04d184d105/service/storage_node", 
+     "service": "https://10.247.59.2/service/storage_node", 
+     "name": "storage_node"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/ac78a974-34c9-4b7e-8f26-0d04d184d105/service/storage_writable", 
+     "service": "https://10.247.59.2/service/storage_writable", 
+     "name": "storage_writable"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/ac78a974-34c9-4b7e-8f26-0d04d184d105/service/system_users", 
+     "service": "https://10.247.59.2/service/system_users", 
+     "name": "system_users"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/ac78a974-34c9-4b7e-8f26-0d04d184d105/service/traffic-control", 
+     "service": "https://10.247.59.2/service/traffic-control", 
+     "name": "traffic-control"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/ac78a974-34c9-4b7e-8f26-0d04d184d105/service/yum", 
+     "service": "https://10.247.59.2/service/yum", 
+     "name": "yum"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/ac78a974-34c9-4b7e-8f26-0d04d184d105/service/zookeeper_base", 
+     "service": "https://10.247.59.2/service/zookeeper_base", 
+     "name": "zookeeper_base"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/ac78a974-34c9-4b7e-8f26-0d04d184d105/service/zookeeper_ssl", 
+     "service": "https://10.247.59.2/service/zookeeper_ssl", 
+     "name": "zookeeper_ssl"
+    }
+   ], 
+   "properties": {
+    "/system/bic/prefer/buser": "1", 
+    "/system/bic/prefer/snmptrapd-site": "1", 
+    "/system/bic/prefer/nosql_br_endpoint": "1", 
+    "/system/bic/prefer/primary_dns_ip": "1", 
+    "/system/bic/prefer/frontend-nginx": "1", 
+    "/system/bic/prefer/dhcpd": "1", 
+    "/system/bic/prefer/storage_master": "1", 
+    "/system/bic/prefer/bevent": "1", 
+    "/system/bic/prefer/memcached": "1", 
+    "/system/bic/master": "1", 
+    "/system/bic/prefer/nosql_kill_orphan_sna": "1", 
+    "/system/bic/prefer/zookeeper_ssl": "1", 
+    "/system/bic/prefer/nosql_admin_endpoint": "1", 
+    "/system/bic/prefer/imagedata": "1", 
+    "/system/bic/prefer/bservicemanager": "1", 
+    "/system/bic/prefer/bdns_api_primary": "1", 
+    "/system/bic/prefer/rabbitmq_1": "1", 
+    "/system/bic/prefer/frontend-admin-nginx": "1", 
+    "/system/bic/prefer/rabbitmq_3": "1", 
+    "/system/bic/prefer/rabbitmq_2": "1", 
+    "/system/bic/prefer/gluster_server": "1", 
+    "/system/bic/prefer/ddb_zookeeper_3": "1", 
+    "/system/bic/prefer/ddb_zookeeper_2": "1", 
+    "/system/bic/prefer/ddb_zookeeper_1": "1", 
+    "/system/bic/prefer/graphite-web": "1", 
+    "/system/bic/prefer/nosql_bic_reload": "1", 
+    "/system/compute/hypervisor/xen": "1", 
+    "/system/bic/prefer/bnet": "1", 
+    "/system/bic/prefer/buserfront": "1", 
+    "/system/bic/prefer/storage_node": "1", 
+    "/system/bic/prefer/bauthfront": "1", 
+    "/system/bic/prefer/nosql_admin": "1", 
+    "/system/bic/prefer/storage_secondary": "1", 
+    "/system/bic/prefer/bservicesite": "1", 
+    "/system/bic/prefer/nosql_shard_setup": "1", 
+    "/system/bic/prefer/bdns_api_secondary": "1", 
+    "/system/bic/prefer/backend-nginx": "1", 
+    "/system/bic/prefer/rsyslog-site": "1", 
+    "/system/bic/prefer/gluster_mount": "1", 
+    "/system/bic/prefer/storage_metadata": "1", 
+    "/system/bic/prefer/bstorageworker_nfs_2": "1", 
+    "/system/nat/forwarder": "1", 
+    "/system/bic/prefer/tftpd": "1", 
+    "/system/bic/prefer/nosql_generate_traps": "1", 
+    "/system/bic/prefer/nosql_storage_node_agent": "1", 
+    "/system/bic/prefer/bauth": "1", 
+    "/system/bic/prefer/nosql_configure": "1", 
+    "/system/compute/allow_instances": "0", 
+    "/system/bic/prefer/bstorageworker_iscsi_101": "1", 
+    "/system/bic/prefer/bdatabaseshim": "1", 
+    "/system/bic/prefer/bmeteringsite": "1", 
+    "/system/bic/prefer/bfederated": "1", 
+    "/system/bic/prefer/bstorageworker_iscsi_102": "1", 
+    "/system/bic/prefer/carbon-cache": "1", 
+    "/system/bic/prefer/borchestrationmanager": "1", 
+    "/system/compute/placement/default": "1", 
+    "/system/bic/prefer/borchestrationsite": "1", 
+    "/system/bic/prefer/bimage": "1", 
+    "/system/bic/prefer/bsecsite": "1", 
+    "/system/bic/prefer/baws": "1", 
+    "/system/bic/prefer/zookeeper_base": "1", 
+    "/system/bic/prefer/nosql_make_bootconfig": "1", 
+    "/system/bic/prefer/storage_writable": "1", 
+    "/system/bic/prefer/bstorageworker_nfs_1": "1", 
+    "/system/bic/prefer/ntp-site-server": "1", 
+    "/system/bic/prefer/bsite": "1", 
+    "/system/bic/prefer/pxe-nginx": "1", 
+    "/system/bic/prefer/graphite-nginx": "1", 
+    "/system/bic/prefer/bdhcp": "1", 
+    "/system/bic/prefer/pxe-ip": "1", 
+    "/system/bic/prefer/bstoragemanager_2": "1", 
+    "/system/bic/prefer/bstoragemanager_3": "1", 
+    "/system/bic/prefer/bstoragemanager_1": "1"
+   }, 
+   "updating": false
+  }, 
+  {
+   "status": "active", 
+   "endpoint": "192.6.64.12", 
+   "node_resources": {
+    "available": {
+     "ram": 311, 
+     "load_avg_5": 102000.81, 
+     "instance_space": 128147628032, 
+     "image_space": 128147628032, 
+     "cpus": 0.0, 
+     "instances": 1048576, 
+     "shared_instance_image_device": true, 
+     "hdfs_space": 33091211264, 
+     "data_space": 10658136064
+    }, 
+    "monitor_port": 34325, 
+    "total": {
+     "ram": 65535, 
+     "instance_space": 135215419392, 
+     "image_space": 135215419392, 
+     "cpus": 40, 
+     "data_space": 16910295040, 
+     "instances": 1048576, 
+     "hdfs_space": 33091399680, 
+     "cores": 8, 
+     "sockets": 1
+    }
+   }, 
+   "uuid": "908d20bc-4d61-43c1-a5ee-a779c56dff01", 
+   "cluster": "192.6.64.0/24", 
+   "uri": "https://10.247.59.2/node/908d20bc-4d61-43c1-a5ee-a779c56dff01", 
+   "instances": [], 
+   "mac": "00:50:56:3f:01:02", 
+   "version": "initial", 
+   "ipmi_ip": "0.0.0.0", 
+   "load_metrics": {
+    "load_average": [
+     0.59, 
+     0.72, 
+     0.92
+    ], 
+    "memory": {
+     "swap_free": 3342332, 
+     "cached": 238976, 
+     "free": 62384460, 
+     "swap_total": 3342332, 
+     "total": 64674896, 
+     "buffers": 204480
+    }
+   }, 
+   "services": [
+    {
+     "uri": "https://10.247.59.2/node/908d20bc-4d61-43c1-a5ee-a779c56dff01/service/access-control", 
+     "service": "https://10.247.59.2/service/access-control", 
+     "name": "access-control"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/908d20bc-4d61-43c1-a5ee-a779c56dff01/service/banner", 
+     "service": "https://10.247.59.2/service/banner", 
+     "name": "banner"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/908d20bc-4d61-43c1-a5ee-a779c56dff01/service/bdhcp", 
+     "service": "https://10.247.59.2/service/bdhcp", 
+     "name": "bdhcp"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/908d20bc-4d61-43c1-a5ee-a779c56dff01/service/bdns_0", 
+     "service": "https://10.247.59.2/service/bdns_0", 
+     "name": "bdns_0"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/908d20bc-4d61-43c1-a5ee-a779c56dff01/service/bdns_api_primary", 
+     "service": "https://10.247.59.2/service/bdns_api_primary", 
+     "name": "bdns_api_primary"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/908d20bc-4d61-43c1-a5ee-a779c56dff01/service/bdns_ip_0", 
+     "service": "https://10.247.59.2/service/bdns_ip_0", 
+     "name": "bdns_ip_0"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/908d20bc-4d61-43c1-a5ee-a779c56dff01/service/bnatnode", 
+     "service": "https://10.247.59.2/service/bnatnode", 
+     "name": "bnatnode"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/908d20bc-4d61-43c1-a5ee-a779c56dff01/service/bnode", 
+     "service": "https://10.247.59.2/service/bnode", 
+     "name": "bnode"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/908d20bc-4d61-43c1-a5ee-a779c56dff01/service/borchestrationmanager", 
+     "service": "https://10.247.59.2/service/borchestrationmanager", 
+     "name": "borchestrationmanager"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/908d20bc-4d61-43c1-a5ee-a779c56dff01/service/borchestrationsite", 
+     "service": "https://10.247.59.2/service/borchestrationsite", 
+     "name": "borchestrationsite"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/908d20bc-4d61-43c1-a5ee-a779c56dff01/service/bsecnode", 
+     "service": "https://10.247.59.2/service/bsecnode", 
+     "name": "bsecnode"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/908d20bc-4d61-43c1-a5ee-a779c56dff01/service/bsecsite", 
+     "service": "https://10.247.59.2/service/bsecsite", 
+     "name": "bsecsite"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/908d20bc-4d61-43c1-a5ee-a779c56dff01/service/bsiteauditor", 
+     "service": "https://10.247.59.2/service/bsiteauditor", 
+     "name": "bsiteauditor"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/908d20bc-4d61-43c1-a5ee-a779c56dff01/service/bstoragemanager_3", 
+     "service": "https://10.247.59.2/service/bstoragemanager_3", 
+     "name": "bstoragemanager_3"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/908d20bc-4d61-43c1-a5ee-a779c56dff01/service/ddb_zookeeper_2", 
+     "service": "https://10.247.59.2/service/ddb_zookeeper_2", 
+     "name": "ddb_zookeeper_2"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/908d20bc-4d61-43c1-a5ee-a779c56dff01/service/diamond", 
+     "service": "https://10.247.59.2/service/diamond", 
+     "name": "diamond"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/908d20bc-4d61-43c1-a5ee-a779c56dff01/service/firewall", 
+     "service": "https://10.247.59.2/service/firewall", 
+     "name": "firewall"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/908d20bc-4d61-43c1-a5ee-a779c56dff01/service/flow-engine", 
+     "service": "https://10.247.59.2/service/flow-engine", 
+     "name": "flow-engine"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/908d20bc-4d61-43c1-a5ee-a779c56dff01/service/gluster_server", 
+     "service": "https://10.247.59.2/service/gluster_server", 
+     "name": "gluster_server"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/908d20bc-4d61-43c1-a5ee-a779c56dff01/service/grub_configuration", 
+     "service": "https://10.247.59.2/service/grub_configuration", 
+     "name": "grub_configuration"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/908d20bc-4d61-43c1-a5ee-a779c56dff01/service/lldp", 
+     "service": "https://10.247.59.2/service/lldp", 
+     "name": "lldp"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/908d20bc-4d61-43c1-a5ee-a779c56dff01/service/nosql_bic_reload", 
+     "service": "https://10.247.59.2/service/nosql_bic_reload", 
+     "name": "nosql_bic_reload"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/908d20bc-4d61-43c1-a5ee-a779c56dff01/service/nosql_make_bootconfig", 
+     "service": "https://10.247.59.2/service/nosql_make_bootconfig", 
+     "name": "nosql_make_bootconfig"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/908d20bc-4d61-43c1-a5ee-a779c56dff01/service/nosql_shard_setup", 
+     "service": "https://10.247.59.2/service/nosql_shard_setup", 
+     "name": "nosql_shard_setup"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/908d20bc-4d61-43c1-a5ee-a779c56dff01/service/ntp-node-server", 
+     "service": "https://10.247.59.2/service/ntp-node-server", 
+     "name": "ntp-node-server"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/908d20bc-4d61-43c1-a5ee-a779c56dff01/service/ossec-client", 
+     "service": "https://10.247.59.2/service/ossec-client", 
+     "name": "ossec-client"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/908d20bc-4d61-43c1-a5ee-a779c56dff01/service/primary_dns_ip", 
+     "service": "https://10.247.59.2/service/primary_dns_ip", 
+     "name": "primary_dns_ip"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/908d20bc-4d61-43c1-a5ee-a779c56dff01/service/proxy_setup", 
+     "service": "https://10.247.59.2/service/proxy_setup", 
+     "name": "proxy_setup"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/908d20bc-4d61-43c1-a5ee-a779c56dff01/service/rabbitmq_1", 
+     "service": "https://10.247.59.2/service/rabbitmq_1", 
+     "name": "rabbitmq_1"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/908d20bc-4d61-43c1-a5ee-a779c56dff01/service/rsyslog-site", 
+     "service": "https://10.247.59.2/service/rsyslog-site", 
+     "name": "rsyslog-site"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/908d20bc-4d61-43c1-a5ee-a779c56dff01/service/selinux", 
+     "service": "https://10.247.59.2/service/selinux", 
+     "name": "selinux"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/908d20bc-4d61-43c1-a5ee-a779c56dff01/service/snmpd-node", 
+     "service": "https://10.247.59.2/service/snmpd-node", 
+     "name": "snmpd-node"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/908d20bc-4d61-43c1-a5ee-a779c56dff01/service/sshd_configuration", 
+     "service": "https://10.247.59.2/service/sshd_configuration", 
+     "name": "sshd_configuration"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/908d20bc-4d61-43c1-a5ee-a779c56dff01/service/sslreload", 
+     "service": "https://10.247.59.2/service/sslreload", 
+     "name": "sslreload"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/908d20bc-4d61-43c1-a5ee-a779c56dff01/service/storage_config", 
+     "service": "https://10.247.59.2/service/storage_config", 
+     "name": "storage_config"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/908d20bc-4d61-43c1-a5ee-a779c56dff01/service/storage_node", 
+     "service": "https://10.247.59.2/service/storage_node", 
+     "name": "storage_node"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/908d20bc-4d61-43c1-a5ee-a779c56dff01/service/system_users", 
+     "service": "https://10.247.59.2/service/system_users", 
+     "name": "system_users"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/908d20bc-4d61-43c1-a5ee-a779c56dff01/service/traffic-control", 
+     "service": "https://10.247.59.2/service/traffic-control", 
+     "name": "traffic-control"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/908d20bc-4d61-43c1-a5ee-a779c56dff01/service/yum", 
+     "service": "https://10.247.59.2/service/yum", 
+     "name": "yum"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/908d20bc-4d61-43c1-a5ee-a779c56dff01/service/zookeeper_base", 
+     "service": "https://10.247.59.2/service/zookeeper_base", 
+     "name": "zookeeper_base"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/908d20bc-4d61-43c1-a5ee-a779c56dff01/service/zookeeper_ssl", 
+     "service": "https://10.247.59.2/service/zookeeper_ssl", 
+     "name": "zookeeper_ssl"
+    }
+   ], 
+   "properties": {
+    "/system/bic/prefer/buser": "1", 
+    "/system/bic/prefer/snmptrapd-site": "1", 
+    "/system/bic/prefer/nosql_br_endpoint": "1", 
+    "/system/bic/prefer/primary_dns_ip": "1", 
+    "/system/bic/prefer/frontend-nginx": "1", 
+    "/system/bic/prefer/dhcpd": "1", 
+    "/system/bic/prefer/storage_master": "1", 
+    "/system/bic/prefer/bevent": "1", 
+    "/system/bic/prefer/memcached": "1", 
+    "/system/bic/master": "1", 
+    "/system/bic/prefer/nosql_kill_orphan_sna": "1", 
+    "/system/bic/prefer/zookeeper_ssl": "1", 
+    "/system/bic/prefer/nosql_admin_endpoint": "1", 
+    "/system/bic/prefer/imagedata": "1", 
+    "/system/bic/prefer/bservicemanager": "1", 
+    "/system/bic/prefer/bdns_api_primary": "1", 
+    "/system/bic/prefer/rabbitmq_1": "1", 
+    "/system/bic/prefer/frontend-admin-nginx": "1", 
+    "/system/bic/prefer/rabbitmq_3": "1", 
+    "/system/bic/prefer/rabbitmq_2": "1", 
+    "/system/bic/prefer/gluster_server": "1", 
+    "/system/bic/prefer/ddb_zookeeper_3": "1", 
+    "/system/bic/prefer/ddb_zookeeper_2": "1", 
+    "/system/bic/prefer/ddb_zookeeper_1": "1", 
+    "/system/bic/prefer/graphite-web": "1", 
+    "/system/bic/prefer/nosql_bic_reload": "1", 
+    "/system/compute/hypervisor/xen": "1", 
+    "/system/bic/prefer/bnet": "1", 
+    "/system/bic/prefer/buserfront": "1", 
+    "/system/bic/prefer/storage_node": "1", 
+    "/system/bic/prefer/bauthfront": "1", 
+    "/system/bic/prefer/nosql_admin": "1", 
+    "/system/bic/prefer/storage_secondary": "1", 
+    "/system/bic/prefer/bservicesite": "1", 
+    "/system/bic/prefer/nosql_shard_setup": "1", 
+    "/system/bic/prefer/bdns_api_secondary": "1", 
+    "/system/bic/prefer/backend-nginx": "1", 
+    "/system/bic/prefer/rsyslog-site": "1", 
+    "/system/bic/prefer/gluster_mount": "1", 
+    "/system/bic/prefer/storage_metadata": "1", 
+    "/system/bic/prefer/bstorageworker_nfs_2": "1", 
+    "/system/nat/forwarder": "1", 
+    "/system/bic/prefer/tftpd": "1", 
+    "/system/bic/prefer/nosql_generate_traps": "1", 
+    "/system/bic/prefer/nosql_storage_node_agent": "1", 
+    "/system/bic/prefer/bauth": "1", 
+    "/system/bic/prefer/nosql_configure": "1", 
+    "/system/compute/allow_instances": "0", 
+    "/system/bic/prefer/bstorageworker_iscsi_101": "1", 
+    "/system/bic/prefer/bdatabaseshim": "1", 
+    "/system/bic/prefer/bmeteringsite": "1", 
+    "/system/bic/prefer/bfederated": "1", 
+    "/system/bic/prefer/bstorageworker_iscsi_102": "1", 
+    "/system/bic/prefer/carbon-cache": "1", 
+    "/system/bic/prefer/borchestrationmanager": "1", 
+    "/system/compute/placement/default": "1", 
+    "/system/bic/prefer/borchestrationsite": "1", 
+    "/system/bic/prefer/bimage": "1", 
+    "/system/bic/prefer/bsecsite": "1", 
+    "/system/bic/prefer/baws": "1", 
+    "/system/bic/prefer/zookeeper_base": "1", 
+    "/system/bic/prefer/nosql_make_bootconfig": "1", 
+    "/system/bic/prefer/storage_writable": "1", 
+    "/system/bic/prefer/bstorageworker_nfs_1": "1", 
+    "/system/bic/prefer/ntp-site-server": "1", 
+    "/system/bic/prefer/bsite": "1", 
+    "/system/bic/prefer/pxe-nginx": "1", 
+    "/system/bic/prefer/graphite-nginx": "1", 
+    "/system/bic/prefer/bdhcp": "1", 
+    "/system/bic/prefer/pxe-ip": "1", 
+    "/system/bic/prefer/bstoragemanager_2": "1", 
+    "/system/bic/prefer/bstoragemanager_3": "1", 
+    "/system/bic/prefer/bstoragemanager_1": "1"
+   }, 
+   "updating": false
+  }, 
+  {
+   "status": "active", 
+   "endpoint": "192.6.64.14", 
+   "node_resources": {
+    "available": {
+     "ram": 311, 
+     "load_avg_5": 121000.91, 
+     "instance_space": 128150147072, 
+     "image_space": 128150147072, 
+     "cpus": 0.0, 
+     "instances": 1048576, 
+     "shared_instance_image_device": true, 
+     "hdfs_space": 0, 
+     "data_space": 10643623936
+    }, 
+    "monitor_port": 35543, 
+    "total": {
+     "ram": 65535, 
+     "instance_space": 135215419392, 
+     "image_space": 135215419392, 
+     "cpus": 40, 
+     "data_space": 16910295040, 
+     "instances": 1048576, 
+     "hdfs_space": 0, 
+     "cores": 8, 
+     "sockets": 1
+    }
+   }, 
+   "uuid": "3da17159-da32-482c-8eff-2870a0facd82", 
+   "cluster": "192.6.64.0/24", 
+   "uri": "https://10.247.59.2/node/3da17159-da32-482c-8eff-2870a0facd82", 
+   "instances": [], 
+   "mac": "00:50:56:3f:01:04", 
+   "version": "initial", 
+   "ipmi_ip": "0.0.0.0", 
+   "load_metrics": {
+    "load_average": [
+     1.2, 
+     1.15, 
+     1.0
+    ], 
+    "memory": {
+     "swap_free": 3342332, 
+     "cached": 621608, 
+     "free": 60838360, 
+     "swap_total": 3342332, 
+     "total": 64674896, 
+     "buffers": 142544
+    }
+   }, 
+   "services": [
+    {
+     "uri": "https://10.247.59.2/node/3da17159-da32-482c-8eff-2870a0facd82/service/access-control", 
+     "service": "https://10.247.59.2/service/access-control", 
+     "name": "access-control"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/3da17159-da32-482c-8eff-2870a0facd82/service/banner", 
+     "service": "https://10.247.59.2/service/banner", 
+     "name": "banner"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/3da17159-da32-482c-8eff-2870a0facd82/service/bfederated", 
+     "service": "https://10.247.59.2/service/bfederated", 
+     "name": "bfederated"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/3da17159-da32-482c-8eff-2870a0facd82/service/bnatnode", 
+     "service": "https://10.247.59.2/service/bnatnode", 
+     "name": "bnatnode"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/3da17159-da32-482c-8eff-2870a0facd82/service/bnode", 
+     "service": "https://10.247.59.2/service/bnode", 
+     "name": "bnode"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/3da17159-da32-482c-8eff-2870a0facd82/service/bsecnode", 
+     "service": "https://10.247.59.2/service/bsecnode", 
+     "name": "bsecnode"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/3da17159-da32-482c-8eff-2870a0facd82/service/bservicemanager", 
+     "service": "https://10.247.59.2/service/bservicemanager", 
+     "name": "bservicemanager"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/3da17159-da32-482c-8eff-2870a0facd82/service/bstoragemanager_2", 
+     "service": "https://10.247.59.2/service/bstoragemanager_2", 
+     "name": "bstoragemanager_2"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/3da17159-da32-482c-8eff-2870a0facd82/service/bstorageworker_iscsi_102", 
+     "service": "https://10.247.59.2/service/bstorageworker_iscsi_102", 
+     "name": "bstorageworker_iscsi_102"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/3da17159-da32-482c-8eff-2870a0facd82/service/bstorageworker_nfs_2", 
+     "service": "https://10.247.59.2/service/bstorageworker_nfs_2", 
+     "name": "bstorageworker_nfs_2"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/3da17159-da32-482c-8eff-2870a0facd82/service/buserfront", 
+     "service": "https://10.247.59.2/service/buserfront", 
+     "name": "buserfront"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/3da17159-da32-482c-8eff-2870a0facd82/service/diamond", 
+     "service": "https://10.247.59.2/service/diamond", 
+     "name": "diamond"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/3da17159-da32-482c-8eff-2870a0facd82/service/firewall", 
+     "service": "https://10.247.59.2/service/firewall", 
+     "name": "firewall"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/3da17159-da32-482c-8eff-2870a0facd82/service/flow-engine", 
+     "service": "https://10.247.59.2/service/flow-engine", 
+     "name": "flow-engine"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/3da17159-da32-482c-8eff-2870a0facd82/service/grub_configuration", 
+     "service": "https://10.247.59.2/service/grub_configuration", 
+     "name": "grub_configuration"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/3da17159-da32-482c-8eff-2870a0facd82/service/lldp", 
+     "service": "https://10.247.59.2/service/lldp", 
+     "name": "lldp"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/3da17159-da32-482c-8eff-2870a0facd82/service/nosql_admin", 
+     "service": "https://10.247.59.2/service/nosql_admin", 
+     "name": "nosql_admin"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/3da17159-da32-482c-8eff-2870a0facd82/service/nosql_admin_endpoint", 
+     "service": "https://10.247.59.2/service/nosql_admin_endpoint", 
+     "name": "nosql_admin_endpoint"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/3da17159-da32-482c-8eff-2870a0facd82/service/nosql_bic_reload", 
+     "service": "https://10.247.59.2/service/nosql_bic_reload", 
+     "name": "nosql_bic_reload"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/3da17159-da32-482c-8eff-2870a0facd82/service/nosql_generate_traps", 
+     "service": "https://10.247.59.2/service/nosql_generate_traps", 
+     "name": "nosql_generate_traps"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/3da17159-da32-482c-8eff-2870a0facd82/service/nosql_make_bootconfig", 
+     "service": "https://10.247.59.2/service/nosql_make_bootconfig", 
+     "name": "nosql_make_bootconfig"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/3da17159-da32-482c-8eff-2870a0facd82/service/nosql_shard_setup", 
+     "service": "https://10.247.59.2/service/nosql_shard_setup", 
+     "name": "nosql_shard_setup"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/3da17159-da32-482c-8eff-2870a0facd82/service/nosql_storage_node_agent", 
+     "service": "https://10.247.59.2/service/nosql_storage_node_agent", 
+     "name": "nosql_storage_node_agent"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/3da17159-da32-482c-8eff-2870a0facd82/service/ntp-node-server", 
+     "service": "https://10.247.59.2/service/ntp-node-server", 
+     "name": "ntp-node-server"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/3da17159-da32-482c-8eff-2870a0facd82/service/ossec-client", 
+     "service": "https://10.247.59.2/service/ossec-client", 
+     "name": "ossec-client"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/3da17159-da32-482c-8eff-2870a0facd82/service/proxy_setup", 
+     "service": "https://10.247.59.2/service/proxy_setup", 
+     "name": "proxy_setup"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/3da17159-da32-482c-8eff-2870a0facd82/service/selinux", 
+     "service": "https://10.247.59.2/service/selinux", 
+     "name": "selinux"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/3da17159-da32-482c-8eff-2870a0facd82/service/snmpd-node", 
+     "service": "https://10.247.59.2/service/snmpd-node", 
+     "name": "snmpd-node"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/3da17159-da32-482c-8eff-2870a0facd82/service/sshd_configuration", 
+     "service": "https://10.247.59.2/service/sshd_configuration", 
+     "name": "sshd_configuration"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/3da17159-da32-482c-8eff-2870a0facd82/service/sslreload", 
+     "service": "https://10.247.59.2/service/sslreload", 
+     "name": "sslreload"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/3da17159-da32-482c-8eff-2870a0facd82/service/storage_config", 
+     "service": "https://10.247.59.2/service/storage_config", 
+     "name": "storage_config"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/3da17159-da32-482c-8eff-2870a0facd82/service/system_users", 
+     "service": "https://10.247.59.2/service/system_users", 
+     "name": "system_users"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/3da17159-da32-482c-8eff-2870a0facd82/service/traffic-control", 
+     "service": "https://10.247.59.2/service/traffic-control", 
+     "name": "traffic-control"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/3da17159-da32-482c-8eff-2870a0facd82/service/yum", 
+     "service": "https://10.247.59.2/service/yum", 
+     "name": "yum"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/3da17159-da32-482c-8eff-2870a0facd82/service/zookeeper_observer", 
+     "service": "https://10.247.59.2/service/zookeeper_observer", 
+     "name": "zookeeper_observer"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/3da17159-da32-482c-8eff-2870a0facd82/service/zookeeper_ssl", 
+     "service": "https://10.247.59.2/service/zookeeper_ssl", 
+     "name": "zookeeper_ssl"
+    }
+   ], 
+   "properties": {
+    "/system/bic/prefer/buser": "1", 
+    "/system/bic/prefer/snmptrapd-site": "1", 
+    "/system/bic/prefer/nosql_br_endpoint": "1", 
+    "/system/bic/prefer/primary_dns_ip": "1", 
+    "/system/bic/prefer/frontend-nginx": "1", 
+    "/system/bic/prefer/dhcpd": "1", 
+    "/system/bic/prefer/storage_master": "1", 
+    "/system/bic/prefer/bevent": "1", 
+    "/system/bic/prefer/memcached": "1", 
+    "/system/bic/master": "1", 
+    "/system/bic/prefer/nosql_kill_orphan_sna": "1", 
+    "/system/bic/prefer/zookeeper_ssl": "1", 
+    "/system/bic/prefer/nosql_admin_endpoint": "1", 
+    "/system/bic/prefer/imagedata": "1", 
+    "/system/bic/prefer/bservicemanager": "1", 
+    "/system/bic/prefer/bdns_api_primary": "1", 
+    "/system/bic/prefer/rabbitmq_1": "1", 
+    "/system/bic/prefer/frontend-admin-nginx": "1", 
+    "/system/bic/prefer/rabbitmq_3": "1", 
+    "/system/bic/prefer/rabbitmq_2": "1", 
+    "/system/bic/prefer/gluster_server": "1", 
+    "/system/bic/prefer/ddb_zookeeper_3": "1", 
+    "/system/bic/prefer/ddb_zookeeper_2": "1", 
+    "/system/bic/prefer/ddb_zookeeper_1": "1", 
+    "/system/bic/prefer/graphite-web": "1", 
+    "/system/bic/prefer/nosql_bic_reload": "1", 
+    "/system/compute/hypervisor/xen": "1", 
+    "/system/bic/prefer/bnet": "1", 
+    "/system/bic/prefer/buserfront": "1", 
+    "/system/bic/prefer/storage_node": "1", 
+    "/system/bic/prefer/bauthfront": "1", 
+    "/system/bic/prefer/nosql_admin": "1", 
+    "/system/bic/prefer/storage_secondary": "1", 
+    "/system/bic/prefer/bservicesite": "1", 
+    "/system/bic/prefer/nosql_shard_setup": "1", 
+    "/system/bic/prefer/bdns_api_secondary": "1", 
+    "/system/bic/prefer/backend-nginx": "1", 
+    "/system/bic/prefer/rsyslog-site": "1", 
+    "/system/bic/prefer/gluster_mount": "1", 
+    "/system/bic/prefer/storage_metadata": "1", 
+    "/system/bic/prefer/bstorageworker_nfs_2": "1", 
+    "/system/nat/forwarder": "1", 
+    "/system/bic/prefer/tftpd": "1", 
+    "/system/bic/prefer/nosql_generate_traps": "1", 
+    "/system/bic/prefer/nosql_storage_node_agent": "1", 
+    "/system/bic/prefer/bauth": "1", 
+    "/system/bic/prefer/nosql_configure": "1", 
+    "/system/compute/allow_instances": "0", 
+    "/system/bic/prefer/bstorageworker_iscsi_101": "1", 
+    "/system/bic/prefer/bdatabaseshim": "1", 
+    "/system/bic/prefer/bmeteringsite": "1", 
+    "/system/bic/prefer/bfederated": "1", 
+    "/system/bic/prefer/bstorageworker_iscsi_102": "1", 
+    "/system/bic/prefer/carbon-cache": "1", 
+    "/system/bic/prefer/borchestrationmanager": "1", 
+    "/system/compute/placement/default": "1", 
+    "/system/bic/prefer/borchestrationsite": "1", 
+    "/system/bic/prefer/bimage": "1", 
+    "/system/bic/prefer/bsecsite": "1", 
+    "/system/bic/prefer/baws": "1", 
+    "/system/bic/prefer/zookeeper_base": "1", 
+    "/system/bic/prefer/nosql_make_bootconfig": "1", 
+    "/system/bic/prefer/storage_writable": "1", 
+    "/system/bic/prefer/bstorageworker_nfs_1": "1", 
+    "/system/bic/prefer/ntp-site-server": "1", 
+    "/system/bic/prefer/bsite": "1", 
+    "/system/bic/prefer/pxe-nginx": "1", 
+    "/system/bic/prefer/graphite-nginx": "1", 
+    "/system/bic/prefer/bdhcp": "1", 
+    "/system/bic/prefer/pxe-ip": "1", 
+    "/system/bic/prefer/bstoragemanager_2": "1", 
+    "/system/bic/prefer/bstoragemanager_3": "1", 
+    "/system/bic/prefer/bstoragemanager_1": "1"
+   }, 
+   "updating": false
+  }, 
+  {
+   "status": "active", 
+   "endpoint": "192.6.80.13", 
+   "node_resources": {
+    "available": {
+     "ram": 58679, 
+     "load_avg_5": 1000.91, 
+     "instance_space": 400936923136, 
+     "image_space": 400936923136, 
+     "cpus": 30.0, 
+     "instances": 1048576, 
+     "shared_instance_image_device": true, 
+     "hdfs_space": 0, 
+     "data_space": 10660737024
+    }, 
+    "monitor_port": 43134, 
+    "total": {
+     "ram": 65535, 
+     "instance_space": 528379994112, 
+     "image_space": 528379994112, 
+     "cpus": 60, 
+     "data_space": 16910295040, 
+     "instances": 1048576, 
+     "hdfs_space": 0, 
+     "cores": 6, 
+     "sockets": 1
+    }
+   }, 
+   "uuid": "de00f2f7-98af-49c6-852c-9b811c0d483c", 
+   "cluster": "192.6.80.0/24", 
+   "uri": "https://10.247.59.2/node/de00f2f7-98af-49c6-852c-9b811c0d483c", 
+   "instances": [], 
+   "mac": "00:50:56:8b:30:a0", 
+   "version": null, 
+   "ipmi_ip": "0.0.0.0", 
+   "load_metrics": {
+    "load_average": [
+     0.99, 
+     0.68, 
+     0.67
+    ], 
+    "memory": {
+     "swap_free": 327676, 
+     "cached": 540312, 
+     "free": 4722364, 
+     "swap_total": 327676, 
+     "total": 5842036, 
+     "buffers": 52564
+    }
+   }, 
+   "services": [
+    {
+     "uri": "https://10.247.59.2/node/de00f2f7-98af-49c6-852c-9b811c0d483c/service/access-control", 
+     "service": "https://10.247.59.2/service/access-control", 
+     "name": "access-control"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/de00f2f7-98af-49c6-852c-9b811c0d483c/service/banner", 
+     "service": "https://10.247.59.2/service/banner", 
+     "name": "banner"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/de00f2f7-98af-49c6-852c-9b811c0d483c/service/bdns_0", 
+     "service": "https://10.247.59.2/service/bdns_0", 
+     "name": "bdns_0"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/de00f2f7-98af-49c6-852c-9b811c0d483c/service/bdns_ip_0", 
+     "service": "https://10.247.59.2/service/bdns_ip_0", 
+     "name": "bdns_ip_0"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/de00f2f7-98af-49c6-852c-9b811c0d483c/service/bnatnode", 
+     "service": "https://10.247.59.2/service/bnatnode", 
+     "name": "bnatnode"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/de00f2f7-98af-49c6-852c-9b811c0d483c/service/bnode", 
+     "service": "https://10.247.59.2/service/bnode", 
+     "name": "bnode"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/de00f2f7-98af-49c6-852c-9b811c0d483c/service/bsecnode", 
+     "service": "https://10.247.59.2/service/bsecnode", 
+     "name": "bsecnode"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/de00f2f7-98af-49c6-852c-9b811c0d483c/service/diamond", 
+     "service": "https://10.247.59.2/service/diamond", 
+     "name": "diamond"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/de00f2f7-98af-49c6-852c-9b811c0d483c/service/firewall", 
+     "service": "https://10.247.59.2/service/firewall", 
+     "name": "firewall"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/de00f2f7-98af-49c6-852c-9b811c0d483c/service/flow-engine", 
+     "service": "https://10.247.59.2/service/flow-engine", 
+     "name": "flow-engine"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/de00f2f7-98af-49c6-852c-9b811c0d483c/service/grub_configuration", 
+     "service": "https://10.247.59.2/service/grub_configuration", 
+     "name": "grub_configuration"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/de00f2f7-98af-49c6-852c-9b811c0d483c/service/lldp", 
+     "service": "https://10.247.59.2/service/lldp", 
+     "name": "lldp"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/de00f2f7-98af-49c6-852c-9b811c0d483c/service/proxy_setup", 
+     "service": "https://10.247.59.2/service/proxy_setup", 
+     "name": "proxy_setup"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/de00f2f7-98af-49c6-852c-9b811c0d483c/service/selinux", 
+     "service": "https://10.247.59.2/service/selinux", 
+     "name": "selinux"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/de00f2f7-98af-49c6-852c-9b811c0d483c/service/snmpd-node", 
+     "service": "https://10.247.59.2/service/snmpd-node", 
+     "name": "snmpd-node"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/de00f2f7-98af-49c6-852c-9b811c0d483c/service/sshd_configuration", 
+     "service": "https://10.247.59.2/service/sshd_configuration", 
+     "name": "sshd_configuration"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/de00f2f7-98af-49c6-852c-9b811c0d483c/service/sslreload", 
+     "service": "https://10.247.59.2/service/sslreload", 
+     "name": "sslreload"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/de00f2f7-98af-49c6-852c-9b811c0d483c/service/storage_config", 
+     "service": "https://10.247.59.2/service/storage_config", 
+     "name": "storage_config"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/de00f2f7-98af-49c6-852c-9b811c0d483c/service/system_users", 
+     "service": "https://10.247.59.2/service/system_users", 
+     "name": "system_users"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/de00f2f7-98af-49c6-852c-9b811c0d483c/service/traffic-control", 
+     "service": "https://10.247.59.2/service/traffic-control", 
+     "name": "traffic-control"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/de00f2f7-98af-49c6-852c-9b811c0d483c/service/yum", 
+     "service": "https://10.247.59.2/service/yum", 
+     "name": "yum"
+    }
+   ], 
+   "properties": {
+    "/system/bic/no/bsite": "1", 
+    "/system/bic/no/buserfront": "1", 
+    "/system/bic/no/graphite-nginx": "1", 
+    "/system/bic/no/bstorageworker_iscsi_101": "1", 
+    "/system/bic/no/nosql_configure": "1", 
+    "/system/bic/no/bdhcp": "1", 
+    "/system/bic/master": "1", 
+    "/system/bic/no/nosql_make_bootconfig": "1", 
+    "/system/bic/no/pxe-ip": "1", 
+    "/system/bic/no/nosql_br_endpoint": "1", 
+    "/system/bic/no/nosql_kill_orphan_sna": "1", 
+    "/system/bic/no/primary_dns_ip": "1", 
+    "/system/bic/no/bservicesite": "1", 
+    "/system/bic/no/borchestrationmanager": "1", 
+    "/system/bic/no/frontend-nginx": "1", 
+    "/system/bic/no/bnet": "1", 
+    "/system/bic/no/nosql_admin": "1", 
+    "/system/bic/no/bsecsite": "1", 
+    "/system/bic/no/storage_metadata": "1", 
+    "/system/bic/no/bdns_api_primary": "1", 
+    "/system/bic/no/storage_writable": "1", 
+    "/system/bic/no/bauthfront": "1", 
+    "/system/bic/no/storage_master": "1", 
+    "/system/bic/no/bfederated": "1", 
+    "/system/bic/no/bmeteringsite": "1", 
+    "/system/bic/no/imagedata": "1", 
+    "/system/bic/no/carbon-cache": "1", 
+    "/system/bic/no/backend-nginx": "1", 
+    "/system/bic/no/nosql_generate_traps": "1", 
+    "/system/bic/no/zookeeper_base": "1", 
+    "/system/bic/no/gluster_mount": "1", 
+    "/system/bic/no/nosql_storage_node_agent": "1", 
+    "/system/bic/no/bstoragemanager_1": "1", 
+    "/system/bic/no/bevent": "1", 
+    "/system/bic/no/bstoragemanager_3": "1", 
+    "/system/bic/no/memcached": "1", 
+    "/system/bic/no/rabbitmq_2": "1", 
+    "/system/compute/allow_instances": "1", 
+    "/system/bic/no/bimage": "1", 
+    "/system/bic/no/nosql_shard_setup": "1", 
+    "/system/bic/no/bstoragemanager_2": "1", 
+    "/system/bic/no/zookeeper_ssl": "1", 
+    "/system/bic/no/pxe-nginx": "1", 
+    "/system/bic/no/bstorageworker_iscsi_102": "1", 
+    "/system/bic/no/borchestrationsite": "1", 
+    "/system/bic/no/nosql_bic_reload": "1", 
+    "/system/compute/hypervisor/xen": "1", 
+    "/system/bic/no/buser": "1", 
+    "/system/bic/no/storage_node": "1", 
+    "/system/bic/no/bservicemanager": "1", 
+    "/system/compute/placement/default": "1", 
+    "/system/bic/no/gluster_server": "1", 
+    "/system/bic/no/bdatabaseshim": "1", 
+    "/system/bic/no/bauth": "1", 
+    "/system/bic/no/baws": "1", 
+    "/system/bic/no/ddb_zookeeper_1": "1", 
+    "/system/bic/no/ddb_zookeeper_2": "1", 
+    "/system/bic/no/ddb_zookeeper_3": "1", 
+    "/system/bic/no/frontend-admin-nginx": "1", 
+    "/system/bic/no/dhcpd": "1", 
+    "/system/bic/no/tftpd": "1", 
+    "/system/bic/no/snmptrapd-site": "1", 
+    "/system/bic/no/graphite-web": "1", 
+    "/system/bic/no/rabbitmq_1": "1", 
+    "/system/bic/no/ntp-site-server": "1", 
+    "/system/bic/no/rabbitmq_3": "1", 
+    "/system/bic/no/bstorageworker_nfs_1": "1", 
+    "/system/bic/no/rsyslog-site": "1", 
+    "/system/bic/no/bdns_api_secondary": "1", 
+    "/system/bic/no/bstorageworker_nfs_2": "1", 
+    "/system/bic/no/nosql_admin_endpoint": "1", 
+    "/system/bic/no/storage_secondary": "1"
+   }, 
+   "updating": false
+  }, 
+  {
+   "status": "active", 
+   "endpoint": "192.6.64.15", 
+   "node_resources": {
+    "available": {
+     "ram": 311, 
+     "load_avg_5": 135000.87, 
+     "instance_space": 128150151168, 
+     "image_space": 128150151168, 
+     "cpus": 0.0, 
+     "instances": 1048576, 
+     "shared_instance_image_device": true, 
+     "hdfs_space": 33091215360, 
+     "data_space": 10642526208
+    }, 
+    "monitor_port": 39240, 
+    "total": {
+     "ram": 65535, 
+     "instance_space": 135215419392, 
+     "image_space": 135215419392, 
+     "cpus": 40, 
+     "data_space": 16910295040, 
+     "instances": 1048576, 
+     "hdfs_space": 33091399680, 
+     "cores": 8, 
+     "sockets": 1
+    }
+   }, 
+   "uuid": "74535186-a278-4e41-bf67-d27746688225", 
+   "cluster": "192.6.64.0/24", 
+   "uri": "https://10.247.59.2/node/74535186-a278-4e41-bf67-d27746688225", 
+   "instances": [], 
+   "mac": "00:50:56:3f:01:05", 
+   "version": "initial", 
+   "ipmi_ip": "0.0.0.0", 
+   "load_metrics": {
+    "load_average": [
+     1.19, 
+     0.98, 
+     1.08
+    ], 
+    "memory": {
+     "swap_free": 3342332, 
+     "cached": 313904, 
+     "free": 60470188, 
+     "swap_total": 3342332, 
+     "total": 64674896, 
+     "buffers": 157488
+    }
+   }, 
+   "services": [
+    {
+     "uri": "https://10.247.59.2/node/74535186-a278-4e41-bf67-d27746688225/service/access-control", 
+     "service": "https://10.247.59.2/service/access-control", 
+     "name": "access-control"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/74535186-a278-4e41-bf67-d27746688225/service/backend-nginx", 
+     "service": "https://10.247.59.2/service/backend-nginx", 
+     "name": "backend-nginx"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/74535186-a278-4e41-bf67-d27746688225/service/backend-nginx-reload", 
+     "service": "https://10.247.59.2/service/backend-nginx-reload", 
+     "name": "backend-nginx-reload"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/74535186-a278-4e41-bf67-d27746688225/service/banner", 
+     "service": "https://10.247.59.2/service/banner", 
+     "name": "banner"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/74535186-a278-4e41-bf67-d27746688225/service/bauth", 
+     "service": "https://10.247.59.2/service/bauth", 
+     "name": "bauth"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/74535186-a278-4e41-bf67-d27746688225/service/bdatabaseshim", 
+     "service": "https://10.247.59.2/service/bdatabaseshim", 
+     "name": "bdatabaseshim"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/74535186-a278-4e41-bf67-d27746688225/service/bevent", 
+     "service": "https://10.247.59.2/service/bevent", 
+     "name": "bevent"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/74535186-a278-4e41-bf67-d27746688225/service/bimage", 
+     "service": "https://10.247.59.2/service/bimage", 
+     "name": "bimage"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/74535186-a278-4e41-bf67-d27746688225/service/bmeteringsite", 
+     "service": "https://10.247.59.2/service/bmeteringsite", 
+     "name": "bmeteringsite"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/74535186-a278-4e41-bf67-d27746688225/service/bnatnode", 
+     "service": "https://10.247.59.2/service/bnatnode", 
+     "name": "bnatnode"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/74535186-a278-4e41-bf67-d27746688225/service/bnet", 
+     "service": "https://10.247.59.2/service/bnet", 
+     "name": "bnet"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/74535186-a278-4e41-bf67-d27746688225/service/bnode", 
+     "service": "https://10.247.59.2/service/bnode", 
+     "name": "bnode"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/74535186-a278-4e41-bf67-d27746688225/service/borchestrationauditor", 
+     "service": "https://10.247.59.2/service/borchestrationauditor", 
+     "name": "borchestrationauditor"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/74535186-a278-4e41-bf67-d27746688225/service/borchestrationmanager", 
+     "service": "https://10.247.59.2/service/borchestrationmanager", 
+     "name": "borchestrationmanager"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/74535186-a278-4e41-bf67-d27746688225/service/bsecnode", 
+     "service": "https://10.247.59.2/service/bsecnode", 
+     "name": "bsecnode"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/74535186-a278-4e41-bf67-d27746688225/service/bsecsite", 
+     "service": "https://10.247.59.2/service/bsecsite", 
+     "name": "bsecsite"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/74535186-a278-4e41-bf67-d27746688225/service/bservicemanager", 
+     "service": "https://10.247.59.2/service/bservicemanager", 
+     "name": "bservicemanager"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/74535186-a278-4e41-bf67-d27746688225/service/bsite", 
+     "service": "https://10.247.59.2/service/bsite", 
+     "name": "bsite"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/74535186-a278-4e41-bf67-d27746688225/service/bstoragemanager_3", 
+     "service": "https://10.247.59.2/service/bstoragemanager_3", 
+     "name": "bstoragemanager_3"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/74535186-a278-4e41-bf67-d27746688225/service/buser", 
+     "service": "https://10.247.59.2/service/buser", 
+     "name": "buser"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/74535186-a278-4e41-bf67-d27746688225/service/diamond", 
+     "service": "https://10.247.59.2/service/diamond", 
+     "name": "diamond"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/74535186-a278-4e41-bf67-d27746688225/service/firewall", 
+     "service": "https://10.247.59.2/service/firewall", 
+     "name": "firewall"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/74535186-a278-4e41-bf67-d27746688225/service/flow-engine", 
+     "service": "https://10.247.59.2/service/flow-engine", 
+     "name": "flow-engine"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/74535186-a278-4e41-bf67-d27746688225/service/frontend-admin-nginx", 
+     "service": "https://10.247.59.2/service/frontend-admin-nginx", 
+     "name": "frontend-admin-nginx"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/74535186-a278-4e41-bf67-d27746688225/service/frontend-admin-nginx-reload", 
+     "service": "https://10.247.59.2/service/frontend-admin-nginx-reload", 
+     "name": "frontend-admin-nginx-reload"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/74535186-a278-4e41-bf67-d27746688225/service/frontend-nginx", 
+     "service": "https://10.247.59.2/service/frontend-nginx", 
+     "name": "frontend-nginx"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/74535186-a278-4e41-bf67-d27746688225/service/frontend-nginx-reload", 
+     "service": "https://10.247.59.2/service/frontend-nginx-reload", 
+     "name": "frontend-nginx-reload"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/74535186-a278-4e41-bf67-d27746688225/service/grub_configuration", 
+     "service": "https://10.247.59.2/service/grub_configuration", 
+     "name": "grub_configuration"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/74535186-a278-4e41-bf67-d27746688225/service/imagedata", 
+     "service": "https://10.247.59.2/service/imagedata", 
+     "name": "imagedata"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/74535186-a278-4e41-bf67-d27746688225/service/imagedataadmin", 
+     "service": "https://10.247.59.2/service/imagedataadmin", 
+     "name": "imagedataadmin"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/74535186-a278-4e41-bf67-d27746688225/service/lldp", 
+     "service": "https://10.247.59.2/service/lldp", 
+     "name": "lldp"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/74535186-a278-4e41-bf67-d27746688225/service/nosql_admin", 
+     "service": "https://10.247.59.2/service/nosql_admin", 
+     "name": "nosql_admin"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/74535186-a278-4e41-bf67-d27746688225/service/nosql_admin_endpoint", 
+     "service": "https://10.247.59.2/service/nosql_admin_endpoint", 
+     "name": "nosql_admin_endpoint"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/74535186-a278-4e41-bf67-d27746688225/service/nosql_bic_reload", 
+     "service": "https://10.247.59.2/service/nosql_bic_reload", 
+     "name": "nosql_bic_reload"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/74535186-a278-4e41-bf67-d27746688225/service/nosql_br_endpoint", 
+     "service": "https://10.247.59.2/service/nosql_br_endpoint", 
+     "name": "nosql_br_endpoint"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/74535186-a278-4e41-bf67-d27746688225/service/nosql_generate_traps", 
+     "service": "https://10.247.59.2/service/nosql_generate_traps", 
+     "name": "nosql_generate_traps"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/74535186-a278-4e41-bf67-d27746688225/service/nosql_make_bootconfig", 
+     "service": "https://10.247.59.2/service/nosql_make_bootconfig", 
+     "name": "nosql_make_bootconfig"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/74535186-a278-4e41-bf67-d27746688225/service/nosql_shard_setup", 
+     "service": "https://10.247.59.2/service/nosql_shard_setup", 
+     "name": "nosql_shard_setup"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/74535186-a278-4e41-bf67-d27746688225/service/nosql_storage_node_agent", 
+     "service": "https://10.247.59.2/service/nosql_storage_node_agent", 
+     "name": "nosql_storage_node_agent"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/74535186-a278-4e41-bf67-d27746688225/service/ntp-node-server", 
+     "service": "https://10.247.59.2/service/ntp-node-server", 
+     "name": "ntp-node-server"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/74535186-a278-4e41-bf67-d27746688225/service/ntp-site-server", 
+     "service": "https://10.247.59.2/service/ntp-site-server", 
+     "name": "ntp-site-server"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/74535186-a278-4e41-bf67-d27746688225/service/ossec-client", 
+     "service": "https://10.247.59.2/service/ossec-client", 
+     "name": "ossec-client"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/74535186-a278-4e41-bf67-d27746688225/service/proxy_setup", 
+     "service": "https://10.247.59.2/service/proxy_setup", 
+     "name": "proxy_setup"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/74535186-a278-4e41-bf67-d27746688225/service/selinux", 
+     "service": "https://10.247.59.2/service/selinux", 
+     "name": "selinux"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/74535186-a278-4e41-bf67-d27746688225/service/snmpd-node", 
+     "service": "https://10.247.59.2/service/snmpd-node", 
+     "name": "snmpd-node"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/74535186-a278-4e41-bf67-d27746688225/service/sshd_configuration", 
+     "service": "https://10.247.59.2/service/sshd_configuration", 
+     "name": "sshd_configuration"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/74535186-a278-4e41-bf67-d27746688225/service/sslreload", 
+     "service": "https://10.247.59.2/service/sslreload", 
+     "name": "sslreload"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/74535186-a278-4e41-bf67-d27746688225/service/storage_config", 
+     "service": "https://10.247.59.2/service/storage_config", 
+     "name": "storage_config"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/74535186-a278-4e41-bf67-d27746688225/service/storage_node", 
+     "service": "https://10.247.59.2/service/storage_node", 
+     "name": "storage_node"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/74535186-a278-4e41-bf67-d27746688225/service/system_users", 
+     "service": "https://10.247.59.2/service/system_users", 
+     "name": "system_users"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/74535186-a278-4e41-bf67-d27746688225/service/traffic-control", 
+     "service": "https://10.247.59.2/service/traffic-control", 
+     "name": "traffic-control"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/74535186-a278-4e41-bf67-d27746688225/service/yum", 
+     "service": "https://10.247.59.2/service/yum", 
+     "name": "yum"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/74535186-a278-4e41-bf67-d27746688225/service/zookeeper_observer", 
+     "service": "https://10.247.59.2/service/zookeeper_observer", 
+     "name": "zookeeper_observer"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/74535186-a278-4e41-bf67-d27746688225/service/zookeeper_ssl", 
+     "service": "https://10.247.59.2/service/zookeeper_ssl", 
+     "name": "zookeeper_ssl"
+    }
+   ], 
+   "properties": {
+    "/system/bic/prefer/buser": "1", 
+    "/system/bic/prefer/snmptrapd-site": "1", 
+    "/system/bic/prefer/nosql_br_endpoint": "1", 
+    "/system/bic/prefer/primary_dns_ip": "1", 
+    "/system/bic/prefer/frontend-nginx": "1", 
+    "/system/bic/prefer/dhcpd": "1", 
+    "/system/bic/prefer/storage_master": "1", 
+    "/system/bic/prefer/bevent": "1", 
+    "/system/bic/prefer/memcached": "1", 
+    "/system/bic/master": "1", 
+    "/system/bic/prefer/nosql_kill_orphan_sna": "1", 
+    "/system/bic/prefer/zookeeper_ssl": "1", 
+    "/system/bic/prefer/nosql_admin_endpoint": "1", 
+    "/system/bic/prefer/imagedata": "1", 
+    "/system/bic/prefer/bservicemanager": "1", 
+    "/system/bic/prefer/bdns_api_primary": "1", 
+    "/system/bic/prefer/rabbitmq_1": "1", 
+    "/system/bic/prefer/frontend-admin-nginx": "1", 
+    "/system/bic/prefer/rabbitmq_3": "1", 
+    "/system/bic/prefer/rabbitmq_2": "1", 
+    "/system/bic/prefer/gluster_server": "1", 
+    "/system/bic/prefer/ddb_zookeeper_3": "1", 
+    "/system/bic/prefer/ddb_zookeeper_2": "1", 
+    "/system/bic/prefer/ddb_zookeeper_1": "1", 
+    "/system/bic/prefer/graphite-web": "1", 
+    "/system/bic/prefer/nosql_bic_reload": "1", 
+    "/system/compute/hypervisor/xen": "1", 
+    "/system/bic/prefer/bnet": "1", 
+    "/system/bic/prefer/buserfront": "1", 
+    "/system/bic/prefer/storage_node": "1", 
+    "/system/bic/prefer/bauthfront": "1", 
+    "/system/bic/prefer/nosql_admin": "1", 
+    "/system/bic/prefer/storage_secondary": "1", 
+    "/system/bic/prefer/bservicesite": "1", 
+    "/system/bic/prefer/nosql_shard_setup": "1", 
+    "/system/bic/prefer/bdns_api_secondary": "1", 
+    "/system/bic/prefer/backend-nginx": "1", 
+    "/system/bic/prefer/rsyslog-site": "1", 
+    "/system/bic/prefer/gluster_mount": "1", 
+    "/system/bic/prefer/storage_metadata": "1", 
+    "/system/bic/prefer/bstorageworker_nfs_2": "1", 
+    "/system/nat/forwarder": "1", 
+    "/system/bic/prefer/tftpd": "1", 
+    "/system/bic/prefer/nosql_generate_traps": "1", 
+    "/system/bic/prefer/nosql_storage_node_agent": "1", 
+    "/system/bic/prefer/bauth": "1", 
+    "/system/bic/prefer/nosql_configure": "1", 
+    "/system/compute/allow_instances": "0", 
+    "/system/bic/prefer/bstorageworker_iscsi_101": "1", 
+    "/system/bic/prefer/bdatabaseshim": "1", 
+    "/system/bic/prefer/bmeteringsite": "1", 
+    "/system/bic/prefer/bfederated": "1", 
+    "/system/bic/prefer/bstorageworker_iscsi_102": "1", 
+    "/system/bic/prefer/carbon-cache": "1", 
+    "/system/bic/prefer/borchestrationmanager": "1", 
+    "/system/compute/placement/default": "1", 
+    "/system/bic/prefer/borchestrationsite": "1", 
+    "/system/bic/prefer/bimage": "1", 
+    "/system/bic/prefer/bsecsite": "1", 
+    "/system/bic/prefer/baws": "1", 
+    "/system/bic/prefer/zookeeper_base": "1", 
+    "/system/bic/prefer/nosql_make_bootconfig": "1", 
+    "/system/bic/prefer/storage_writable": "1", 
+    "/system/bic/prefer/bstorageworker_nfs_1": "1", 
+    "/system/bic/prefer/ntp-site-server": "1", 
+    "/system/bic/prefer/bsite": "1", 
+    "/system/bic/prefer/pxe-nginx": "1", 
+    "/system/bic/prefer/graphite-nginx": "1", 
+    "/system/bic/prefer/bdhcp": "1", 
+    "/system/bic/prefer/pxe-ip": "1", 
+    "/system/bic/prefer/bstoragemanager_2": "1", 
+    "/system/bic/prefer/bstoragemanager_3": "1", 
+    "/system/bic/prefer/bstoragemanager_1": "1"
+   }, 
+   "updating": false
+  }, 
+  {
+   "status": "active", 
+   "endpoint": "192.6.64.17", 
+   "node_resources": {
+    "available": {
+     "ram": 311, 
+     "load_avg_5": 14002.63, 
+     "instance_space": 128147648512, 
+     "image_space": 128147648512, 
+     "cpus": 0.0, 
+     "instances": 1048576, 
+     "shared_instance_image_device": true, 
+     "hdfs_space": 33091219456, 
+     "data_space": 10641096704
+    }, 
+    "monitor_port": 43681, 
+    "total": {
+     "ram": 65535, 
+     "instance_space": 135215419392, 
+     "image_space": 135215419392, 
+     "cpus": 40, 
+     "data_space": 16910295040, 
+     "instances": 1048576, 
+     "hdfs_space": 33091399680, 
+     "cores": 8, 
+     "sockets": 1
+    }
+   }, 
+   "uuid": "51f5b489-37f7-452a-bc04-c310bca409f7", 
+   "cluster": "192.6.64.0/24", 
+   "uri": "https://10.247.59.2/node/51f5b489-37f7-452a-bc04-c310bca409f7", 
+   "instances": [], 
+   "mac": "00:50:56:3f:01:07", 
+   "version": "initial", 
+   "ipmi_ip": "0.0.0.0", 
+   "load_metrics": {
+    "load_average": [
+     0.73, 
+     0.99, 
+     1.2
+    ], 
+    "memory": {
+     "swap_free": 3342332, 
+     "cached": 1668116, 
+     "free": 61302916, 
+     "swap_total": 3342332, 
+     "total": 64674896, 
+     "buffers": 127548
+    }
+   }, 
+   "services": [
+    {
+     "uri": "https://10.247.59.2/node/51f5b489-37f7-452a-bc04-c310bca409f7/service/access-control", 
+     "service": "https://10.247.59.2/service/access-control", 
+     "name": "access-control"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/51f5b489-37f7-452a-bc04-c310bca409f7/service/banner", 
+     "service": "https://10.247.59.2/service/banner", 
+     "name": "banner"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/51f5b489-37f7-452a-bc04-c310bca409f7/service/bauthfront", 
+     "service": "https://10.247.59.2/service/bauthfront", 
+     "name": "bauthfront"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/51f5b489-37f7-452a-bc04-c310bca409f7/service/bfederated", 
+     "service": "https://10.247.59.2/service/bfederated", 
+     "name": "bfederated"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/51f5b489-37f7-452a-bc04-c310bca409f7/service/bimage", 
+     "service": "https://10.247.59.2/service/bimage", 
+     "name": "bimage"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/51f5b489-37f7-452a-bc04-c310bca409f7/service/bnatnode", 
+     "service": "https://10.247.59.2/service/bnatnode", 
+     "name": "bnatnode"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/51f5b489-37f7-452a-bc04-c310bca409f7/service/bnode", 
+     "service": "https://10.247.59.2/service/bnode", 
+     "name": "bnode"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/51f5b489-37f7-452a-bc04-c310bca409f7/service/bsecnode", 
+     "service": "https://10.247.59.2/service/bsecnode", 
+     "name": "bsecnode"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/51f5b489-37f7-452a-bc04-c310bca409f7/service/bstorageworker_nfs_1", 
+     "service": "https://10.247.59.2/service/bstorageworker_nfs_1", 
+     "name": "bstorageworker_nfs_1"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/51f5b489-37f7-452a-bc04-c310bca409f7/service/buser", 
+     "service": "https://10.247.59.2/service/buser", 
+     "name": "buser"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/51f5b489-37f7-452a-bc04-c310bca409f7/service/buserfront", 
+     "service": "https://10.247.59.2/service/buserfront", 
+     "name": "buserfront"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/51f5b489-37f7-452a-bc04-c310bca409f7/service/diamond", 
+     "service": "https://10.247.59.2/service/diamond", 
+     "name": "diamond"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/51f5b489-37f7-452a-bc04-c310bca409f7/service/firewall", 
+     "service": "https://10.247.59.2/service/firewall", 
+     "name": "firewall"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/51f5b489-37f7-452a-bc04-c310bca409f7/service/flow-engine", 
+     "service": "https://10.247.59.2/service/flow-engine", 
+     "name": "flow-engine"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/51f5b489-37f7-452a-bc04-c310bca409f7/service/grub_configuration", 
+     "service": "https://10.247.59.2/service/grub_configuration", 
+     "name": "grub_configuration"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/51f5b489-37f7-452a-bc04-c310bca409f7/service/lldp", 
+     "service": "https://10.247.59.2/service/lldp", 
+     "name": "lldp"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/51f5b489-37f7-452a-bc04-c310bca409f7/service/nosql_bic_reload", 
+     "service": "https://10.247.59.2/service/nosql_bic_reload", 
+     "name": "nosql_bic_reload"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/51f5b489-37f7-452a-bc04-c310bca409f7/service/nosql_generate_traps", 
+     "service": "https://10.247.59.2/service/nosql_generate_traps", 
+     "name": "nosql_generate_traps"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/51f5b489-37f7-452a-bc04-c310bca409f7/service/nosql_make_bootconfig", 
+     "service": "https://10.247.59.2/service/nosql_make_bootconfig", 
+     "name": "nosql_make_bootconfig"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/51f5b489-37f7-452a-bc04-c310bca409f7/service/nosql_shard_setup", 
+     "service": "https://10.247.59.2/service/nosql_shard_setup", 
+     "name": "nosql_shard_setup"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/51f5b489-37f7-452a-bc04-c310bca409f7/service/nosql_storage_node_agent", 
+     "service": "https://10.247.59.2/service/nosql_storage_node_agent", 
+     "name": "nosql_storage_node_agent"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/51f5b489-37f7-452a-bc04-c310bca409f7/service/ntp-node-server", 
+     "service": "https://10.247.59.2/service/ntp-node-server", 
+     "name": "ntp-node-server"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/51f5b489-37f7-452a-bc04-c310bca409f7/service/ossec-client", 
+     "service": "https://10.247.59.2/service/ossec-client", 
+     "name": "ossec-client"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/51f5b489-37f7-452a-bc04-c310bca409f7/service/proxy_setup", 
+     "service": "https://10.247.59.2/service/proxy_setup", 
+     "name": "proxy_setup"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/51f5b489-37f7-452a-bc04-c310bca409f7/service/rabbitmq_2", 
+     "service": "https://10.247.59.2/service/rabbitmq_2", 
+     "name": "rabbitmq_2"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/51f5b489-37f7-452a-bc04-c310bca409f7/service/selinux", 
+     "service": "https://10.247.59.2/service/selinux", 
+     "name": "selinux"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/51f5b489-37f7-452a-bc04-c310bca409f7/service/snmpd-node", 
+     "service": "https://10.247.59.2/service/snmpd-node", 
+     "name": "snmpd-node"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/51f5b489-37f7-452a-bc04-c310bca409f7/service/sshd_configuration", 
+     "service": "https://10.247.59.2/service/sshd_configuration", 
+     "name": "sshd_configuration"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/51f5b489-37f7-452a-bc04-c310bca409f7/service/sslreload", 
+     "service": "https://10.247.59.2/service/sslreload", 
+     "name": "sslreload"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/51f5b489-37f7-452a-bc04-c310bca409f7/service/storage_config", 
+     "service": "https://10.247.59.2/service/storage_config", 
+     "name": "storage_config"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/51f5b489-37f7-452a-bc04-c310bca409f7/service/storage_node", 
+     "service": "https://10.247.59.2/service/storage_node", 
+     "name": "storage_node"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/51f5b489-37f7-452a-bc04-c310bca409f7/service/system_users", 
+     "service": "https://10.247.59.2/service/system_users", 
+     "name": "system_users"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/51f5b489-37f7-452a-bc04-c310bca409f7/service/traffic-control", 
+     "service": "https://10.247.59.2/service/traffic-control", 
+     "name": "traffic-control"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/51f5b489-37f7-452a-bc04-c310bca409f7/service/yum", 
+     "service": "https://10.247.59.2/service/yum", 
+     "name": "yum"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/51f5b489-37f7-452a-bc04-c310bca409f7/service/zookeeper_ssl", 
+     "service": "https://10.247.59.2/service/zookeeper_ssl", 
+     "name": "zookeeper_ssl"
+    }
+   ], 
+   "properties": {
+    "/system/bic/prefer/buser": "1", 
+    "/system/bic/prefer/snmptrapd-site": "1", 
+    "/system/bic/prefer/nosql_br_endpoint": "1", 
+    "/system/bic/prefer/primary_dns_ip": "1", 
+    "/system/bic/prefer/frontend-nginx": "1", 
+    "/system/bic/prefer/dhcpd": "1", 
+    "/system/bic/prefer/storage_master": "1", 
+    "/system/bic/prefer/bevent": "1", 
+    "/system/bic/prefer/memcached": "1", 
+    "/system/bic/master": "1", 
+    "/system/bic/prefer/nosql_kill_orphan_sna": "1", 
+    "/system/bic/prefer/zookeeper_ssl": "1", 
+    "/system/bic/prefer/nosql_admin_endpoint": "1", 
+    "/system/bic/prefer/imagedata": "1", 
+    "/system/bic/prefer/bservicemanager": "1", 
+    "/system/bic/prefer/bdns_api_primary": "1", 
+    "/system/bic/prefer/rabbitmq_1": "1", 
+    "/system/bic/prefer/frontend-admin-nginx": "1", 
+    "/system/bic/prefer/rabbitmq_3": "1", 
+    "/system/bic/prefer/rabbitmq_2": "1", 
+    "/system/bic/prefer/gluster_server": "1", 
+    "/system/bic/prefer/ddb_zookeeper_3": "1", 
+    "/system/bic/prefer/ddb_zookeeper_2": "1", 
+    "/system/bic/prefer/ddb_zookeeper_1": "1", 
+    "/system/bic/prefer/graphite-web": "1", 
+    "/system/bic/prefer/nosql_bic_reload": "1", 
+    "/system/compute/hypervisor/xen": "1", 
+    "/system/bic/prefer/bnet": "1", 
+    "/system/bic/prefer/buserfront": "1", 
+    "/system/bic/prefer/storage_node": "1", 
+    "/system/bic/prefer/bauthfront": "1", 
+    "/system/bic/prefer/nosql_admin": "1", 
+    "/system/bic/prefer/storage_secondary": "1", 
+    "/system/bic/prefer/bservicesite": "1", 
+    "/system/bic/prefer/nosql_shard_setup": "1", 
+    "/system/bic/prefer/bdns_api_secondary": "1", 
+    "/system/bic/prefer/backend-nginx": "1", 
+    "/system/bic/prefer/rsyslog-site": "1", 
+    "/system/bic/prefer/gluster_mount": "1", 
+    "/system/bic/prefer/storage_metadata": "1", 
+    "/system/bic/prefer/bstorageworker_nfs_2": "1", 
+    "/system/nat/forwarder": "1", 
+    "/system/bic/prefer/tftpd": "1", 
+    "/system/bic/prefer/nosql_generate_traps": "1", 
+    "/system/bic/prefer/nosql_storage_node_agent": "1", 
+    "/system/bic/prefer/bauth": "1", 
+    "/system/bic/prefer/nosql_configure": "1", 
+    "/system/compute/allow_instances": "0", 
+    "/system/bic/prefer/bstorageworker_iscsi_101": "1", 
+    "/system/bic/prefer/bdatabaseshim": "1", 
+    "/system/bic/prefer/bmeteringsite": "1", 
+    "/system/bic/prefer/bfederated": "1", 
+    "/system/bic/prefer/bstorageworker_iscsi_102": "1", 
+    "/system/bic/prefer/carbon-cache": "1", 
+    "/system/bic/prefer/borchestrationmanager": "1", 
+    "/system/compute/placement/default": "1", 
+    "/system/bic/prefer/borchestrationsite": "1", 
+    "/system/bic/prefer/bimage": "1", 
+    "/system/bic/prefer/bsecsite": "1", 
+    "/system/bic/prefer/baws": "1", 
+    "/system/bic/prefer/zookeeper_base": "1", 
+    "/system/bic/prefer/nosql_make_bootconfig": "1", 
+    "/system/bic/prefer/storage_writable": "1", 
+    "/system/bic/prefer/bstorageworker_nfs_1": "1", 
+    "/system/bic/prefer/ntp-site-server": "1", 
+    "/system/bic/prefer/bsite": "1", 
+    "/system/bic/prefer/pxe-nginx": "1", 
+    "/system/bic/prefer/graphite-nginx": "1", 
+    "/system/bic/prefer/bdhcp": "1", 
+    "/system/bic/prefer/pxe-ip": "1", 
+    "/system/bic/prefer/bstoragemanager_2": "1", 
+    "/system/bic/prefer/bstoragemanager_3": "1", 
+    "/system/bic/prefer/bstoragemanager_1": "1"
+   }, 
+   "updating": false
+  }, 
+  {
+   "status": "active", 
+   "endpoint": "192.6.64.16", 
+   "node_resources": {
+    "available": {
+     "ram": 311, 
+     "load_avg_5": 31002.97, 
+     "instance_space": 128150147072, 
+     "image_space": 128150147072, 
+     "cpus": 0.0, 
+     "instances": 1048576, 
+     "shared_instance_image_device": true, 
+     "hdfs_space": 0, 
+     "data_space": 10643783680
+    }, 
+    "monitor_port": 41999, 
+    "total": {
+     "ram": 65535, 
+     "instance_space": 135215419392, 
+     "image_space": 135215419392, 
+     "cpus": 40, 
+     "data_space": 16910295040, 
+     "instances": 1048576, 
+     "hdfs_space": 0, 
+     "cores": 8, 
+     "sockets": 1
+    }
+   }, 
+   "uuid": "f7f72c4a-5cbf-4c7c-ba8d-b17db038efcf", 
+   "cluster": "192.6.64.0/24", 
+   "uri": "https://10.247.59.2/node/f7f72c4a-5cbf-4c7c-ba8d-b17db038efcf", 
+   "instances": [], 
+   "mac": "00:50:56:3f:01:06", 
+   "version": "initial", 
+   "ipmi_ip": "0.0.0.0", 
+   "load_metrics": {
+    "load_average": [
+     0.9, 
+     1.27, 
+     1.51
+    ], 
+    "memory": {
+     "swap_free": 3342332, 
+     "cached": 255272, 
+     "free": 61301556, 
+     "swap_total": 3342332, 
+     "total": 64674896, 
+     "buffers": 150620
+    }
+   }, 
+   "services": [
+    {
+     "uri": "https://10.247.59.2/node/f7f72c4a-5cbf-4c7c-ba8d-b17db038efcf/service/access-control", 
+     "service": "https://10.247.59.2/service/access-control", 
+     "name": "access-control"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/f7f72c4a-5cbf-4c7c-ba8d-b17db038efcf/service/banner", 
+     "service": "https://10.247.59.2/service/banner", 
+     "name": "banner"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/f7f72c4a-5cbf-4c7c-ba8d-b17db038efcf/service/bdatabaseshim", 
+     "service": "https://10.247.59.2/service/bdatabaseshim", 
+     "name": "bdatabaseshim"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/f7f72c4a-5cbf-4c7c-ba8d-b17db038efcf/service/bdhcp", 
+     "service": "https://10.247.59.2/service/bdhcp", 
+     "name": "bdhcp"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/f7f72c4a-5cbf-4c7c-ba8d-b17db038efcf/service/bevent", 
+     "service": "https://10.247.59.2/service/bevent", 
+     "name": "bevent"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/f7f72c4a-5cbf-4c7c-ba8d-b17db038efcf/service/bnatnode", 
+     "service": "https://10.247.59.2/service/bnatnode", 
+     "name": "bnatnode"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/f7f72c4a-5cbf-4c7c-ba8d-b17db038efcf/service/bnode", 
+     "service": "https://10.247.59.2/service/bnode", 
+     "name": "bnode"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/f7f72c4a-5cbf-4c7c-ba8d-b17db038efcf/service/bsecnode", 
+     "service": "https://10.247.59.2/service/bsecnode", 
+     "name": "bsecnode"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/f7f72c4a-5cbf-4c7c-ba8d-b17db038efcf/service/bstorageworker_iscsi_102", 
+     "service": "https://10.247.59.2/service/bstorageworker_iscsi_102", 
+     "name": "bstorageworker_iscsi_102"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/f7f72c4a-5cbf-4c7c-ba8d-b17db038efcf/service/dhcpd", 
+     "service": "https://10.247.59.2/service/dhcpd", 
+     "name": "dhcpd"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/f7f72c4a-5cbf-4c7c-ba8d-b17db038efcf/service/diamond", 
+     "service": "https://10.247.59.2/service/diamond", 
+     "name": "diamond"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/f7f72c4a-5cbf-4c7c-ba8d-b17db038efcf/service/firewall", 
+     "service": "https://10.247.59.2/service/firewall", 
+     "name": "firewall"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/f7f72c4a-5cbf-4c7c-ba8d-b17db038efcf/service/flow-engine", 
+     "service": "https://10.247.59.2/service/flow-engine", 
+     "name": "flow-engine"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/f7f72c4a-5cbf-4c7c-ba8d-b17db038efcf/service/grub_configuration", 
+     "service": "https://10.247.59.2/service/grub_configuration", 
+     "name": "grub_configuration"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/f7f72c4a-5cbf-4c7c-ba8d-b17db038efcf/service/lldp", 
+     "service": "https://10.247.59.2/service/lldp", 
+     "name": "lldp"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/f7f72c4a-5cbf-4c7c-ba8d-b17db038efcf/service/nosql_admin", 
+     "service": "https://10.247.59.2/service/nosql_admin", 
+     "name": "nosql_admin"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/f7f72c4a-5cbf-4c7c-ba8d-b17db038efcf/service/nosql_admin_endpoint", 
+     "service": "https://10.247.59.2/service/nosql_admin_endpoint", 
+     "name": "nosql_admin_endpoint"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/f7f72c4a-5cbf-4c7c-ba8d-b17db038efcf/service/nosql_bic_reload", 
+     "service": "https://10.247.59.2/service/nosql_bic_reload", 
+     "name": "nosql_bic_reload"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/f7f72c4a-5cbf-4c7c-ba8d-b17db038efcf/service/nosql_br_endpoint", 
+     "service": "https://10.247.59.2/service/nosql_br_endpoint", 
+     "name": "nosql_br_endpoint"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/f7f72c4a-5cbf-4c7c-ba8d-b17db038efcf/service/nosql_generate_traps", 
+     "service": "https://10.247.59.2/service/nosql_generate_traps", 
+     "name": "nosql_generate_traps"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/f7f72c4a-5cbf-4c7c-ba8d-b17db038efcf/service/nosql_make_bootconfig", 
+     "service": "https://10.247.59.2/service/nosql_make_bootconfig", 
+     "name": "nosql_make_bootconfig"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/f7f72c4a-5cbf-4c7c-ba8d-b17db038efcf/service/nosql_shard_setup", 
+     "service": "https://10.247.59.2/service/nosql_shard_setup", 
+     "name": "nosql_shard_setup"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/f7f72c4a-5cbf-4c7c-ba8d-b17db038efcf/service/nosql_storage_node_agent", 
+     "service": "https://10.247.59.2/service/nosql_storage_node_agent", 
+     "name": "nosql_storage_node_agent"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/f7f72c4a-5cbf-4c7c-ba8d-b17db038efcf/service/ntp-node-server", 
+     "service": "https://10.247.59.2/service/ntp-node-server", 
+     "name": "ntp-node-server"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/f7f72c4a-5cbf-4c7c-ba8d-b17db038efcf/service/ntp-site-server", 
+     "service": "https://10.247.59.2/service/ntp-site-server", 
+     "name": "ntp-site-server"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/f7f72c4a-5cbf-4c7c-ba8d-b17db038efcf/service/ossec-client", 
+     "service": "https://10.247.59.2/service/ossec-client", 
+     "name": "ossec-client"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/f7f72c4a-5cbf-4c7c-ba8d-b17db038efcf/service/proxy_setup", 
+     "service": "https://10.247.59.2/service/proxy_setup", 
+     "name": "proxy_setup"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/f7f72c4a-5cbf-4c7c-ba8d-b17db038efcf/service/pxe-ip", 
+     "service": "https://10.247.59.2/service/pxe-ip", 
+     "name": "pxe-ip"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/f7f72c4a-5cbf-4c7c-ba8d-b17db038efcf/service/pxe-nginx", 
+     "service": "https://10.247.59.2/service/pxe-nginx", 
+     "name": "pxe-nginx"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/f7f72c4a-5cbf-4c7c-ba8d-b17db038efcf/service/selinux", 
+     "service": "https://10.247.59.2/service/selinux", 
+     "name": "selinux"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/f7f72c4a-5cbf-4c7c-ba8d-b17db038efcf/service/snmpd-node", 
+     "service": "https://10.247.59.2/service/snmpd-node", 
+     "name": "snmpd-node"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/f7f72c4a-5cbf-4c7c-ba8d-b17db038efcf/service/sshd_configuration", 
+     "service": "https://10.247.59.2/service/sshd_configuration", 
+     "name": "sshd_configuration"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/f7f72c4a-5cbf-4c7c-ba8d-b17db038efcf/service/sslreload", 
+     "service": "https://10.247.59.2/service/sslreload", 
+     "name": "sslreload"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/f7f72c4a-5cbf-4c7c-ba8d-b17db038efcf/service/storage_config", 
+     "service": "https://10.247.59.2/service/storage_config", 
+     "name": "storage_config"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/f7f72c4a-5cbf-4c7c-ba8d-b17db038efcf/service/system_users", 
+     "service": "https://10.247.59.2/service/system_users", 
+     "name": "system_users"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/f7f72c4a-5cbf-4c7c-ba8d-b17db038efcf/service/tftpd", 
+     "service": "https://10.247.59.2/service/tftpd", 
+     "name": "tftpd"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/f7f72c4a-5cbf-4c7c-ba8d-b17db038efcf/service/traffic-control", 
+     "service": "https://10.247.59.2/service/traffic-control", 
+     "name": "traffic-control"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/f7f72c4a-5cbf-4c7c-ba8d-b17db038efcf/service/yum", 
+     "service": "https://10.247.59.2/service/yum", 
+     "name": "yum"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/f7f72c4a-5cbf-4c7c-ba8d-b17db038efcf/service/zookeeper_ssl", 
+     "service": "https://10.247.59.2/service/zookeeper_ssl", 
+     "name": "zookeeper_ssl"
+    }
+   ], 
+   "properties": {
+    "/system/bic/prefer/buser": "1", 
+    "/system/bic/prefer/snmptrapd-site": "1", 
+    "/system/bic/prefer/nosql_br_endpoint": "1", 
+    "/system/bic/prefer/primary_dns_ip": "1", 
+    "/system/bic/prefer/frontend-nginx": "1", 
+    "/system/bic/prefer/dhcpd": "1", 
+    "/system/bic/prefer/storage_master": "1", 
+    "/system/bic/prefer/bevent": "1", 
+    "/system/bic/prefer/memcached": "1", 
+    "/system/bic/master": "1", 
+    "/system/bic/prefer/nosql_kill_orphan_sna": "1", 
+    "/system/bic/prefer/zookeeper_ssl": "1", 
+    "/system/bic/prefer/nosql_admin_endpoint": "1", 
+    "/system/bic/prefer/imagedata": "1", 
+    "/system/bic/prefer/bservicemanager": "1", 
+    "/system/bic/prefer/bdns_api_primary": "1", 
+    "/system/bic/prefer/rabbitmq_1": "1", 
+    "/system/bic/prefer/frontend-admin-nginx": "1", 
+    "/system/bic/prefer/rabbitmq_3": "1", 
+    "/system/bic/prefer/rabbitmq_2": "1", 
+    "/system/bic/prefer/gluster_server": "1", 
+    "/system/bic/prefer/ddb_zookeeper_3": "1", 
+    "/system/bic/prefer/ddb_zookeeper_2": "1", 
+    "/system/bic/prefer/ddb_zookeeper_1": "1", 
+    "/system/bic/prefer/graphite-web": "1", 
+    "/system/bic/prefer/nosql_bic_reload": "1", 
+    "/system/compute/hypervisor/xen": "1", 
+    "/system/bic/prefer/bnet": "1", 
+    "/system/bic/prefer/buserfront": "1", 
+    "/system/bic/prefer/storage_node": "1", 
+    "/system/bic/prefer/bauthfront": "1", 
+    "/system/bic/prefer/nosql_admin": "1", 
+    "/system/bic/prefer/storage_secondary": "1", 
+    "/system/bic/prefer/bservicesite": "1", 
+    "/system/bic/prefer/nosql_shard_setup": "1", 
+    "/system/bic/prefer/bdns_api_secondary": "1", 
+    "/system/bic/prefer/backend-nginx": "1", 
+    "/system/bic/prefer/rsyslog-site": "1", 
+    "/system/bic/prefer/gluster_mount": "1", 
+    "/system/bic/prefer/storage_metadata": "1", 
+    "/system/bic/prefer/bstorageworker_nfs_2": "1", 
+    "/system/nat/forwarder": "1", 
+    "/system/bic/prefer/tftpd": "1", 
+    "/system/bic/prefer/nosql_generate_traps": "1", 
+    "/system/bic/prefer/nosql_storage_node_agent": "1", 
+    "/system/bic/prefer/bauth": "1", 
+    "/system/bic/prefer/nosql_configure": "1", 
+    "/system/compute/allow_instances": "0", 
+    "/system/bic/prefer/bstorageworker_iscsi_101": "1", 
+    "/system/bic/prefer/bdatabaseshim": "1", 
+    "/system/bic/prefer/bmeteringsite": "1", 
+    "/system/bic/prefer/bfederated": "1", 
+    "/system/bic/prefer/bstorageworker_iscsi_102": "1", 
+    "/system/bic/prefer/carbon-cache": "1", 
+    "/system/bic/prefer/borchestrationmanager": "1", 
+    "/system/compute/placement/default": "1", 
+    "/system/bic/prefer/borchestrationsite": "1", 
+    "/system/bic/prefer/bimage": "1", 
+    "/system/bic/prefer/bsecsite": "1", 
+    "/system/bic/prefer/baws": "1", 
+    "/system/bic/prefer/zookeeper_base": "1", 
+    "/system/bic/prefer/nosql_make_bootconfig": "1", 
+    "/system/bic/prefer/storage_writable": "1", 
+    "/system/bic/prefer/bstorageworker_nfs_1": "1", 
+    "/system/bic/prefer/ntp-site-server": "1", 
+    "/system/bic/prefer/bsite": "1", 
+    "/system/bic/prefer/pxe-nginx": "1", 
+    "/system/bic/prefer/graphite-nginx": "1", 
+    "/system/bic/prefer/bdhcp": "1", 
+    "/system/bic/prefer/pxe-ip": "1", 
+    "/system/bic/prefer/bstoragemanager_2": "1", 
+    "/system/bic/prefer/bstoragemanager_3": "1", 
+    "/system/bic/prefer/bstoragemanager_1": "1"
+   }, 
+   "updating": false
+  }, 
+  {
+   "status": "active", 
+   "endpoint": "192.6.64.13", 
+   "node_resources": {
+    "available": {
+     "ram": 311, 
+     "load_avg_5": 103501.02, 
+     "instance_space": 128147644416, 
+     "image_space": 128147644416, 
+     "cpus": 0.0, 
+     "instances": 1048576, 
+     "shared_instance_image_device": true, 
+     "hdfs_space": 33091207168, 
+     "data_space": 10656129024
+    }, 
+    "monitor_port": 37895, 
+    "total": {
+     "ram": 65535, 
+     "instance_space": 135215419392, 
+     "image_space": 135215419392, 
+     "cpus": 40, 
+     "data_space": 16910295040, 
+     "instances": 1048576, 
+     "hdfs_space": 33091399680, 
+     "cores": 8, 
+     "sockets": 1
+    }
+   }, 
+   "uuid": "07cccbfd-8e0f-4161-88a4-1f56dc1332ea", 
+   "cluster": "192.6.64.0/24", 
+   "uri": "https://10.247.59.2/node/07cccbfd-8e0f-4161-88a4-1f56dc1332ea", 
+   "instances": [], 
+   "mac": "00:50:56:3f:01:03", 
+   "version": "initial", 
+   "ipmi_ip": "0.0.0.0", 
+   "load_metrics": {
+    "load_average": [
+     0.39, 
+     0.52, 
+     0.66
+    ], 
+    "memory": {
+     "swap_free": 3342332, 
+     "cached": 1835336, 
+     "free": 60463512, 
+     "swap_total": 3342332, 
+     "total": 64674896, 
+     "buffers": 273816
+    }
+   }, 
+   "services": [
+    {
+     "uri": "https://10.247.59.2/node/07cccbfd-8e0f-4161-88a4-1f56dc1332ea/service/access-control", 
+     "service": "https://10.247.59.2/service/access-control", 
+     "name": "access-control"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/07cccbfd-8e0f-4161-88a4-1f56dc1332ea/service/banner", 
+     "service": "https://10.247.59.2/service/banner", 
+     "name": "banner"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/07cccbfd-8e0f-4161-88a4-1f56dc1332ea/service/bauth", 
+     "service": "https://10.247.59.2/service/bauth", 
+     "name": "bauth"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/07cccbfd-8e0f-4161-88a4-1f56dc1332ea/service/bcluster", 
+     "service": "https://10.247.59.2/service/bcluster", 
+     "name": "bcluster"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/07cccbfd-8e0f-4161-88a4-1f56dc1332ea/service/bdns_1", 
+     "service": "https://10.247.59.2/service/bdns_1", 
+     "name": "bdns_1"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/07cccbfd-8e0f-4161-88a4-1f56dc1332ea/service/bdns_ip_1", 
+     "service": "https://10.247.59.2/service/bdns_ip_1", 
+     "name": "bdns_ip_1"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/07cccbfd-8e0f-4161-88a4-1f56dc1332ea/service/bloghandler", 
+     "service": "https://10.247.59.2/service/bloghandler", 
+     "name": "bloghandler"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/07cccbfd-8e0f-4161-88a4-1f56dc1332ea/service/bmeteringsite", 
+     "service": "https://10.247.59.2/service/bmeteringsite", 
+     "name": "bmeteringsite"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/07cccbfd-8e0f-4161-88a4-1f56dc1332ea/service/bnatnode", 
+     "service": "https://10.247.59.2/service/bnatnode", 
+     "name": "bnatnode"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/07cccbfd-8e0f-4161-88a4-1f56dc1332ea/service/bnode", 
+     "service": "https://10.247.59.2/service/bnode", 
+     "name": "bnode"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/07cccbfd-8e0f-4161-88a4-1f56dc1332ea/service/bsecnode", 
+     "service": "https://10.247.59.2/service/bsecnode", 
+     "name": "bsecnode"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/07cccbfd-8e0f-4161-88a4-1f56dc1332ea/service/bservicesite", 
+     "service": "https://10.247.59.2/service/bservicesite", 
+     "name": "bservicesite"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/07cccbfd-8e0f-4161-88a4-1f56dc1332ea/service/bsitelauncher", 
+     "service": "https://10.247.59.2/service/bsitelauncher", 
+     "name": "bsitelauncher"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/07cccbfd-8e0f-4161-88a4-1f56dc1332ea/service/bstorageworker_nfs_2", 
+     "service": "https://10.247.59.2/service/bstorageworker_nfs_2", 
+     "name": "bstorageworker_nfs_2"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/07cccbfd-8e0f-4161-88a4-1f56dc1332ea/service/btraphandler", 
+     "service": "https://10.247.59.2/service/btraphandler", 
+     "name": "btraphandler"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/07cccbfd-8e0f-4161-88a4-1f56dc1332ea/service/carbon-cache", 
+     "service": "https://10.247.59.2/service/carbon-cache", 
+     "name": "carbon-cache"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/07cccbfd-8e0f-4161-88a4-1f56dc1332ea/service/ddb_zookeeper_3", 
+     "service": "https://10.247.59.2/service/ddb_zookeeper_3", 
+     "name": "ddb_zookeeper_3"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/07cccbfd-8e0f-4161-88a4-1f56dc1332ea/service/diamond", 
+     "service": "https://10.247.59.2/service/diamond", 
+     "name": "diamond"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/07cccbfd-8e0f-4161-88a4-1f56dc1332ea/service/firewall", 
+     "service": "https://10.247.59.2/service/firewall", 
+     "name": "firewall"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/07cccbfd-8e0f-4161-88a4-1f56dc1332ea/service/flow-engine", 
+     "service": "https://10.247.59.2/service/flow-engine", 
+     "name": "flow-engine"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/07cccbfd-8e0f-4161-88a4-1f56dc1332ea/service/gluster_server", 
+     "service": "https://10.247.59.2/service/gluster_server", 
+     "name": "gluster_server"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/07cccbfd-8e0f-4161-88a4-1f56dc1332ea/service/graphite-web", 
+     "service": "https://10.247.59.2/service/graphite-web", 
+     "name": "graphite-web"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/07cccbfd-8e0f-4161-88a4-1f56dc1332ea/service/grub_configuration", 
+     "service": "https://10.247.59.2/service/grub_configuration", 
+     "name": "grub_configuration"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/07cccbfd-8e0f-4161-88a4-1f56dc1332ea/service/lldp", 
+     "service": "https://10.247.59.2/service/lldp", 
+     "name": "lldp"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/07cccbfd-8e0f-4161-88a4-1f56dc1332ea/service/memcached", 
+     "service": "https://10.247.59.2/service/memcached", 
+     "name": "memcached"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/07cccbfd-8e0f-4161-88a4-1f56dc1332ea/service/memcached_ssl", 
+     "service": "https://10.247.59.2/service/memcached_ssl", 
+     "name": "memcached_ssl"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/07cccbfd-8e0f-4161-88a4-1f56dc1332ea/service/nosql_bic_reload", 
+     "service": "https://10.247.59.2/service/nosql_bic_reload", 
+     "name": "nosql_bic_reload"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/07cccbfd-8e0f-4161-88a4-1f56dc1332ea/service/nosql_make_bootconfig", 
+     "service": "https://10.247.59.2/service/nosql_make_bootconfig", 
+     "name": "nosql_make_bootconfig"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/07cccbfd-8e0f-4161-88a4-1f56dc1332ea/service/nosql_shard_setup", 
+     "service": "https://10.247.59.2/service/nosql_shard_setup", 
+     "name": "nosql_shard_setup"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/07cccbfd-8e0f-4161-88a4-1f56dc1332ea/service/ntp-node-server", 
+     "service": "https://10.247.59.2/service/ntp-node-server", 
+     "name": "ntp-node-server"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/07cccbfd-8e0f-4161-88a4-1f56dc1332ea/service/ntp-site-server", 
+     "service": "https://10.247.59.2/service/ntp-site-server", 
+     "name": "ntp-site-server"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/07cccbfd-8e0f-4161-88a4-1f56dc1332ea/service/ossec-client", 
+     "service": "https://10.247.59.2/service/ossec-client", 
+     "name": "ossec-client"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/07cccbfd-8e0f-4161-88a4-1f56dc1332ea/service/proxy_setup", 
+     "service": "https://10.247.59.2/service/proxy_setup", 
+     "name": "proxy_setup"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/07cccbfd-8e0f-4161-88a4-1f56dc1332ea/service/rsyslog-cluster", 
+     "service": "https://10.247.59.2/service/rsyslog-cluster", 
+     "name": "rsyslog-cluster"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/07cccbfd-8e0f-4161-88a4-1f56dc1332ea/service/selinux", 
+     "service": "https://10.247.59.2/service/selinux", 
+     "name": "selinux"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/07cccbfd-8e0f-4161-88a4-1f56dc1332ea/service/snmpd-node", 
+     "service": "https://10.247.59.2/service/snmpd-node", 
+     "name": "snmpd-node"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/07cccbfd-8e0f-4161-88a4-1f56dc1332ea/service/snmptrapd-cluster", 
+     "service": "https://10.247.59.2/service/snmptrapd-cluster", 
+     "name": "snmptrapd-cluster"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/07cccbfd-8e0f-4161-88a4-1f56dc1332ea/service/sshd_configuration", 
+     "service": "https://10.247.59.2/service/sshd_configuration", 
+     "name": "sshd_configuration"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/07cccbfd-8e0f-4161-88a4-1f56dc1332ea/service/sslreload", 
+     "service": "https://10.247.59.2/service/sslreload", 
+     "name": "sslreload"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/07cccbfd-8e0f-4161-88a4-1f56dc1332ea/service/statsd-server", 
+     "service": "https://10.247.59.2/service/statsd-server", 
+     "name": "statsd-server"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/07cccbfd-8e0f-4161-88a4-1f56dc1332ea/service/storage_config", 
+     "service": "https://10.247.59.2/service/storage_config", 
+     "name": "storage_config"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/07cccbfd-8e0f-4161-88a4-1f56dc1332ea/service/storage_node", 
+     "service": "https://10.247.59.2/service/storage_node", 
+     "name": "storage_node"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/07cccbfd-8e0f-4161-88a4-1f56dc1332ea/service/storage_secondary", 
+     "service": "https://10.247.59.2/service/storage_secondary", 
+     "name": "storage_secondary"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/07cccbfd-8e0f-4161-88a4-1f56dc1332ea/service/system_users", 
+     "service": "https://10.247.59.2/service/system_users", 
+     "name": "system_users"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/07cccbfd-8e0f-4161-88a4-1f56dc1332ea/service/traffic-control", 
+     "service": "https://10.247.59.2/service/traffic-control", 
+     "name": "traffic-control"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/07cccbfd-8e0f-4161-88a4-1f56dc1332ea/service/yum", 
+     "service": "https://10.247.59.2/service/yum", 
+     "name": "yum"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/07cccbfd-8e0f-4161-88a4-1f56dc1332ea/service/zookeeper_base", 
+     "service": "https://10.247.59.2/service/zookeeper_base", 
+     "name": "zookeeper_base"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/07cccbfd-8e0f-4161-88a4-1f56dc1332ea/service/zookeeper_ssl", 
+     "service": "https://10.247.59.2/service/zookeeper_ssl", 
+     "name": "zookeeper_ssl"
+    }
+   ], 
+   "properties": {
+    "/system/bic/prefer/buser": "1", 
+    "/system/bic/prefer/snmptrapd-site": "1", 
+    "/system/bic/prefer/nosql_br_endpoint": "1", 
+    "/system/bic/prefer/primary_dns_ip": "1", 
+    "/system/bic/prefer/frontend-nginx": "1", 
+    "/system/bic/prefer/dhcpd": "1", 
+    "/system/bic/prefer/storage_master": "1", 
+    "/system/bic/prefer/bevent": "1", 
+    "/system/bic/prefer/memcached": "1", 
+    "/system/bic/master": "1", 
+    "/system/bic/prefer/nosql_kill_orphan_sna": "1", 
+    "/system/bic/prefer/zookeeper_ssl": "1", 
+    "/system/bic/prefer/nosql_admin_endpoint": "1", 
+    "/system/bic/prefer/imagedata": "1", 
+    "/system/bic/prefer/bservicemanager": "1", 
+    "/system/bic/prefer/bdns_api_primary": "1", 
+    "/system/bic/prefer/rabbitmq_1": "1", 
+    "/system/bic/prefer/frontend-admin-nginx": "1", 
+    "/system/bic/prefer/rabbitmq_3": "1", 
+    "/system/bic/prefer/rabbitmq_2": "1", 
+    "/system/bic/prefer/gluster_server": "1", 
+    "/system/bic/prefer/ddb_zookeeper_3": "1", 
+    "/system/bic/prefer/ddb_zookeeper_2": "1", 
+    "/system/bic/prefer/ddb_zookeeper_1": "1", 
+    "/system/bic/prefer/graphite-web": "1", 
+    "/system/bic/prefer/nosql_bic_reload": "1", 
+    "/system/compute/hypervisor/xen": "1", 
+    "/system/bic/prefer/bnet": "1", 
+    "/system/bic/prefer/buserfront": "1", 
+    "/system/bic/prefer/storage_node": "1", 
+    "/system/bic/prefer/bauthfront": "1", 
+    "/system/bic/prefer/nosql_admin": "1", 
+    "/system/bic/prefer/storage_secondary": "1", 
+    "/system/bic/prefer/bservicesite": "1", 
+    "/system/bic/prefer/nosql_shard_setup": "1", 
+    "/system/bic/prefer/bdns_api_secondary": "1", 
+    "/system/bic/prefer/backend-nginx": "1", 
+    "/system/bic/prefer/rsyslog-site": "1", 
+    "/system/bic/prefer/gluster_mount": "1", 
+    "/system/bic/prefer/storage_metadata": "1", 
+    "/system/bic/prefer/bstorageworker_nfs_2": "1", 
+    "/system/nat/forwarder": "1", 
+    "/system/bic/prefer/tftpd": "1", 
+    "/system/bic/prefer/nosql_generate_traps": "1", 
+    "/system/bic/prefer/nosql_storage_node_agent": "1", 
+    "/system/bic/prefer/bauth": "1", 
+    "/system/bic/prefer/nosql_configure": "1", 
+    "/system/compute/allow_instances": "0", 
+    "/system/bic/prefer/bstorageworker_iscsi_101": "1", 
+    "/system/bic/prefer/bdatabaseshim": "1", 
+    "/system/bic/prefer/bmeteringsite": "1", 
+    "/system/bic/prefer/bfederated": "1", 
+    "/system/bic/prefer/bstorageworker_iscsi_102": "1", 
+    "/system/bic/prefer/carbon-cache": "1", 
+    "/system/bic/prefer/borchestrationmanager": "1", 
+    "/system/compute/placement/default": "1", 
+    "/system/bic/prefer/borchestrationsite": "1", 
+    "/system/bic/prefer/bimage": "1", 
+    "/system/bic/prefer/bsecsite": "1", 
+    "/system/bic/prefer/baws": "1", 
+    "/system/bic/prefer/zookeeper_base": "1", 
+    "/system/bic/prefer/nosql_make_bootconfig": "1", 
+    "/system/bic/prefer/storage_writable": "1", 
+    "/system/bic/prefer/bstorageworker_nfs_1": "1", 
+    "/system/bic/prefer/ntp-site-server": "1", 
+    "/system/bic/prefer/bsite": "1", 
+    "/system/bic/prefer/pxe-nginx": "1", 
+    "/system/bic/prefer/graphite-nginx": "1", 
+    "/system/bic/prefer/bdhcp": "1", 
+    "/system/bic/prefer/pxe-ip": "1", 
+    "/system/bic/prefer/bstoragemanager_2": "1", 
+    "/system/bic/prefer/bstoragemanager_3": "1", 
+    "/system/bic/prefer/bstoragemanager_1": "1"
+   }, 
+   "updating": false
+  }, 
+  {
+   "status": "active", 
+   "endpoint": "192.6.64.18", 
+   "node_resources": {
+    "available": {
+     "ram": 311, 
+     "load_avg_5": 1000.88, 
+     "instance_space": 128150147072, 
+     "image_space": 128150147072, 
+     "cpus": 0.0, 
+     "instances": 1048576, 
+     "shared_instance_image_device": true, 
+     "hdfs_space": 0, 
+     "data_space": 10660974592
+    }, 
+    "monitor_port": 53322, 
+    "total": {
+     "ram": 65535, 
+     "instance_space": 135215419392, 
+     "image_space": 135215419392, 
+     "cpus": 40, 
+     "data_space": 16910295040, 
+     "instances": 1048576, 
+     "hdfs_space": 0, 
+     "cores": 8, 
+     "sockets": 1
+    }
+   }, 
+   "uuid": "03a2306b-0a75-43d4-86b1-0b675650faf5", 
+   "cluster": "192.6.64.0/24", 
+   "uri": "https://10.247.59.2/node/03a2306b-0a75-43d4-86b1-0b675650faf5", 
+   "instances": [], 
+   "mac": "00:50:56:3f:01:08", 
+   "version": "initial", 
+   "ipmi_ip": "0.0.0.0", 
+   "load_metrics": {
+    "load_average": [
+     0.97, 
+     0.67, 
+     0.63
+    ], 
+    "memory": {
+     "swap_free": 3342332, 
+     "cached": 173096, 
+     "free": 63119852, 
+     "swap_total": 3342332, 
+     "total": 64674896, 
+     "buffers": 119560
+    }
+   }, 
+   "services": [
+    {
+     "uri": "https://10.247.59.2/node/03a2306b-0a75-43d4-86b1-0b675650faf5/service/access-control", 
+     "service": "https://10.247.59.2/service/access-control", 
+     "name": "access-control"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/03a2306b-0a75-43d4-86b1-0b675650faf5/service/banner", 
+     "service": "https://10.247.59.2/service/banner", 
+     "name": "banner"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/03a2306b-0a75-43d4-86b1-0b675650faf5/service/bfederated", 
+     "service": "https://10.247.59.2/service/bfederated", 
+     "name": "bfederated"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/03a2306b-0a75-43d4-86b1-0b675650faf5/service/bnatnode", 
+     "service": "https://10.247.59.2/service/bnatnode", 
+     "name": "bnatnode"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/03a2306b-0a75-43d4-86b1-0b675650faf5/service/bnet", 
+     "service": "https://10.247.59.2/service/bnet", 
+     "name": "bnet"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/03a2306b-0a75-43d4-86b1-0b675650faf5/service/bnode", 
+     "service": "https://10.247.59.2/service/bnode", 
+     "name": "bnode"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/03a2306b-0a75-43d4-86b1-0b675650faf5/service/bsecnode", 
+     "service": "https://10.247.59.2/service/bsecnode", 
+     "name": "bsecnode"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/03a2306b-0a75-43d4-86b1-0b675650faf5/service/bservicemanager", 
+     "service": "https://10.247.59.2/service/bservicemanager", 
+     "name": "bservicemanager"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/03a2306b-0a75-43d4-86b1-0b675650faf5/service/bsite", 
+     "service": "https://10.247.59.2/service/bsite", 
+     "name": "bsite"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/03a2306b-0a75-43d4-86b1-0b675650faf5/service/bstoragemanager_2", 
+     "service": "https://10.247.59.2/service/bstoragemanager_2", 
+     "name": "bstoragemanager_2"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/03a2306b-0a75-43d4-86b1-0b675650faf5/service/bstorageworker_iscsi_101", 
+     "service": "https://10.247.59.2/service/bstorageworker_iscsi_101", 
+     "name": "bstorageworker_iscsi_101"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/03a2306b-0a75-43d4-86b1-0b675650faf5/service/diamond", 
+     "service": "https://10.247.59.2/service/diamond", 
+     "name": "diamond"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/03a2306b-0a75-43d4-86b1-0b675650faf5/service/firewall", 
+     "service": "https://10.247.59.2/service/firewall", 
+     "name": "firewall"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/03a2306b-0a75-43d4-86b1-0b675650faf5/service/flow-engine", 
+     "service": "https://10.247.59.2/service/flow-engine", 
+     "name": "flow-engine"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/03a2306b-0a75-43d4-86b1-0b675650faf5/service/grub_configuration", 
+     "service": "https://10.247.59.2/service/grub_configuration", 
+     "name": "grub_configuration"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/03a2306b-0a75-43d4-86b1-0b675650faf5/service/lldp", 
+     "service": "https://10.247.59.2/service/lldp", 
+     "name": "lldp"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/03a2306b-0a75-43d4-86b1-0b675650faf5/service/nosql_bic_reload", 
+     "service": "https://10.247.59.2/service/nosql_bic_reload", 
+     "name": "nosql_bic_reload"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/03a2306b-0a75-43d4-86b1-0b675650faf5/service/nosql_make_bootconfig", 
+     "service": "https://10.247.59.2/service/nosql_make_bootconfig", 
+     "name": "nosql_make_bootconfig"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/03a2306b-0a75-43d4-86b1-0b675650faf5/service/nosql_shard_setup", 
+     "service": "https://10.247.59.2/service/nosql_shard_setup", 
+     "name": "nosql_shard_setup"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/03a2306b-0a75-43d4-86b1-0b675650faf5/service/ntp-node-server", 
+     "service": "https://10.247.59.2/service/ntp-node-server", 
+     "name": "ntp-node-server"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/03a2306b-0a75-43d4-86b1-0b675650faf5/service/ossec-client", 
+     "service": "https://10.247.59.2/service/ossec-client", 
+     "name": "ossec-client"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/03a2306b-0a75-43d4-86b1-0b675650faf5/service/proxy_setup", 
+     "service": "https://10.247.59.2/service/proxy_setup", 
+     "name": "proxy_setup"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/03a2306b-0a75-43d4-86b1-0b675650faf5/service/selinux", 
+     "service": "https://10.247.59.2/service/selinux", 
+     "name": "selinux"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/03a2306b-0a75-43d4-86b1-0b675650faf5/service/snmpd-node", 
+     "service": "https://10.247.59.2/service/snmpd-node", 
+     "name": "snmpd-node"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/03a2306b-0a75-43d4-86b1-0b675650faf5/service/sshd_configuration", 
+     "service": "https://10.247.59.2/service/sshd_configuration", 
+     "name": "sshd_configuration"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/03a2306b-0a75-43d4-86b1-0b675650faf5/service/sslreload", 
+     "service": "https://10.247.59.2/service/sslreload", 
+     "name": "sslreload"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/03a2306b-0a75-43d4-86b1-0b675650faf5/service/storage_config", 
+     "service": "https://10.247.59.2/service/storage_config", 
+     "name": "storage_config"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/03a2306b-0a75-43d4-86b1-0b675650faf5/service/system_users", 
+     "service": "https://10.247.59.2/service/system_users", 
+     "name": "system_users"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/03a2306b-0a75-43d4-86b1-0b675650faf5/service/traffic-control", 
+     "service": "https://10.247.59.2/service/traffic-control", 
+     "name": "traffic-control"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/03a2306b-0a75-43d4-86b1-0b675650faf5/service/yum", 
+     "service": "https://10.247.59.2/service/yum", 
+     "name": "yum"
+    }, 
+    {
+     "uri": "https://10.247.59.2/node/03a2306b-0a75-43d4-86b1-0b675650faf5/service/zookeeper_ssl", 
+     "service": "https://10.247.59.2/service/zookeeper_ssl", 
+     "name": "zookeeper_ssl"
+    }
+   ], 
+   "properties": {
+    "/system/bic/prefer/buser": "1", 
+    "/system/bic/prefer/snmptrapd-site": "1", 
+    "/system/bic/prefer/nosql_br_endpoint": "1", 
+    "/system/bic/prefer/primary_dns_ip": "1", 
+    "/system/bic/prefer/frontend-nginx": "1", 
+    "/system/bic/prefer/dhcpd": "1", 
+    "/system/bic/prefer/storage_master": "1", 
+    "/system/bic/prefer/bevent": "1", 
+    "/system/bic/prefer/memcached": "1", 
+    "/system/bic/master": "1", 
+    "/system/bic/prefer/nosql_kill_orphan_sna": "1", 
+    "/system/bic/prefer/zookeeper_ssl": "1", 
+    "/system/bic/prefer/nosql_admin_endpoint": "1", 
+    "/system/bic/prefer/imagedata": "1", 
+    "/system/bic/prefer/bservicemanager": "1", 
+    "/system/bic/prefer/bdns_api_primary": "1", 
+    "/system/bic/prefer/rabbitmq_1": "1", 
+    "/system/bic/prefer/frontend-admin-nginx": "1", 
+    "/system/bic/prefer/rabbitmq_3": "1", 
+    "/system/bic/prefer/rabbitmq_2": "1", 
+    "/system/bic/prefer/gluster_server": "1", 
+    "/system/bic/prefer/ddb_zookeeper_3": "1", 
+    "/system/bic/prefer/ddb_zookeeper_2": "1", 
+    "/system/bic/prefer/ddb_zookeeper_1": "1", 
+    "/system/bic/prefer/graphite-web": "1", 
+    "/system/bic/prefer/nosql_bic_reload": "1", 
+    "/system/compute/hypervisor/xen": "1", 
+    "/system/bic/prefer/bnet": "1", 
+    "/system/bic/prefer/buserfront": "1", 
+    "/system/bic/prefer/storage_node": "1", 
+    "/system/bic/prefer/bauthfront": "1", 
+    "/system/bic/prefer/nosql_admin": "1", 
+    "/system/bic/prefer/storage_secondary": "1", 
+    "/system/bic/prefer/bservicesite": "1", 
+    "/system/bic/prefer/nosql_shard_setup": "1", 
+    "/system/bic/prefer/bdns_api_secondary": "1", 
+    "/system/bic/prefer/backend-nginx": "1", 
+    "/system/bic/prefer/rsyslog-site": "1", 
+    "/system/bic/prefer/gluster_mount": "1", 
+    "/system/bic/prefer/storage_metadata": "1", 
+    "/system/bic/prefer/bstorageworker_nfs_2": "1", 
+    "/system/nat/forwarder": "1", 
+    "/system/bic/prefer/tftpd": "1", 
+    "/system/bic/prefer/nosql_generate_traps": "1", 
+    "/system/bic/prefer/nosql_storage_node_agent": "1", 
+    "/system/bic/prefer/bauth": "1", 
+    "/system/bic/prefer/nosql_configure": "1", 
+    "/system/compute/allow_instances": "0", 
+    "/system/bic/prefer/bstorageworker_iscsi_101": "1", 
+    "/system/bic/prefer/bdatabaseshim": "1", 
+    "/system/bic/prefer/bmeteringsite": "1", 
+    "/system/bic/prefer/bfederated": "1", 
+    "/system/bic/prefer/bstorageworker_iscsi_102": "1", 
+    "/system/bic/prefer/carbon-cache": "1", 
+    "/system/bic/prefer/borchestrationmanager": "1", 
+    "/system/compute/placement/default": "1", 
+    "/system/bic/prefer/borchestrationsite": "1", 
+    "/system/bic/prefer/bimage": "1", 
+    "/system/bic/prefer/bsecsite": "1", 
+    "/system/bic/prefer/baws": "1", 
+    "/system/bic/prefer/zookeeper_base": "1", 
+    "/system/bic/prefer/nosql_make_bootconfig": "1", 
+    "/system/bic/prefer/storage_writable": "1", 
+    "/system/bic/prefer/bstorageworker_nfs_1": "1", 
+    "/system/bic/prefer/ntp-site-server": "1", 
+    "/system/bic/prefer/bsite": "1", 
+    "/system/bic/prefer/pxe-nginx": "1", 
+    "/system/bic/prefer/graphite-nginx": "1", 
+    "/system/bic/prefer/bdhcp": "1", 
+    "/system/bic/prefer/pxe-ip": "1", 
+    "/system/bic/prefer/bstoragemanager_2": "1", 
+    "/system/bic/prefer/bstoragemanager_3": "1", 
+    "/system/bic/prefer/bstoragemanager_1": "1"
+   }, 
+   "updating": false
+  }
+ ]
+}

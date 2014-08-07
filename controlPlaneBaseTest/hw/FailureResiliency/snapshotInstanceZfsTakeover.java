@@ -6,6 +6,7 @@ package com.oracle.nimbula.qa.ha.hw.FailureResiliency;
 
 import com.oracle.nimbula.qa.ha.FunctionalUtils;
 import com.oracle.nimbula.qa.ha.HAUtil;
+import com.oracle.nimbula.qa.ha.InstanceUtil;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -13,20 +14,30 @@ import org.testng.annotations.Test;
 
 /**
  *
- * @author ctyagi
+ * @author sning
  */
 public class snapshotInstanceZfsTakeover extends TakeoverBaseClass {
+   
     @BeforeClass(alwaysRun = true, timeOut = 129600000)
     public void setup() throws InterruptedException {
+        super.setup();
         func.launchSmallVM();
+        int count = 0;
         while (!func.isVMup()){
-            Thread.sleep(10000);
+            Thread.sleep(10000);   
+            count++;
+            if (count >= 10){
+                break;
+            }
         }
+        Assert.assertTrue(func.isVMup(),"VM is down");
     }
     
     @Test(alwaysRun=true, timeOut=129600000)
     public void aa_snapshotVM() throws InterruptedException{
-        Assert.assertTrue(func.createSnapshot(),"Snapshot creation failed");
+        Assert.assertTrue(func.createSnapshot(),"Snapshot creation failed");        
+        Assert.assertTrue(func.isVMup(),"VM is up");
+        Assert.assertTrue(func.lastCreatedSnapshotExists(),"Error : Snapshot doesn't existed, snapshot failed!");
     }
     
     @Test(alwaysRun=true,timeOut=129600000)
