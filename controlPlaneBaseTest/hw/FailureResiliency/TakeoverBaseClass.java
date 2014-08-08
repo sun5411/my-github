@@ -264,18 +264,4 @@ public class TakeoverBaseClass extends ControlPlaneBaseTest {
         }
         return true;
     }
-     public boolean switchFailover(String portName){
-        if("eth0".equals(portName)){
-            if (!sw1.reboot()){
-                logger.severe("Failed to reboot sw1");
-                return false;
-            }
-        } else if ("eth1".equals(portName)){
-            if (!sw2.reboot()){
-                logger.severe("Failed to reboot sw2");
-                return false;
-            }
-        }
-        return true;
-     }
 }

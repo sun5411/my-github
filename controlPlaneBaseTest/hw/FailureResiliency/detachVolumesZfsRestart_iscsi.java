@@ -19,27 +19,28 @@ import org.testng.annotations.Test;
  *
  * @author Sun Ning
  */
-public class attachVolumeZFSTakeover extends TakeoverBaseClass {
-    InstanceUtil vm;    
-    IPpoolUtil ip;
-    String ipPoolEntry;
-    String vmUUID;
-    String volumeName;
-    int volNum = 30;
-    List<String> uuids = new LinkedList<>();
-    List<String> volumeNames = new LinkedList<>();
-    List<String> ipReservations = new LinkedList<>();
-
-    
+public class detachVolumesZfsRestart_iscsi extends TakeoverBaseClass {
+    private InstanceUtil vm;    
+    private IPpoolUtil ip;
+    private String ipPoolEntry;    
+    private final int volNum = 30;
+    private List<String> uuids;
+    private List<String> volumeNames;
+    private List<String> ipReservations;
+    private List<String> storageAttachments;
+       
     @BeforeClass(alwaysRun = true, timeOut = 129600000)
     public void setup() throws InterruptedException {
         super.setup();
         vm = new InstanceUtil();
         ip = new IPpoolUtil();
+        ipReservations = new LinkedList<>();
+        uuids = new LinkedList<>();
+        volumeNames = new LinkedList<>();
+        storageAttachments = new LinkedList<>();
         
         Assert.assertTrue(ip.addIPpool(),"Failed to add ippool");
-        ipPoolEntry = ip.addIPPoolEntry();
-        ipReservations = new LinkedList<>();
+        ipPoolEntry = ip.addIPPoolEntry();        
         for ( int i = 0 ; i < volNum; i++){
             String ipResName = ip.addIPPoolReservation();
             Assert.assertNotNull(ipResName, "Unable to add ip reservation");
@@ -49,46 +50,50 @@ public class attachVolumeZFSTakeover extends TakeoverBaseClass {
         Assert.assertTrue(func.createVolumes(volNum),"Error : Volume create failed!");
         while (!func.areVolumesOnline()){
             logger.severe("Volumes are not online yet");
-            Thread.sleep(30000);
+            Thread.sleep(10000);
         }
         Assert.assertTrue(vm.launchNSimpleVMsWithIPreservations(volNum,ipReservations),"Error : VMs create failed!");
         uuids = vm.getCreatedInstancesUUID();
         volumeNames = func.getCreatedVolumeNames();
-        for ( int i = 0 ; i < volNum; i++ ){
-            vmUUID = uuids.get(i);
-            while(!vm.isVMup(vmUUID)){
-                Thread.sleep(1000);
+        for ( int i = 0 ; i < volNum; i++ ){            
+            while(!vm.isVMup(uuids.get(i))){
+                Thread.sleep(10000);
             }
+        }
+        
+        for ( int i = 0 ; i < volNum; i++ ){            
+            Assert.assertTrue(vm.addStorageAttachment(uuids.get(i), volumeNames.get(i)), "Storage volume could not be attached to the VM");
+        }
+        for ( int i = 0; i < volNum; i++){
+            int count = 0;            
+            String storageAtt = vm.getStorageAttachmentName(uuids.get(i)).get(0);
+            while(!vm.isStorageAttached(storageAtt)){
+                logger.severe("Storage is not attached yet");
+                Thread.sleep(30000);
+                count = count + 1;
+                if ( count > 15 ) {
+                    break;
+                }
+            }            
+            this.storageAttachments.add(storageAtt);
         }
     }
     
     @Test(alwaysRun=true, timeOut=129600000)
-    public void aa_attachVolumes() throws InterruptedException{
-        for ( int i = 0 ; i < volNum; i++ ){
-            vmUUID = uuids.get(i);
-            volumeName = volumeNames.get(i);
-            Assert.assertTrue(vm.addStorageAttachment(vmUUID, volumeName), "Storage volume could not be attached to the VM");
-        }
-        for ( int i = 0; i < volNum; i++){
-            int count = 0;
-            vmUUID = uuids.get(i);
-            while(!vm.isStorageAttached(vm.getStorageAttachmentName(vmUUID).get(0))){
-                logger.severe("Storage is not attached yet");
-                Thread.sleep(10000);
-                count = count + 1;
-                if ( count > 15 ){ break;}
-            }                     
-        }
-        for (int i = 0 ; i < volNum ; i++){
-            vmUUID = uuids.get(i);
-            Assert.assertTrue(vm.pingVM(vmUUID), "Error : Failed to ping VM");
-            Assert.assertTrue(vm.checkVolumeSanity(vmUUID), "Error : Failed to accessed attached volume from instance, VM : " + vmUUID);
+    public void aa_detachVolumes() throws InterruptedException{
+        Iterator<String> it = this.storageAttachments.iterator();
+        while(it.hasNext()){
+            Assert.assertTrue(vm.deleteStorageAttachment(it.next()), "Error : Storage dettachment failed !");
+        }        
+        for ( int i = 0; i < volNum; i++){            
+            Assert.assertTrue(vm.pingVM(uuids.get(i)), "Error : Failed to ping VM");
+            Assert.assertTrue(vm.checkVolumeSanity(uuids.get(i)), "Error : Failed to accessed attached volume from instance, VM : " + uuids.get(i));
         }
     }
     
     @Test(alwaysRun=true,timeOut=129600000)
-    public void bb_StorageServerTakeover() throws InterruptedException{
-        Assert.assertTrue(super.takeover(), "Error : Storage takeover failed!");
+    public void bb_StorageServerRestart() throws InterruptedException{
+        Assert.assertTrue(super.rebootZFSmaster(), "Error : ZFS storage master reboot failed!");
         Thread.sleep(30000);
     }  
 
@@ -116,7 +121,7 @@ public class attachVolumeZFSTakeover extends TakeoverBaseClass {
         }            
         func.deleteCreatedVolumes();
         Thread.sleep(10000);
-        func.deleteStoragePool();        
+        func.deleteStoragePool();
         func.deleteStorageServer();
         func.deleteStorageProperty();
     }        

@@ -4,6 +4,8 @@
  */
 package com.oracle.nimbula.qa.ha.hw.FailureResiliency;
 
+import com.oracle.nimbula.qa.ha.FunctionalUtils;
+import com.oracle.nimbula.qa.ha.HAUtil;
 import com.oracle.nimbula.qa.ha.InstanceUtil;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -14,30 +16,32 @@ import org.testng.annotations.Test;
  *
  * @author Sun Ning
  */
-public class stopOrchestrationNodeCrash extends TakeoverBaseClass {
-    String vmUUID;
+public class startOrchestrationNodeCrash_noHA extends TakeoverBaseClass {
+    String vmUUID,new_vmUUID;
     InstanceUtil vm;
    
     @BeforeClass(alwaysRun = true, timeOut = 129600000)
     public void setup() throws InterruptedException {
         super.setup();
         vm = new InstanceUtil();
-        super.addStartOrchestration("/tmp/SingleVM_HA.json");
-        vmUUID=super.orchestrationInstances().get(0);
-        Assert.assertTrue(vm.pingVM(vmUUID), "Error : Failed to ping VM");
     }
     
     @Test(alwaysRun=true, timeOut=129600000)
     public void aa_startOrchestration() throws InterruptedException{
-        super.stopDeleteOrchestration();
+        super.addStartOrchestration("/tmp/Simple_OPlan.json");
     }
     
     @Test(alwaysRun=true,timeOut=129600000)
     public void bb_NodeCrash() throws InterruptedException{
+        Thread.sleep(20000);
+        vmUUID=super.orchestrationInstances().get(0);
         super.killNodeUUID(util.getVMnode(vmUUID));
+        Assert.assertFalse(vm.pingVM(new_vmUUID), "Error : should can not ping the VM!");
     }  
     
     @AfterClass(alwaysRun = true)
     public void tearDown() {
+        super.stopDeleteOrchestration();
     }
+    
 }

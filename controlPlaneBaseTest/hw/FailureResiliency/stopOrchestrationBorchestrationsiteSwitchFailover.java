@@ -5,6 +5,7 @@
 package com.oracle.nimbula.qa.ha.hw.FailureResiliency;
 
 import com.oracle.nimbula.qa.ha.InstanceUtil;
+import java.util.List;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -14,8 +15,8 @@ import org.testng.annotations.Test;
  *
  * @author Sun Ning
  */
-public class stopOrchestrationNodeCrash extends TakeoverBaseClass {
-    String vmUUID;
+public class stopOrchestrationBorchestrationsiteSwitchFailover extends TakeoverBaseClass {
+    String vmUUID,new_vmUUID;
     InstanceUtil vm;
    
     @BeforeClass(alwaysRun = true, timeOut = 129600000)
@@ -24,7 +25,7 @@ public class stopOrchestrationNodeCrash extends TakeoverBaseClass {
         vm = new InstanceUtil();
         super.addStartOrchestration("/tmp/SingleVM_HA.json");
         vmUUID=super.orchestrationInstances().get(0);
-        Assert.assertTrue(vm.pingVM(vmUUID), "Error : Failed to ping VM");
+        Assert.assertTrue(vm.pingVM(vmUUID), "Error : Failed to ping VM");       
     }
     
     @Test(alwaysRun=true, timeOut=129600000)
@@ -33,9 +34,15 @@ public class stopOrchestrationNodeCrash extends TakeoverBaseClass {
     }
     
     @Test(alwaysRun=true,timeOut=129600000)
-    public void bb_NodeCrash() throws InterruptedException{
-        super.killNodeUUID(util.getVMnode(vmUUID));
-    }  
+    public void bb_borchestrationsiteSwitchFailover() throws InterruptedException{
+        List<String> nodeOfService = this.util.getNodesOfService("borchestrationmanager");
+        String activeNic = this.util.getActiveNIC(nodeOfService.get(0));
+        if (activeNic.equalsIgnoreCase("eth0")){
+            super.sw1.reboot();
+        } else if (activeNic.equalsIgnoreCase("eth1")){
+            super.sw2.reboot();
+        }
+    }
     
     @AfterClass(alwaysRun = true)
     public void tearDown() {

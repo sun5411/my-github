@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.oracle.nimbula.qa.ha.hw.vmResiliency;
+package com.oracle.nimbula.qa.ha.hw.FailureResiliency;
 
 import com.oracle.nimbula.qa.ha.IPpoolUtil;
 import com.oracle.nimbula.qa.ha.InstanceUtil;
@@ -19,7 +19,7 @@ import org.testng.annotations.Test;
  *
  * @author Sun Ning
  */
-public class attachVolumeZFSTakeover extends TakeoverBaseClass {
+public class attachVolumeZfsRestart_iscsi extends TakeoverBaseClass {
     InstanceUtil vm;    
     IPpoolUtil ip;
     String ipPoolEntry;
@@ -60,10 +60,7 @@ public class attachVolumeZFSTakeover extends TakeoverBaseClass {
                 Thread.sleep(1000);
             }
         }
-    }
-    
-    @Test(alwaysRun=true, timeOut=129600000)
-    public void aa_attachVolumes() throws InterruptedException{
+        
         for ( int i = 0 ; i < volNum; i++ ){
             vmUUID = uuids.get(i);
             volumeName = volumeNames.get(i);
@@ -79,17 +76,18 @@ public class attachVolumeZFSTakeover extends TakeoverBaseClass {
                 if ( count > 15 ){ break;}
             }                     
         }
+    }
+    
+    @Test(alwaysRun=true,timeOut=129600000)
+    public void bb_StorageServerRestart() throws InterruptedException{
+        Assert.assertTrue(super.rebootZFSmaster(), "Error : ZFS storage master reboot failed!");
+        Thread.sleep(180000);
+        
         for (int i = 0 ; i < volNum ; i++){
             vmUUID = uuids.get(i);
             Assert.assertTrue(vm.pingVM(vmUUID), "Error : Failed to ping VM");
             Assert.assertTrue(vm.checkVolumeSanity(vmUUID), "Error : Failed to accessed attached volume from instance, VM : " + vmUUID);
         }
-    }
-    
-    @Test(alwaysRun=true,timeOut=129600000)
-    public void bb_StorageServerTakeover() throws InterruptedException{
-        Assert.assertTrue(super.takeover(), "Error : Storage takeover failed!");
-        Thread.sleep(30000);
     }  
 
     @AfterClass(alwaysRun = true)

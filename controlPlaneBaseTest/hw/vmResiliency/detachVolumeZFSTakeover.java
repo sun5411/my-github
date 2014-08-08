@@ -123,5 +123,6 @@ public class detachVolumeZFSTakeover extends TakeoverBaseClass {
         Thread.sleep(10000);
         func.deleteStoragePool();
         func.deleteStorageServer();
+        func.deleteStorageProperty();
     }        
 }

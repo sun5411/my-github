@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.oracle.nimbula.qa.ha.hw.vmResiliency;
+package com.oracle.nimbula.qa.ha.hw.FailureResiliency;
 
 import com.oracle.nimbula.qa.ha.IPpoolUtil;
 import com.oracle.nimbula.qa.ha.InstanceUtil;
@@ -19,7 +19,7 @@ import org.testng.annotations.Test;
  *
  * @author Sun Ning
  */
-public class attachVolumeZFSTakeover extends TakeoverBaseClass {
+public class addAttachVolumeZfsRestart_iscsi extends TakeoverBaseClass {
     InstanceUtil vm;    
     IPpoolUtil ip;
     String ipPoolEntry;
@@ -87,8 +87,8 @@ public class attachVolumeZFSTakeover extends TakeoverBaseClass {
     }
     
     @Test(alwaysRun=true,timeOut=129600000)
-    public void bb_StorageServerTakeover() throws InterruptedException{
-        Assert.assertTrue(super.takeover(), "Error : Storage takeover failed!");
+    public void bb_StorageServerRestart() throws InterruptedException{
+        Assert.assertTrue(super.rebootZFSmaster(), "Error : ZFS storage master reboot failed!");
         Thread.sleep(30000);
     }  
 

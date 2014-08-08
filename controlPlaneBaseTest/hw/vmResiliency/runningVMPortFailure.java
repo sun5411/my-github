@@ -2,9 +2,7 @@ package com.oracle.nimbula.qa.ha.hw.vmResiliency;
 
 import com.oracle.nimbula.qa.ha.IPpoolUtil;
 import com.oracle.nimbula.qa.ha.InstanceUtil;
-import com.oracle.nimbula.qa.ha.common.NimbulaHAPropertiesReader;
 import com.oracle.nimbula.qa.ha.hw.FailureResiliency.TakeoverBaseClass;
-import java.net.UnknownHostException;
 import java.util.List;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -55,13 +53,15 @@ public class runningVMPortFailure extends TakeoverBaseClass {
     }
     
     @Test(alwaysRun=true,timeOut=129600000)
-    public void dd_vm1BondPortFailover() throws InterruptedException{        
-        Assert.assertTrue(instanceUtil.bondPortFailover(vm1), "Failed to perform bond port failover for vm1");
+    public void dd_vm1HostBondPortFailover() throws InterruptedException{        
+        String hostingNode = this.util.getVMnode(vm1);
+        Assert.assertTrue(this.util.bondPortFailover(hostingNode), "Failed to perform bond port failover for vm1's hosting node");
     } 
     
     @Test(alwaysRun=true,timeOut=129600000)
-    public void ee_vm1BondPortFailover() throws InterruptedException{        
-        Assert.assertTrue(instanceUtil.bondPortFailover(vm2), "Failed to perform bond port failover for vm2");
+    public void ee_vm1HostBondPortFailover() throws InterruptedException{      
+        String hostingNode = this.util.getVMnode(vm2);
+        Assert.assertTrue(this.util.bondPortFailover(hostingNode), "Failed to perform bond port failover for vm2's hosting node");
     } 
     
     @AfterClass(alwaysRun = true)
